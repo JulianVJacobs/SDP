@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './home.page';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
+import { HomePage } from './home.page';
+import { HomeGuard } from '../guards/home.guard';
+
+export const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomePage,
+    canActivate: [HomeGuard],
+    children: [
+      {
+        path: 'main',
+        loadChildren: () => import('../pages/main/main.module').then(
+          m => m.MainPageModule
+        )
+      },
+      {
+        path: '',
+        redirectTo: 'main',
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class HomePageRoutingModule {}

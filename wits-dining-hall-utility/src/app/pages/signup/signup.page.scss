@@ -1,0 +1,52 @@
+*{
+    font-weight: 300;
+  }
+  
+   ion-content{
+     --background: url(../../../assets/images/gh6.png) no-repeat center center fixed;
+   }
+  
+   ion-text{
+     position: absolute;
+     top: 15%;
+  
+     h1{
+       font-size: 44px;
+       color: #ffffff;
+       font-style: italic;
+       font-family: cursive;
+     }
+  
+     p{
+       font-size: 20px;
+       color: #ffffff;
+     }
+  
+   }
+  
+   .actions{
+     position: absolute;
+     width: 90%;
+     bottom: 3%;
+     color: #ffffff;
+     font-size: 20px;;
+  
+   }
+
+   .input{
+    position: absolute;
+    width: 90%;
+    bottom: 20%;
+    right: 5%
+   }
+  
+   ion-button{
+     --border-radius: 9px;
+     --box-shadow: none;
+     --background: linear-gradient(60deg, #D4AF37 0%, #416 100%);
+     text-transform: initial;
+     font-size: 12px;
+     display: block;
+     margin-left: 5%;
+  
+   }
