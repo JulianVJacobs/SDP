@@ -7,8 +7,6 @@ node_js:
 addons:
   chrome: stable
 
-before_install:
-  - cd demo/ionic-dev/greenpeace
 
 install:
   - npm install
@@ -16,6 +14,3 @@ install:
 before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
-script:
-  - npm run test -- --no-watch --code-coverage --reporters=coverage,coveralls --no-progress --browsers=ChromeHeadlessCI
-  - cat ../coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
