@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    <h1>Sign Up</h1>
+  </ion-text>
+  <div class="input">
+    <form>
+      <ion-list>
+
+        <ion-item>
+          <ion-label position="stacked">Person Number</ion-label>
+          <ion-input name="personNumber" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">First Name</ion-label>
+          <ion-input name="name" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Last Name</ion-label>
+          <ion-input name="surname" ></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" name="password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </form>
+  </div>
+  <div class = "actions">
+    <ion-button expand="block" (click)="mainAction()">Sign Up</ion-button>
+    <p>
+      Already have an account? 
+      <a (click)="loginAction()"> Login</a>
+    </p>
+  </div>
+
+</ion-content>
