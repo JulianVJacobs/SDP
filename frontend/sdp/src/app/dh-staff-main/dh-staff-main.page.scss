@@ -1,0 +1,30 @@
+*{
+    font-weight: 300;
+}
+  
+ion-content{
+     --background: url(../../assets/images/gh7.jpg) no-repeat center center fixed;
+}
+
+ion-text{
+    position: absolute;
+     top: 10%;
+  
+     h1{
+       font-size: 44px;
+       color: #ffffff;
+       font-style: italic;
+       font-family: cursive;
+     }
+}
+
+.display{
+    position: absolute;
+    width: 80%;
+    bottom: 40%;
+    left: 10%;
+
+    p{
+        font-size: 12px;
+    }
+}

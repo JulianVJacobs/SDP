@@ -1,0 +1,7 @@
+{
+  "name": "sdp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
