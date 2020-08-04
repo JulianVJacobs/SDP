@@ -39,7 +39,6 @@ export class LoginPage implements OnInit {
   }
 
   mainAction() {
-    this.router.navigate(['home']);
     if (this.validateInputs()) {
       this.authService.signin(this.postData).subscribe(
         (res: any) => {
