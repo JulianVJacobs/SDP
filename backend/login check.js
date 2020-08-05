@@ -1,7 +1,9 @@
-function writeUserData(userId, name, email, imageUrl) {
-     firebase.database().ref('users/' + userId).set({
-       username: name,
-       email: email,
-       profile_picture : imageUrl
-     });
-   }
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://greenpeace-33d5f.firebaseio.com"
+});
