@@ -48,7 +48,7 @@ var con = mysql.createConnection({
 	con.end(function (){
 	});
 
-});*/
+});
 
 
 
@@ -57,6 +57,19 @@ var con = mysql.createConnection({
 	console.log("connected!");
 	var sql =  "INSERT INTO Student(Stu_No, Password, First_Name, Last_Name) values(?,?,?,?)";
 	var values = [568410, "kabzfromrome", "Karabo", "Dlamini"];									 //This one is for to regiser the students
+  	con.query(sql,values,function (err, result) {						 						//takes in student_no, password, firstname and lastname
+    	if (err) throw err;	
+    	console.log(result);
+  	});
+	con.end(function (){
+});
+});*/
+
+con.connect(function(err) {
+	if (err) throw err;
+	console.log("connected!");
+	var sql =  "UPDATE Owners SET order_size = order_size + 1 WHERE Staff_No = ?";
+	var values = 138931;									 //This one is for to regiser the students
   	con.query(sql,values,function (err, result) {						 						//takes in student_no, password, firstname and lastname
     	if (err) throw err;	
     	console.log(result);
