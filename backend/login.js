@@ -69,8 +69,8 @@ con.connect(function(err) {
 	if (err) throw err;
 	console.log("connected!");
 	var sql =  "UPDATE Owners SET order_size = order_size + 1 WHERE Staff_No = ?";
-	var values = 138931;									 //This one is for to regiser the students
-  	con.query(sql,values,function (err, result) {						 						//takes in student_no, password, firstname and lastname
+	var values = 138931;									 //This should happen when a dining hall is clickd and the values should be
+  	con.query(sql,values,function (err, result) {			//staff number of the owner of the dining hall					
     	if (err) throw err;	
     	console.log(result);
   	});
