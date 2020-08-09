@@ -39,9 +39,8 @@ export class LoginPage implements OnInit {
   }
 
   mainAction() {
-    this.router.navigate(['home']);
     if (this.validateInputs()) {
-      this.authService.signin(this.postData).subscribe(
+      this.authService.login(this.postData).subscribe(
         (res: any) => {
           this.storageService.store(AuthConstants.AUTH, res);
           this.router.navigate(['main']);
