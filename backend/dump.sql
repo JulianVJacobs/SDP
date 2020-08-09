@@ -60,6 +60,7 @@ CREATE TABLE `ErnestOppenheimer` (
 
 LOCK TABLES `ErnestOppenheimer` WRITE;
 /*!40000 ALTER TABLE `ErnestOppenheimer` DISABLE KEYS */;
+INSERT INTO `ErnestOppenheimer` VALUES (568410,'2020-08-09','chips'),(648005,'2020-08-09','chips');
 /*!40000 ALTER TABLE `ErnestOppenheimer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +214,7 @@ CREATE TABLE `Student` (
 
 LOCK TABLES `Student` WRITE;
 /*!40000 ALTER TABLE `Student` DISABLE KEYS */;
-INSERT INTO `Student` VALUES (568410,'kabzfromrome','Karabo','Dlamini',NULL,NULL,NULL);
+INSERT INTO `Student` VALUES (568410,'kabzfromrome','Karabo','Dlamini',NULL,NULL,NULL),(648005,'unhashedpassword','Vladamir','Trump',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `Student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -226,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-09  2:06:01
+-- Dump completed on 2020-08-09  2:54:25

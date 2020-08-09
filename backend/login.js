@@ -56,14 +56,14 @@ var con = mysql.createConnection({
 	if (err) throw err;
 	console.log("connected!");
 	var sql =  "INSERT INTO Student(Stu_No, Password, First_Name, Last_Name) values(?,?,?,?)";
-	var values = [568410, "kabzfromrome", "Karabo", "Dlamini"];									 //This one is for to regiser the students
+	var values = [648005, "unhashedpassword", "Vladamir", "Trump"];									 //This one is for to regiser the students
   	con.query(sql,values,function (err, result) {						 						//takes in student_no, password, firstname and lastname
     	if (err) throw err;	
     	console.log(result);
   	});
 	con.end(function (){
 });
-});*/
+});
 
 con.connect(function(err) {
 	if (err) throw err;
@@ -73,6 +73,32 @@ con.connect(function(err) {
   	con.query(sql,values,function (err, result) {			//staff number of the owner of the dining hall					
     	if (err) throw err;	
     	console.log(result);
+  	});
+	con.end(function (){
+});
+});
+
+con.connect(function(err) {
+	if (err) throw err;
+	console.log("connected!");
+	var sql =  "INSERT INTO ErnestOppenheimer(Ordered_by, Date, Food_order) values(?,CURDATE(),?)";
+	var values = [648005,'chips'];									 //Ordered by is the student number of whoever ordered the food
+  	con.query(sql,values,function (err, result) {			//This is for placing orders					
+    	if (err) throw err;	
+    	console.log(result);
+  	});
+	con.end(function (){
+});
+});
+*/
+
+con.connect(function(err) {
+	if (err) throw err;
+	console.log("connected!");
+	var sql =  "SELECT COUNT(*) FROM ErnestOppenheimer WHERE Date = CURDATE()";
+  	con.query(sql,function (err, result) {			//This is to count how many orders where made 				
+    	if (err) throw err;							//in a dining hall table for that day	
+    	console.log(result[0]);
   	});
 	con.end(function (){
 });
