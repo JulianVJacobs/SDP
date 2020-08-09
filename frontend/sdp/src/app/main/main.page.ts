@@ -16,7 +16,7 @@ export class MainPage implements OnInit {
     //TODO: update respective DH databases
 
     if(num == "1"){//convo
-      this.router.navigate(['dh-staff-main']);
+      //this.router.navigate(['dh-staff-main']);
 
       const toast = await this.toastController.create({
         message: 'You have booked your meal at the Convocation dining hall.',
