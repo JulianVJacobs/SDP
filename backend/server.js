@@ -40,7 +40,7 @@ app.post('/login', function(req, res){
 	con.query(sql,[personNumber],function (err, result) {	
 		if (err) return err;
 		if (result[0].password == password){
-			return res.status(200).json({'person_number':result[0].personNumber,
+			return res.status(200).json({'personNumber':result[0].person_number,
 										'position':result[0].position});
 		}
 		else {
@@ -64,26 +64,13 @@ app.post('/signup', function(req, res){
 	});
 });
 
-// i don't understand why the order increment is happening besides the order being placed
-// increments order count
-app.post('/order:inc', function(req, res){ 
-    let personNumber =  JSON.parse(req.body).personNumber;
-	// let password =  JSON.parse(req.body).password;
-		
-	var sql = "UPDATE Owners SET order_size = order_size + 1 WHERE Staff_No = ?";
-	
-	con.query(sql,personNumber,function (err, result) {				
-		if (err) return err;	
-		return res.status(200).json(result);
-	});
-});
-
 // places order
-app.post('/order:place', function(req, res){ 
+app.post('/main:place_order', function(req,res){ 
+	let diningHall = JSON.parse(req.body).diningHall;
     let personNumber =  JSON.parse(req.body).personNumber;
 	let order =  JSON.parse(req.body).order;
 		
-	var sql = "INSERT INTO ErnestOppenheimer(Ordered_by, Date, Food_order) values(?,CURDATE(),?)";
+	var sql = "INSERT INTO " + diningHall + " (Ordered_by, Date, Food_order) values(?,CURDATE(),?)";
 	
 	con.query(sql,[personNumber,order],function (err, result) {				
 		if (err) return err;	
@@ -91,66 +78,21 @@ app.post('/order:place', function(req, res){
 	});
 });
 
-app.post('/dh-staff-main:count', function(req, res){
+app.post('/dh-staff-main', function(req, res){
+	let personNumber = JSON.parse(req.body).personNumber;
 		
-	var sql = "SELECT COUNT(*) FROM ErnestOppenheimer WHERE Date = CURDATE()";
+	var sql = "SELECT dh_name FROM owners WHERE staff_no = ?"
 	
-	con.query(sql,function (err, result) {				
+	con.query(sql,[personNumber],function (err, result) {				
 		if (err) return err;	
-		return res.status(200).json(result);
+		con.query('SELECT COUNT(*) FROM ' + result[0].dh_name + ' WHERE date = CURDATE()',function(err,result){
+			if (err) return err;
+			console.log(result)
+			return res.status(200).json(result);
+		})
 	});
-});	
+});
 
-// 	con.query(sql,personNumber,function (err, result) {				
-// 		if (err) return err;		
-// 		if (result.length > 0){
-// 			if (result[0].PASSWORD == password){
-// 				con.query(sql[1],[values],function (err, result) {	
-// 					if (err) return err;
-// 					data['user'] = result[0]; // gets the staff member
-// 					next();
-// 				});
-// 			}
-// 			else {
-// 				return res.status(401).send('Password entered does not match password on record.');
-// 			}
-// 		}
-// 		else {
-// 			return res.status(401).send('No such user in database.');
-// 		}
-// 	});	
-// },function(req,res){
-// 	var sql = "SELECT FLAG, STU_NUMBER, STUDENT_FNAME, STUDENT_LNAME FROM (SELECT * FROM STUDENT LIMIT 10) AS STU_LIST"
-// 	con.query(sql,function (err, result) {	
-// 		if (err) return err;
-// 		data['students'] = result;    // gets the first 10 students in the Student table
-// 		return res.status(200).json(data);
-// 	});			
-
-// app.post('/home/course-management:task', function(req, res){
-// 	let task = req.params.task
-// 	switch (task) {
-// 		case ':get': // select the mark data of the specified student
-// 			var values = [JSON.parse(req.body)]
-// 			var sql = "SELECT TUT_TEST1, TUT_TEST2, TEST_1, TEST_2, ASSIGNMENT, EXAM FROM MARKS WHERE STU_NUMBER = ?";
-// 			con.query(sql,values,function (err, result) {
-// 				if (err) return err;
-// 				return res.status(200).json(result);
-// 			});
-// 		break;
-
-// 		case ':update': // change the mark data for the specified student
-// 			var values = Object.values(JSON.parse(req.body).data);
-// 			values.push(JSON.parse(req.body).student[0].STU_NUMBER);
-// 			var sql = "UPDATE MARKS SET TUT_TEST1 = ?, TUT_TEST2 = ?, TEST_1 = ?, TEST_2 = ?, ASSIGNMENT = ?, EXAM = ? WHERE STU_NUMBER = ?";
-// 			con.query(sql,values,function (err, result) {
-// 				if (err) return err;
-// 				return res.status(200).json(result);
-// 			});
-// 		break;
-// 	}
-// });
-    
 app.listen(backendPort, function() {
     console.log('Express server listening on port ' + backendPort);
 });

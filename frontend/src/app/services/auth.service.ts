@@ -33,16 +33,12 @@ export class AuthService {
     return this.httpService.post('signup', postData)
   }
 
-  order_inc (postData: any): Observable<any> {
-    return this.httpService.post('order:inc', postData)
+  place_order (postData: any): Observable<any> {
+    return this.httpService.post('main:place_order', postData)
   }
 
-  order_place (postData: any): Observable<any> {
-    return this.httpService.post('order:place', postData)
-  }
-
-  count (): Observable<any> {
-    return this.httpService.get('dh-staff-main:count')
+  count (postData: any): Observable<any> {
+    return this.httpService.post('dh-staff-main',postData);
   }
 
   signout () {
