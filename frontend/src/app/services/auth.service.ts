@@ -25,12 +25,8 @@ export class AuthService {
     })
   }
 
-  login_staff (postData: any): Observable<any> {
-    return this.httpService.post('login:staff', postData)
-  }
-
-  login_student (postData: any): Observable<any> {
-    return this.httpService.post('login:student', postData)
+  login (postData: any): Observable<any> {
+    return this.httpService.post('login', postData)
   }
 
   signup (postData: any): Observable<any> {
@@ -45,8 +41,8 @@ export class AuthService {
     return this.httpService.post('order:place', postData)
   }
 
-  count (postData: any): Observable<any> {
-    return this.httpService.post('count', postData)
+  count (): Observable<any> {
+    return this.httpService.get('dh-staff-main:count')
   }
 
   signout () {

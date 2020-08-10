@@ -29,32 +29,19 @@ app.use(function(req, res, next) {
     next();
 });
 
-// check if staff member exists
-// if staff member exists, return a response code of 200
-// app.post('/login:staff', function(req, res){
-//     let personNumber =  JSON.parse(req.body).personNumber;
-// 	// let password =  JSON.parse(req.body).password;
-		
-// 	var sql = "SELECT Staff_No, Password,First_Name FROM Owners WHERE Staff_No = ?";
-	
-// 	con.query(sql,personNumber,function (err, result) {				
-// 		if (err) return err;	
-// 		return res.status(200).json(result);
-// 	});
-// });
-
 // i think creating a universal table for users will make 2 queries unnecessary here
 // same as above
-app.post('/login:student', function(req, res){ 
+app.post('/login', function(req, res){ 
     let personNumber =  JSON.parse(req.body).personNumber;
 	let password =  JSON.parse(req.body).password;
 		
-	var sql = "SELECT Stu_No, Password,First_Name FROM student WHERE Stu_No = ?";
+	var sql = "SELECT person_number,password,position FROM users WHERE person_number = ?";
 	
 	con.query(sql,[personNumber],function (err, result) {	
 		if (err) return err;
-		if (result[0].Password == password){
-			return res.status(200).json(result);
+		if (result[0].password == password){
+			return res.status(200).json({'person_number':result[0].personNumber,
+										'position':result[0].position});
 		}
 		else {
 			return res.status(401);
@@ -104,7 +91,7 @@ app.post('/order:place', function(req, res){
 	});
 });
 
-app.post('/count', function(req, res){
+app.post('/dh-staff-main:count', function(req, res){
 		
 	var sql = "SELECT COUNT(*) FROM ErnestOppenheimer WHERE Date = CURDATE()";
 	
