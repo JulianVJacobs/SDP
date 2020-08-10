@@ -25,28 +25,20 @@ export class AuthService {
     })
   }
 
-  login_staff (postData: any): Observable<any> {
-    return this.httpService.post('login:staff', postData)
-  }
-
-  login_student (postData: any): Observable<any> {
-    return this.httpService.post('login:student', postData)
+  login (postData: any): Observable<any> {
+    return this.httpService.post('login', postData)
   }
 
   signup (postData: any): Observable<any> {
     return this.httpService.post('signup', postData)
   }
 
-  order_inc (postData: any): Observable<any> {
-    return this.httpService.post('order:inc', postData)
-  }
-
-  order_place (postData: any): Observable<any> {
-    return this.httpService.post('order:place', postData)
+  place_order (postData: any): Observable<any> {
+    return this.httpService.post('main:place_order', postData)
   }
 
   count (postData: any): Observable<any> {
-    return this.httpService.post('count', postData)
+    return this.httpService.post('dh-staff-main',postData);
   }
 
   signout () {

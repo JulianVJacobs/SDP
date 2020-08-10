@@ -40,7 +40,7 @@ export class SignupPage implements OnInit {
 
   mainAction() {
     if (this.validateInputs()) {
-      this.authService.login_student(this.postData).subscribe(
+      this.authService.login(this.postData).subscribe(
         (res: any) => {
           this.storageService.store(AuthConstants.AUTH, res);
           this.router.navigate(['main']);
