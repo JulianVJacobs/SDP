@@ -6,7 +6,7 @@ import { HomeGuard } from '../guards/home.guard';
 
 export const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomePage,
     // canActivate: [HomeGuard],
     children: [
@@ -17,13 +17,13 @@ export const routes: Routes = [
         )
       },
       {
-        path: 'staff-main',
+        path: 'dh-staff-main',
         loadChildren: () => import('../pages/dh-staff-main/dh-staff-main.module').then(
           m => m.DhStaffMainPageModule
         )
       },
       {
-        path: 'home',
+        path: '',
         redirectTo: 'main',
         pathMatch: 'full'
       }

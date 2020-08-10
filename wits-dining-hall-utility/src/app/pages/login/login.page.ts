@@ -40,10 +40,10 @@ export class LoginPage implements OnInit {
 
   mainAction() {
     if (this.validateInputs()) {
-      this.authService.login(this.postData).subscribe(
+      this.authService.login_student(this.postData).subscribe(
         (res: any) => {
           this.storageService.store(AuthConstants.AUTH, res);
-          this.router.navigate(['main']);
+          this.router.navigate(['home']);
         },
         (error: any) => {
           if (error.status != 401){

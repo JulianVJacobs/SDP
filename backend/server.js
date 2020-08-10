@@ -15,7 +15,7 @@ var con = mysql.createConnection({
 	host: "localhost",
 	user: "root",
 	password: "qwerty",
-	database: "SD_PROJECT"
+	database: "sdp"
 });
 
 app.use(function(req, res, next) {
@@ -31,29 +31,34 @@ app.use(function(req, res, next) {
 
 // check if staff member exists
 // if staff member exists, return a response code of 200
-app.post('/login:staff', function(req, res){
-    let personNumber =  JSON.parse(req.body).personNumber;
-	// let password =  JSON.parse(req.body).password;
+// app.post('/login:staff', function(req, res){
+//     let personNumber =  JSON.parse(req.body).personNumber;
+// 	// let password =  JSON.parse(req.body).password;
 		
-	var sql = "SELECT Staff_No, Password,First_Name FROM Owners WHERE Staff_No = ?";
+// 	var sql = "SELECT Staff_No, Password,First_Name FROM Owners WHERE Staff_No = ?";
 	
-	con.query(sql,personNumber,function (err, result) {				
-		if (err) return err;	
-		return res.status(200).json(result);
-	});
-});
+// 	con.query(sql,personNumber,function (err, result) {				
+// 		if (err) return err;	
+// 		return res.status(200).json(result);
+// 	});
+// });
 
 // i think creating a universal table for users will make 2 queries unnecessary here
 // same as above
 app.post('/login:student', function(req, res){ 
     let personNumber =  JSON.parse(req.body).personNumber;
-	// let password =  JSON.parse(req.body).password;
+	let password =  JSON.parse(req.body).password;
 		
-	var sql = "SELECT Stu_No, Password,First_Name FROM Student WHERE Stu_No = ?";
+	var sql = "SELECT Stu_No, Password,First_Name FROM student WHERE Stu_No = ?";
 	
-	con.query(sql,personNumber,function (err, result) {				
-		if (err) return err;	
-		return res.status(200).json(result);
+	con.query(sql,[personNumber],function (err, result) {	
+		if (err) return err;
+		if (result[0].Password == password){
+			return res.status(200).json(result);
+		}
+		else {
+			return res.status(401);
+		}
 	});
 });
 
