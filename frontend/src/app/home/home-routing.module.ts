@@ -8,7 +8,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomePage,
-    // canActivate: [HomeGuard],
+    canActivate: [HomeGuard],
     children: [
       {
         path: 'main',
@@ -21,11 +21,6 @@ export const routes: Routes = [
         loadChildren: () => import('../pages/dh-staff-main/dh-staff-main.module').then(
           m => m.DhStaffMainPageModule
         )
-      },
-      {
-        path: '',
-        redirectTo: 'main',
-        pathMatch: 'full'
       }
     ]
   }

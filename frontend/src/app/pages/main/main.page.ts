@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController} from '@ionic/angular'
+import { ToastService } from 'src/app/services/toast.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { AuthConstants } from 'src/app/config/auth-constants';
+import { TYPED_NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-main',
@@ -8,63 +12,37 @@ import { ToastController} from '@ionic/angular'
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
+  postData = {
+    personNumber: null,
+    order: null,
+    diningHall: null
+  }
 
-  constructor(private router: Router, public toastController: ToastController) {}
+  constructor(private router: Router, 
+    private toastService: ToastService,
+    private authService: AuthService,
+    private storageService: StorageService
+    ) {}
 
-  async addDH(num: string){
-
+  async addDH(dh: string){
     //TODO: update respective DH databases
-
-    if(num == "1"){//convo
-      this.router.navigate(['dh-staff-main']);
-
-      const toast = await this.toastController.create({
-        message: 'You have booked your meal at the Convocation dining hall.',
-        duration: 2000
+    this.storageService.get(AuthConstants.AUTH).then( res => {
+    this.postData.personNumber = res.personNumber;
+    this.postData.diningHall = dh;
+    this.postData.order = 1;
+    this.authService.place_order(this.postData).subscribe(
+      (res: any) => {
+        this.toastService.presentToast('You have booked your meal at ' + dh + '.');
+      },
+      (error: any) => {
+        if (error.status != 401){
+          this.toastService.presentToast("Network error.");
+        }
+        else {
+          this.toastService.presentToast(error.error);
+        }
       });
-      toast.present();
-    }
-    if(num == "2"){//eoh
-
-      const toast = await this.toastController.create({
-        message: 'You have booked your meal at the EOH dining hall.',
-        duration: 2000
-      });
-      toast.present();
-    }
-    if(num == "3"){//highfeild
-
-      const toast = await this.toastController.create({
-        message: 'You have booked your meal at the Highfeild dining hall.',
-        duration: 2000
-      });
-      toast.present();
-    }
-    if(num == "4"){//jubs
-
-      const toast = await this.toastController.create({
-        message: 'You have booked your meal at the Jubilee dining hall.',
-        duration: 2000
-      });
-      toast.present();
-    }
-    if(num == "5"){//knocks
-
-      const toast = await this.toastController.create({
-        message: 'You have booked your meal at the Knockando dining hall.',
-        duration: 2000
-      });
-      toast.present();
-    }
-    if(num == "6"){//main
-      
-
-      const toast = await this.toastController.create({
-        message: 'You have booked your meal at the Main dining hall.',
-        duration: 2000
-      });
-      toast.present();
-    }
+    })
     
   }
 

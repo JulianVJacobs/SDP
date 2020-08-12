@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, resolveForwardRef } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AuthConstants } from '../config/auth-constants';
 import { StorageService } from '../services/storage.service';
@@ -11,7 +11,7 @@ export class IndexGuard implements CanActivate {
     return new Promise(resolve => {
       this.storageService.get(AuthConstants.AUTH).then( res => {
         if (res) {
-          this.router.navigate(['main']);
+          this.router.navigate(['home']);
           resolve(false);
         }
         else {
