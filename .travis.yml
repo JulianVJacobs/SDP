@@ -7,8 +7,8 @@ node_js:
 addons:
   chrome: stable
 
-cache:
-  - npm
+# cache:
+#   - npm
   
 before_install:
   - cd frontend
@@ -22,7 +22,8 @@ before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
-  - ng test "--no-watch" "--code-coverage" "--reporters=coverage,coveralls" "--no-progress" "--browsers=ChromeHeadlessCI"
+  - npm run test -- --no-watch --code-coverage --reporters=coverage,coveralls --no-progress --browsers=ChromeHeadlessCI
+  # - ng test "--no-watch" "--code-coverage" "--reporters=coverage,coveralls" "--no-progress" "--browsers=ChromeHeadlessCI"
 
 after_script:
   - cat ../coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
