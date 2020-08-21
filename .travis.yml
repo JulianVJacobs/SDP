@@ -8,14 +8,14 @@ addons:
   chrome: stable
   
 before_install:
+  - npm config set user 0
+  - npm config set unsafe-perm true
   - cd frontend
 
 install:
   - npm install
 
 before_script:
-  - npm config set user 0
-  - npm config set unsafe-perm true
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
