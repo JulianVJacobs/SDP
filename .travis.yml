@@ -8,7 +8,6 @@ addons:
   chrome: stable
   
 before_install:
-  - npm config set user 1
   - cd frontend
 
 install:
