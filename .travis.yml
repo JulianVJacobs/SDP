@@ -8,8 +8,7 @@ addons:
   chrome: stable
 
 cache:
-  directories:
-  - "node_modules"
+  - npm
   
 before_install:
   - cd frontend
