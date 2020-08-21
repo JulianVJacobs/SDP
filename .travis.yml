@@ -8,7 +8,7 @@ addons:
   chrome: stable
   
 before_install:
-  - groups
+  - exit
   - cd frontend
 
 install:
