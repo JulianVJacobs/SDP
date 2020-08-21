@@ -44,7 +44,7 @@ describe('HomeGuard', () => {
       guard.canActivate()
         .then((resolve) => {
           expect(resolve).toBeFalsy();
-          expect(routerSpy).toHaveBeenCalledWith(['signin']);
+          expect(routerSpy).toHaveBeenCalledWith(['landing']);
       done();
       });
     });

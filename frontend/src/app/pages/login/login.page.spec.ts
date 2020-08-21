@@ -1,7 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
+import { AuthService } from 'src/app/services/auth.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('LoginPage', () => {
   let component: LoginPage;
@@ -10,7 +14,9 @@ describe('LoginPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginPage ],
-      imports: [IonicModule.forRoot()]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [IonicModule.forRoot(), RouterTestingModule, HttpClientTestingModule],
+      providers: [AuthService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginPage);

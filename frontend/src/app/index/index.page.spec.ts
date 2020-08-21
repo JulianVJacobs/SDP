@@ -48,32 +48,52 @@ describe('IndexRoutingModule', () => {
     router = TestBed.get(Router);
   }));
 
-  it('should have 3 routes', () => {
-    expect(router.config[0].children.length).toBe(2);
+  it('should have 4 routes', () => {
+    expect(router.config[0].children.length).toBe(4);
   });
 
-  it('should have a /signin route', () => {
-    expect(router.config[0].children[0].path).toBe('signin');
+  it('should have a /landing route', () => {
+    expect(router.config[0].children[0].path).toBe('landing');
+  });
+
+  it('should have a /login route', () => {
+    expect(router.config[0].children[1].path).toBe('login');
+  });
+
+  it('should have a /signup path', () => {
+    expect(router.config[0].children[2].path).toBe('signup');
   });
 
   it('should have a / path', () => {
-    expect(router.config[0].children[1].path).toBe('');
+    expect(router.config[0].children[3].path).toBe('');
   });
 
-  describe('/signin route', () => {
+  describe('/landing route', () => {
     it('should have a loadChildren() function', () => {
       expect(router.config[0].children[0].loadChildren()).toBeDefined();
+    });
+  });
+
+  describe('/login route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[0].children[1].loadChildren()).toBeDefined();
+    });
+  });
+
+  describe('/signup route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[0].children[2].loadChildren()).toBeDefined();
     });
   });
 
   describe('/ route', () => {
     it('should have a redirectTo property', () => {
       debugger;
-      expect(router.config[0].children[1].hasOwnProperty('redirectTo')).toBeTruthy();
+      expect(router.config[0].children[3].hasOwnProperty('redirectTo')).toBeTruthy();
     });
 
     it('should redirect to sign in', () => {
-      expect(router.config[0].children[1].redirectTo).toBe("signin");
+      expect(router.config[0].children[3].redirectTo).toBe("landing");
     });
   });
 });
