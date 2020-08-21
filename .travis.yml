@@ -1,20 +1,26 @@
 dist: trusty
-
+sudo: required
 language: node_js
 node_js:
   - "12"
 
 addons:
   chrome: stable
+
+cache:
+  directories:
+    - node_modules
   
 before_install:
   - cd frontend
 
 install:
   - npm install
+  - npm i @angular-devkit/build-angular@0.803.24
+  - npm i @angular/cli@8.3.26
 
 before_script:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
   - ng test "--no-watch" "--code-coverage" "--reporters=coverage,coveralls" "--no-progress" "--browsers=ChromeHeadlessCI"
