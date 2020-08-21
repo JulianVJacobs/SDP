@@ -1,5 +1,5 @@
 dist: trusty
-sudo: required
+
 language: node_js
 node_js:
   - "12"
@@ -7,9 +7,8 @@ node_js:
 addons:
   chrome: stable
 
-# cache:
-#   directories:
-#     - node_modules
+cache:
+  - sync; echo 3 > /proc/sys/vm/drop_caches 
   
 before_install:
   - cd frontend
