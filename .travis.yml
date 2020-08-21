@@ -10,6 +10,8 @@ addons:
   chrome: stable
   
 before_install:
+  - useradd -m user
+  - su user
   - cd frontend
 
 install:
