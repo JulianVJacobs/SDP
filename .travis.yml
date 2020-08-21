@@ -1,7 +1,5 @@
 dist: trusty
 
-sudo: false
-
 language: node_js
 node_js:
   - "12"
@@ -10,7 +8,7 @@ addons:
   chrome: stable
   
 before_install:
-  - useradd -m user
+  - sudo useradd -m user
   - su user
   - cd frontend
 
