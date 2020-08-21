@@ -8,8 +8,7 @@ addons:
   chrome: stable
   
 before_install:
-  - npm config set user 0
-  - npm config set unsafe-perm true
+  - npm config set user 1
   - cd frontend
 
 install:
