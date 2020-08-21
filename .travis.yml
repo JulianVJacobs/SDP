@@ -2,8 +2,8 @@ dist: trusty
 
 language: node_js
 node_js:
-  - "10"
-  # - "12"
+  # - "10"
+  - "12"
 
 addons:
   chrome: stable
@@ -16,9 +16,9 @@ addons:
 before_install:
   - cd frontend
 
-install:
+# install:
   # - npm install
-  - npm i --save-dev @ionic/angular-toolkit@2.3.1
+  # - npm i --save-dev @ionic/angular-toolkit@2.3.1
   # - npm i @angular-devkit/build-angular@0.803.24
   # - npm i @angular/cli@8.3.26
 
