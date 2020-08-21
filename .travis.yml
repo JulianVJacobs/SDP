@@ -8,8 +8,7 @@ addons:
   chrome: stable
   
 before_install:
-  - sudo useradd -m user
-  - su user
+  - groups
   - cd frontend
 
 install:
