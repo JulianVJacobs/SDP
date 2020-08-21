@@ -2,19 +2,22 @@ dist: trusty
 
 language: node_js
 node_js:
-  - "12"
+  - "10"
+  # - "12"
 
 addons:
   chrome: stable
 
-# cache:
-#   - npm
+cache:
+  directories:
+    - "node_modules"
   
 before_install:
   - cd frontend
 
 install:
   - npm install
+  - npm audit
   - npm i @angular-devkit/build-angular@0.803.24
   - npm i @angular/cli@8.3.26
 
