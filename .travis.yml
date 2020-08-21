@@ -16,8 +16,8 @@ before_install:
 
 install:
   - npm install
-  - npm i @angular-devkit/build-angular@0.803.24
-  - npm i @angular/cli@8.3.26
+  # - npm i @angular-devkit/build-angular@0.803.24
+  # - npm i @angular/cli@8.3.26
 
 before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
