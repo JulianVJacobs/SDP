@@ -31,7 +31,7 @@ describe('HomeGuard', () => {
     let router: Router;
     let routerSpy: any;
 
-    it('should return false and redirect to \\signin if storage service returns false', (done) =>  {
+    it('should return false and redirect to \\landing if storage service returns false', (done) =>  {
       storageService = new StorageService;
       storageServiceSpy = spyOn(storageService,'get');
       router = TestBed.get(Router);
@@ -49,7 +49,7 @@ describe('HomeGuard', () => {
       });
     });
 
-    it('should return true and not redirect to \\signin if storage service returns true', (done) =>  {
+    it('should return true and not redirect to \\landing if storage service returns true', (done) =>  {
       storageService = new StorageService;
       storageServiceSpy = spyOn(storageService,'get');
       router = TestBed.get(Router);
@@ -67,7 +67,7 @@ describe('HomeGuard', () => {
       });
     });
 
-    it('should return true and not redirect to \\signin if storage service is unresolved', (done) =>  {
+    it('should return true and not redirect to \\landing if storage service is unresolved', (done) =>  {
       storageService = new StorageService;
       storageServiceSpy = spyOn(storageService,'get');
       router = TestBed.get(Router);
