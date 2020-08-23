@@ -22,7 +22,7 @@ export class DhStaffMainPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.storageService.get(AuthConstants.AUTH).then( res => {
+    this.storageService.get(AuthConstants.uid).then( res => {
       this.postData.personNumber = res.personNumber;
       this.authService.count(this.postData).subscribe(
         (res: any) => {

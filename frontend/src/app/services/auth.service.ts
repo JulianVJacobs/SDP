@@ -5,6 +5,7 @@ import { HttpService } from './http.service';
 import { StorageService } from './storage.service';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { AuthConstants } from '../config/auth-constants';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Injectable({
@@ -14,6 +15,7 @@ export class AuthService {
   userData$ = new BehaviorSubject<any>('');
 
   constructor(
+    private afAuth: AngularFireAuth,
     private httpService: HttpService, 
     private storageService: StorageService, 
     private router: Router
@@ -25,13 +27,13 @@ export class AuthService {
     })
   }
 
-  login (postData: any): Observable<any> {
-    return this.httpService.post('login', postData)
-  }
+  // login (postData: any): Observable<any> {
+  //   return this.httpService.post('login', postData)
+  // }
 
-  signup (postData: any): Observable<any> {
-    return this.httpService.post('signup', postData)
-  }
+  // signup (postData: any): Observable<any> {
+  //   return this.httpService.post('signup', postData)
+  // }
 
   place_order (postData: any): Observable<any> {
     return this.httpService.post('main:place_order', postData)
