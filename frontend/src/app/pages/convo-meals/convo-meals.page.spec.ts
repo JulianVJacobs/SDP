@@ -61,13 +61,6 @@ describe('ConvoMealsPage', () => {
   });
 
   describe('Order <ion-button>', () => {
-    // it('should have an expand property', () => {
-    //   expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].expand).toBeTruthy();
-    // });
-
-    // it('should have an expand property set to block', () => {
-    //   expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].expand).toBe('block');
-    // });
 
     it('should have the text "Order"', () => {
       expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].textContent).toBe("Order");
@@ -85,13 +78,6 @@ describe('ConvoMealsPage', () => {
   });
 
   describe('Make Review <ion-button>', () => {
-    // it('should have an expand property', () => {
-    //   expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].expand).toBeTruthy();
-    // });
-
-    // it('should have an expand property set to block', () => {
-    //   expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].expand).toBe('block');
-    // });
 
     it('should have the text "Make Review"', () => {
       expect(fixture.nativeElement.getElementsByTagName('ion-button')[1].textContent).toBe("Make Review");
