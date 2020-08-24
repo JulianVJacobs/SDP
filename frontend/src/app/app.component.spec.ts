@@ -65,22 +65,15 @@ describe('AppRoutingModule', () => {
     expect(router.config[0].path).toBe('');
   });
 
-  // it('should have a /home path', () => {
-  //   expect(router.config[1].path).toBe('home');
-  // });
+  it('should have a /landing path', () => {
+    expect(router.config[1].path).toBe('landing');
+  });
 
-  // describe('/ route', () => {
-  //   it('should have a loadChildren() function', () => {
-  //     debugger;
-  //     expect(router.config[0].loadChildren()).toBeDefined();
-  //   });
-  // });
-
-  // describe('/home route', () => {
-  //   it('should have a loadChildren() function', () => {
-  //     expect(router.config[1].loadChildren()).toBeDefined();
-  //   });
-  // });
+  describe('/landing route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[1].loadChildren()).toBeDefined();
+    });
+  });
 
   //TODO: loadChildren should load their specific modules
 });
