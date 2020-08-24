@@ -1,9 +1,9 @@
 *{
     font-weight: 300;
-    top: 10%
+    top: 7%
 }
 ion-content{
-    --background: url(../../../assets/images/blackWhite.jpg) no-repeat center center fixed;
+    --background: url(../../assets/images/white.jpg) no-repeat center center fixed;
   }
 
 ion-grid{
@@ -12,11 +12,15 @@ ion-grid{
 
 ion-text{
     position: absolute;
-    top: 5%;
+    top: 3%;
     
     h1{
     font-size: 20px;
     color: #D4AF37;
+    font-style: italic;
+    font-family: cursive;
     }
-
+}
+ion-fab{
+    bottom: 10%;
 }

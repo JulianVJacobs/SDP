@@ -6,17 +6,23 @@ import { StorageService } from 'src/app/services/storage.service';
 import { AuthConstants } from 'src/app/config/auth-constants';
 import { TYPED_NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
+
+
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.page.html',
-  styleUrls: ['./main.page.scss'],
+  selector: 'app-menu',
+  templateUrl: './menu.page.html',
+  styleUrls: ['./menu.page.scss'],
 })
-export class MainPage implements OnInit {
+export class MenuPage implements OnInit {
+
   postData = {
     personNumber: null,
     order: null,
-    diningHall: null
+    diningHall: null,
+    meal : null
   }
+
+  review: any;
 
   constructor(private router: Router, 
     private toastService: ToastService,
@@ -24,16 +30,15 @@ export class MainPage implements OnInit {
     private storageService: StorageService
     ) {}
 
-  async addDH(dh: string){
-    //TODO: update respective DH databases
-    this.storageService.get(AuthConstants.uid).then( res => {
+  async addMeal(meal: string){
+    //TODO: update respective meal database
+    this.storageService.get(AuthConstants.AUTH).then( res => {
     this.postData.personNumber = res.personNumber;
-    this.postData.diningHall = dh;
-    this.postData.order = 1;
+    this.postData.meal = meal;
+    //this.postData.order = 1;
     this.authService.place_order(this.postData).subscribe(
       (res: any) => {
-        this.toastService.presentToast('You have booked your meal at ' + dh + '.');
-        this.router.navigate(['menu']);
+        this.toastService.presentToast('You have ordered ' + meal + '.');
       },
       (error: any) => {
         if (error.status != 401){
@@ -48,6 +53,7 @@ export class MainPage implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
 }
