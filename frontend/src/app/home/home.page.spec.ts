@@ -12,12 +12,12 @@ describe('HomePage', () => {
   let component: HomePage;
   let fixture: ComponentFixture<HomePage>;
 
-  beforeEach(async(() => [HomeGuard],
-      imports: [Io {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HomePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers:nicModule.forRoot(),RouterTestingModule]
+      providers:[HomeGuard],
+      imports: [IonicModule.forRoot(),RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);
