@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController} from '@ionic/angular'
+import { ToastService } from 'src/app/services/toast.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { AuthConstants } from 'src/app/config/auth-constants';
+import { TYPED_NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-main',
@@ -8,40 +12,40 @@ import { ToastController} from '@ionic/angular'
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
+  postData = {
+    personNumber: null,
+    order: null,
+    diningHall: null
+  }
 
-  constructor(private router: Router, public toastController: ToastController) {}
+  constructor(private router: Router, 
+    private toastService: ToastService,
+    private authService: AuthService,
+    private storageService: StorageService
+    ) {}
 
-  async addDH(num: string){
-
+  async addDH(dh: string){
     //TODO: update respective DH databases
-
-    if(num == "1"){//convo
-      //the below is temporary
-      this.router.navigate(['dh-staff-main']);
-      //this.router.navigate(['convo-meals']);
-    }
-    if(num == "2"){//eoh
-      this.router.navigate(['eoh-meals']);
-    }
-
-    if(num == "3"){//highfeild
-      this.router.navigate(['highfeild-meals']);
-    }
-
-    if(num == "4"){//jubs
-      this.router.navigate(['jubs-meals']);
-    }
-
-    if(num == "5"){//knocks
-      this.router.navigate(['knocks-meals']);
-    }
-
-    if(num == "6"){//main
-      this.router.navigate(['main-meals']);
-    }
+    this.storageService.get(AuthConstants.uid).then( res => {
+    this.postData.personNumber = res.personNumber;
+    this.postData.diningHall = dh;
+    this.postData.order = 1;
+    this.authService.place_order(this.postData).subscribe(
+      (res: any) => {
+        this.toastService.presentToast('You have booked your meal at ' + dh + '.');
+      },
+      (error: any) => {
+        if (error.status != 401){
+          this.toastService.presentToast("Network error.");
+        }
+        else {
+          this.toastService.presentToast(error.error);
+        }
+      });
+    })
     
   }
-  
+
   ngOnInit() {
   }
 

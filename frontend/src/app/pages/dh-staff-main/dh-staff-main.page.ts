@@ -22,20 +22,21 @@ export class DhStaffMainPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.storageService.get(AuthConstants.AUTH).then( res => {
-      this.postData.personNumber = res.personNumber;
-      this.authService.count(this.postData).subscribe(
-        (res: any) => {
-          console.log(res)
-        },
-        (error: any) => {
-          if (error.status != 401){
-            this.toastService.presentToast("Network error.");
-          }
-          else {
-            this.toastService.presentToast(error.error);
-          }
-      });
+    this.storageService.get(AuthConstants.uid).then( res => {
+      console.log(res);
+      // this.postData.personNumber = res.personNumber;
+      // this.authService.count(this.postData).subscribe(
+      //   (res: any) => {
+      //     console.log(res)
+      //   },
+      //   (error: any) => {
+      //     if (error.status != 401){
+      //       this.toastService.presentToast("Network error.");
+      //     }
+      //     else {
+      //       this.toastService.presentToast(error.error);
+      //     }
+      // });
     });
     
   }

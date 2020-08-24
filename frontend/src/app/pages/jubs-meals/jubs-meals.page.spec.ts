@@ -1,7 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { JubsMealsPage } from './jubs-meals.page';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('JubsMealsPage', () => {
   let component: JubsMealsPage;
@@ -10,7 +13,8 @@ describe('JubsMealsPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ JubsMealsPage ],
-      imports: [IonicModule.forRoot()]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(JubsMealsPage);
