@@ -52,16 +52,8 @@ export class MenuPage implements OnInit {
     
   }
 
-  ionViewWillEnter() {
-    setTimeout(() => {
-      this.review = {
-        'person': 'Thandeka Mtshali',
-        'review' : 'Needs a whole lot of sugar'
-      };
-    },5000);
-  }
-
   ngOnInit() {
+    
   }
 
 }

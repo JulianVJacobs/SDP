@@ -33,6 +33,7 @@ export class MainPage implements OnInit {
     this.authService.place_order(this.postData).subscribe(
       (res: any) => {
         this.toastService.presentToast('You have booked your meal at ' + dh + '.');
+        this.router.navigate(['menu']);
       },
       (error: any) => {
         if (error.status != 401){
