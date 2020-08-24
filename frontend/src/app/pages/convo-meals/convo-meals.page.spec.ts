@@ -17,7 +17,8 @@ describe('ConvoMealsPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ConvoMealsPage ],
-      imports: [IonicModule.forRoot()]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ConvoMealsPage);

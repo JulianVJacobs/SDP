@@ -16,7 +16,7 @@ describe('HomePage', () => {
     TestBed.configureTestingModule({
       declarations: [ HomePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [HomeGuard],
+      providers:[HomeGuard],
       imports: [IonicModule.forRoot(),RouterTestingModule]
     }).compileComponents();
 

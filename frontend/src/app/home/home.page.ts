@@ -18,8 +18,8 @@ export class HomePage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.storageService.get(AuthConstants.AUTH).then( res => {
-      switch(res.position){
+    this.storageService.get(AuthConstants.uid).then( res => {
+      switch(res.Role){
         case 0:
           this.router.navigate(['home/main'])
         break;
@@ -27,7 +27,6 @@ export class HomePage implements OnInit {
         case 1:
           this.router.navigate(['home/dh-staff-main'])
         break;
-
       }
     });
 
