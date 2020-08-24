@@ -25,6 +25,14 @@ describe('MainMealsPage', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should have a ngOnInit() function', () => {
+    expect(component.ngOnInit).toBeTruthy();
+  });
+
+  it('should have at least one <h1> tag', () => {
+    expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
+  });
+
   it('should have at least one <ion-content>', () => {
     expect(fixture.nativeElement.querySelector('ion-content')).toBeTruthy();
   });
@@ -43,6 +51,12 @@ describe('MainMealsPage', () => {
 
   it('should have a reviewAction() function', () => {
     expect(component.reviewAction).toBeTruthy();
+  });
+
+  describe('<h1>', () => {
+    it('should have the text "Main" before ngOnInit() is called', () => {
+      expect(fixture.nativeElement.querySelector('h1').textContent).toBe("Main");
+    });
   });
 
   describe('Order <ion-button>', () => {
