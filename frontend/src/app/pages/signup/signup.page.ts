@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
-// import { ToastService } from 'src/app/services/toast.service';
+import { ToastService } from 'src/app/services/toast.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthConstants } from 'src/app/config/auth-constants';
@@ -14,15 +14,15 @@ import { AuthConstants } from 'src/app/config/auth-constants';
 export class SignupPage implements OnInit {
   public data = {
     auth: {
-      PersonNumber : '123456',
-      Password: '123456'
+      PersonNumber : '',
+      Password: ''
     },
     user: {
-      Name: 'Graina',
-      Surname: 'Salt',
+      Name: '',
+      Surname: '',
       Role: 0,
-      'Phone number': '060441112',
-      'Amount Left': '500'
+      'Phone number': '',
+      'Amount Left': ''
     }
   };
 
@@ -30,8 +30,8 @@ export class SignupPage implements OnInit {
     private auth: AngularFireAuth,
     private firestore: AngularFirestore,
     private router: Router, 
-    private storageService: StorageService
-    // private toastService: ToastService
+    private storageService: StorageService,
+    private toastService: ToastService
     ) { }
 
   ngOnInit() {
@@ -47,53 +47,13 @@ export class SignupPage implements OnInit {
               this.router.navigate(['home']);
             })
             .catch((error) => {
-              console.dir(error);
+          this.toastService.presentToast("Error.");
+          console.dir(error);
             });
         })
         .catch((error) => {
+          this.toastService.presentToast("Error.");
           console.dir(error);
       });
   }
-
-  // validateInputs() {
-  //   let personNumber = this.postData.personNumber.trim();
-  //   let password = this.postData.password.trim();
-
-  //   return ( 
-  //     this.postData.personNumber && 
-  //     this.postData.password && 
-  //     personNumber.length > 0 && 
-  //     password.length > 0)
-  // }
-
-  // mainAction() {
-  //   if (this.validateInputs()) {
-  //     this.authService.login(this.postData).subscribe(
-  //       (res: any) => {
-  //         this.storageService.store(AuthConstants.AUTH, res);
-  //         this.router.navigate(['main']);
-  //       },
-  //       (error: any) => {
-  //         if (error.status != 401){
-  //           this.toastService.presentToast("Network error.");
-  //         }
-  //         else {
-  //           this.toastService.presentToast(error.error);
-  //         }
-  //     });
-  //   }
-  //   else {
-  //     if (this.postData.personNumber.trim().length == 0 && this.postData.password.trim().length == 0) {
-  //       this.toastService.presentToast("Please enter your person number and password.");
-  //     }
-  //     else {
-  //       if (this.postData.password.trim().length == 0) {
-  //         this.toastService.presentToast("Please enter a password.");
-  //       }
-  //       if (this.postData.personNumber.trim().length == 0) {
-  //         this.toastService.presentToast("Please enter your person number.");
-  //       }
-  //     }
-  //   }
-  // }
 }

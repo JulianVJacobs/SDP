@@ -3,21 +3,21 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HighfeildMealsPage } from './highfeild-meals.page';
+import { HighfieldMealsPage } from './highfield-meals.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-describe('HighfeildMealsPage', () => {
-  let component: HighfeildMealsPage;
-  let fixture: ComponentFixture<HighfeildMealsPage>;
+describe('HighfieldMealsPage', () => {
+  let component: HighfieldMealsPage;
+  let fixture: ComponentFixture<HighfieldMealsPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HighfeildMealsPage ],
+      declarations: [ HighfieldMealsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HighfeildMealsPage);
+    fixture = TestBed.createComponent(HighfieldMealsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

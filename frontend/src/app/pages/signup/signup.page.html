@@ -8,22 +8,22 @@
 
         <ion-item>
           <ion-label position="stacked">Person Number</ion-label>
-          <ion-input name="personNumber" ></ion-input>
+          <ion-input name="personNumber" [(ngModel)]="data.auth.PersonNumber"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">First Name</ion-label>
-          <ion-input name="name" ></ion-input>
+          <ion-input name="name" [(ngModel)]="data.user.Name"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">Last Name</ion-label>
-          <ion-input name="surname" ></ion-input>
+          <ion-input name="surname" [(ngModel)]="data.user.Surname"></ion-input>
         </ion-item>
   
         <ion-item>
           <ion-label position="stacked">Password</ion-label>
-          <ion-input type="password" name="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="data.auth.Password"></ion-input>
         </ion-item>
 
       </ion-list>

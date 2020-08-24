@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HighfeildMealsPageRoutingModule } from './highfeild-meals-routing.module';
+import { HighfieldMealsPageRoutingModule } from './highfield-meals-routing.module';
 
-import { HighfeildMealsPage } from './highfeild-meals.page';
+import { HighfieldMealsPage } from './highfield-meals.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HighfeildMealsPageRoutingModule
+    HighfieldMealsPageRoutingModule
   ],
-  declarations: [HighfeildMealsPage]
+  declarations: [HighfieldMealsPage]
 })
-export class HighfeildMealsPageModule {}
+export class HighfieldMealsPageModule {}

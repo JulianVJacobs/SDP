@@ -3,11 +3,11 @@ import { ToastController} from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-highfeild-meals',
-  templateUrl: './highfeild-meals.page.html',
-  styleUrls: ['./highfeild-meals.page.scss'],
+  selector: 'app-highfield-meals',
+  templateUrl: './highfield-meals.page.html',
+  styleUrls: ['./highfield-meals.page.scss'],
 })
-export class HighfeildMealsPage implements OnInit {
+export class HighfieldMealsPage implements OnInit {
 
   constructor(private router: Router, public toastController: ToastController) {}
 
