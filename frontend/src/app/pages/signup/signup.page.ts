@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
-// import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 // import { ToastService } from 'src/app/services/toast.service';
-// import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthConstants } from 'src/app/config/auth-constants';
 
 @Component({
   selector: 'app-signup',
@@ -29,9 +29,8 @@ export class SignupPage implements OnInit {
   constructor(
     private auth: AngularFireAuth,
     private firestore: AngularFirestore,
-    // private router: Router, 
-    // private authService: AuthService, 
-    // private storageService: StorageService,
+    private router: Router, 
+    private storageService: StorageService
     // private toastService: ToastService
     ) { }
 
@@ -42,6 +41,11 @@ export class SignupPage implements OnInit {
       this.auth.createUserWithEmailAndPassword(this.data.auth.PersonNumber + '@students.wits.ac.za',this.data.auth.Password)
         .then((res) => {
           this.firestore.collection('users').doc(res.user.uid).set(this.data.user)
+            .then(()=>{
+              AuthConstants.uid = res.user.uid;
+              this.storageService.store(AuthConstants.uid, this.data.user);
+              this.router.navigate(['home']);
+            })
             .catch((error) => {
               console.dir(error);
             });

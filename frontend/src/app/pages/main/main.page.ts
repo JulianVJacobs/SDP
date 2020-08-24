@@ -26,7 +26,7 @@ export class MainPage implements OnInit {
 
   async addDH(dh: string){
     //TODO: update respective DH databases
-    this.storageService.get(AuthConstants.AUTH).then( res => {
+    this.storageService.get(AuthConstants.uid).then( res => {
     this.postData.personNumber = res.personNumber;
     this.postData.diningHall = dh;
     this.postData.order = 1;

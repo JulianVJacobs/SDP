@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
-import { ToastService } from 'src/app/services/toast.service';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthConstants } from 'src/app/config/auth-constants';
 
 @Component({
@@ -33,11 +31,10 @@ export class LoginPage implements OnInit {
   mainAction(){
     this.auth.signInWithEmailAndPassword(this.data.personNumber + '@students.wits.ac.za',this.data.password)
       .then((res) => {
-        console.log(res);
         this.firestore.firestore.collection('users').doc(res.user.uid).get()
           .then((user) => {
             AuthConstants.uid = res.user.uid;
-            this.storageService.store(AuthConstants.uid, user);
+            this.storageService.store(AuthConstants.uid, user.data());
             this.router.navigate(['home']);
           })
           .catch((error) => {

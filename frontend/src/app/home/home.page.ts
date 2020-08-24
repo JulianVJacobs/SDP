@@ -27,7 +27,6 @@ export class HomePage implements OnInit {
         case 1:
           this.router.navigate(['home/dh-staff-main'])
         break;
-
       }
     });
 
