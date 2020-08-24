@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    <h1>Review Past Meal</h1>
+  </ion-text>
+
+  
+
+  <div class="input">
+    <form>
+      <ion-list>
+
+        <ion-item>
+          <ion-label position="stacked">Write a short comment</ion-label>
+          <ion-input name="reviewComment" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Rate the meal
+            <br> 1 = bad, 5 = great
+          </ion-label>
+          <ion-input type="Number" name="numRating"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </form>
+  </div>
+
+  <div class = "actions">
+    <ion-button expand="block" (click)="submitReview(numRating)">Submit Review</ion-button>
+  </div>
+
+</ion-content>

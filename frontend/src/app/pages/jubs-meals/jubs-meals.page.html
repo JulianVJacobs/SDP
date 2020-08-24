@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    <h1>Jubilee</h1>
+  </ion-text>
+
+  <ion-card>
+    <img src="../../assets/images/russianRoll.png"/>
+    <ion-card-header>
+      <ion-card-title>Russian Roll</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      A Scrumbcious russian roll, served with freshly fried chips. <br>
+      Allergens:
+      Wheat
+    </ion-card-content>
+    <ion-button (click)="orderAction(1)">Order</ion-button>
+    <ion-button (click)="reviewAction()">Make Review</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/images/beefBurger.jpg"/>
+    <ion-card-header>
+      <ion-card-title>Beef Burger</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      A Mouth Watering beef burger, served with freshly fried chips.<br>
+      Allergens:
+      Wheat
+    </ion-card-content>
+    <ion-button (click)="orderAction(2)">Order</ion-button>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/images/chickenWrap.jpg"/>
+    <ion-card-header>
+      <ion-card-title>Chicken Wrap</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      A Delicious chicken wrap, served with freshly fried chips.<br>
+      Allergens:
+      Wheat, Milk, 
+    </ion-card-content>
+    <ion-button (click)="orderAction(3)">Order</ion-button>
+    <ion-button (click)="reviewAction()">Make Review</ion-button>
+  </ion-card>
+  
+
+</ion-content>

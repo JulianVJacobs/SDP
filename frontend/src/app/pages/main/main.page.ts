@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastService } from 'src/app/services/toast.service';
-import { AuthService } from 'src/app/services/auth.service';
-import { StorageService } from 'src/app/services/storage.service';
-import { AuthConstants } from 'src/app/config/auth-constants';
-import { TYPED_NULL_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ToastController} from '@ionic/angular'
 
 @Component({
   selector: 'app-main',
@@ -12,41 +8,40 @@ import { TYPED_NULL_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  postData = {
-    personNumber: null,
-    order: null,
-    diningHall: null
-  }
 
-  constructor(private router: Router, 
-    private toastService: ToastService,
-    private authService: AuthService,
-    private storageService: StorageService
-    ) {}
+  constructor(private router: Router, public toastController: ToastController) {}
 
-  async addDH(dh: string){
+  async addDH(num: string){
+
     //TODO: update respective DH databases
-    this.storageService.get(AuthConstants.AUTH).then( res => {
-    this.postData.personNumber = res.personNumber;
-    this.postData.diningHall = dh;
-    this.postData.order = 1;
-    this.authService.place_order(this.postData).subscribe(
-      (res: any) => {
-        this.toastService.presentToast('You have booked your meal at ' + dh + '.');
-        this.router.navigate(['menu']);
-      },
-      (error: any) => {
-        if (error.status != 401){
-          this.toastService.presentToast("Network error.");
-        }
-        else {
-          this.toastService.presentToast(error.error);
-        }
-      });
-    })
+
+    if(num == "1"){//convo
+      //the below is temporary
+      this.router.navigate(['dh-staff-main']);
+      //this.router.navigate(['convo-meals']);
+    }
+    if(num == "2"){//eoh
+      this.router.navigate(['eoh-meals']);
+    }
+
+    if(num == "3"){//highfeild
+      this.router.navigate(['highfeild-meals']);
+    }
+
+    if(num == "4"){//jubs
+      this.router.navigate(['jubs-meals']);
+    }
+
+    if(num == "5"){//knocks
+      this.router.navigate(['knocks-meals']);
+    }
+
+    if(num == "6"){//main
+      this.router.navigate(['main-meals']);
+    }
     
   }
-
+  
   ngOnInit() {
   }
 
