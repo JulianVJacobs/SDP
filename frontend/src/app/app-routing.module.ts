@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '', 
     redirectTo: 'home', 
@@ -56,13 +56,12 @@ const routes: Routes = [
   {
     path: 'make-review',
     loadChildren: () => import('./pages/make-review/make-review.module').then( m => m.MakeReviewPageModule)
-  },
-
+  }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
