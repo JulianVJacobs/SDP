@@ -34,8 +34,8 @@ export class LoginPage implements OnInit {
       .then((res) => {
         this.firestore.firestore.collection('users').doc(res.user.uid).get()
           .then((user) => {
-            AuthConstants.uid = res.user.uid;
-            this.storageService.store(AuthConstants.uid, user.data());
+            AuthConstants.personNumber = this.data.personNumber;
+            this.storageService.store(AuthConstants.personNumber, user.data());
             this.router.navigate(['home']);
           })
           .catch((error) => {

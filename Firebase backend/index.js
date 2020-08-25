@@ -1,4 +1,3 @@
-const admin = require('firebase-admin');
 const serviceAccount = require('./greenpeace-33d5f-firebase-adminsdk-zodtx-8a611510ea.json');
 const firebase = require("firebase");
 admin.initializeApp({

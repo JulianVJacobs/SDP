@@ -5,8 +5,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { JubsMealsPage } from './jubs-meals.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-describe('JubsMealsPage', () => {
+xdescribe('JubsMealsPage', () => {
   let component: JubsMealsPage;
   let fixture: ComponentFixture<JubsMealsPage>;
 
@@ -14,7 +18,15 @@ describe('JubsMealsPage', () => {
     TestBed.configureTestingModule({
       declarations: [ JubsMealsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
+      imports: [
+        IonicModule.forRoot(), 
+        RouterTestingModule, 
+        HttpClientTestingModule,
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(JubsMealsPage);

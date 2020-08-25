@@ -9,7 +9,7 @@ import { AuthConstants } from '../config/auth-constants';
 export class HomeGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise(resolve => {
-      this.storageService.get(AuthConstants.uid).then( res => {
+      this.storageService.get(AuthConstants.personNumber).then( res => {
         if (res) {
           resolve(true);
         }

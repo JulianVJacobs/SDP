@@ -1,29 +1,29 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { ToastController} from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ToastService } from 'src/app/services/toast.service';
 import { AuthConstants } from 'src/app/config/auth-constants';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
-  selector: 'app-eoh-meals',
-  templateUrl: './eoh-meals.page.html',
-  styleUrls: ['./eoh-meals.page.scss'],
+  selector: 'app-highfeild-meals',
+  templateUrl: './highfeild-meals.page.html',
+  styleUrls: ['./highfeild-meals.page.scss'],
 })
-export class EohMealsPage implements OnInit {
+export class HighfeildMealsPage implements OnInit {
   public menu = []
 
   constructor(
     private router: Router,
-    private firestore: AngularFirestore, 
-    public toastService: ToastService
-    ) {}
+    private firestore: AngularFirestore,
+    public toastService: ToastService) { }
 
   ngOnInit() {
-    this.firestore.firestore.collection('Dining Halls').doc('Ernest Oppenheimer').get()
+    this.firestore.firestore.collection('Dining Halls').doc('Highfield').get()
     .then((res) => {
       res.data()['lunch menu'].forEach((meal) => {
-        this.firestore.firestore.collection("Dining Halls/Ernest Oppenheimer/Meals").doc(meal).get()
+        this.firestore.firestore.collection("Dining Halls/Highfield/Meals").doc(meal).get()
           .then((res) => {
             this.menu.push(res.data());
           })
@@ -37,13 +37,15 @@ export class EohMealsPage implements OnInit {
     });
   }
 
-  async orderAction(num: string){
+
+  async orderAction(num: string) {
+    //backend
     var today = new Date;
     var data = { 'Ordered By': AuthConstants.personNumber, Time: today.getTime(), Date: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() };
 
 
     if (num == "1") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Rice and Chicken/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Chicken Pizza/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -53,7 +55,7 @@ export class EohMealsPage implements OnInit {
     }
 
     if (num == "2") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Vegetarian Lasagna/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Beef Lasagna/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -63,7 +65,7 @@ export class EohMealsPage implements OnInit {
     }
 
     if (num == "3") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Steak and Wedges/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Coucous and Chicken/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -73,8 +75,9 @@ export class EohMealsPage implements OnInit {
     }
   }
 
-  reviewAction(){
+  reviewAction() {
     this.router.navigate(['home/main/make-review']);
   }
 
 }
+

@@ -42,8 +42,8 @@ export class SignupPage implements OnInit {
         .then((res) => {
           this.firestore.collection('users').doc(res.user.uid).set(this.data.user)
             .then(()=>{
-              AuthConstants.uid = res.user.uid;
-              this.storageService.store(AuthConstants.uid, this.data.user);
+              AuthConstants.personNumber = this.data.auth.PersonNumber;
+              this.storageService.store(AuthConstants.personNumber, this.data.user);
               this.router.navigate(['home']);
             })
             .catch((error) => {

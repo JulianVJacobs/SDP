@@ -34,9 +34,9 @@ const routes: Routes = [
         m => m.JubsMealsPageModule)
     },
     {
-      path: 'highfield-meals',
-      loadChildren: () => import('../highfield-meals/highfield-meals.module').then( 
-        m => m.HighfieldMealsPageModule)
+      path: 'highfeild-meals',
+      loadChildren: () => import('../highfeild-meals/highfeild-meals.module').then( 
+        m => m.HighfeildMealsPageModule)
     },
     {
       path: 'make-review',

@@ -20,7 +20,7 @@ export class AuthService {
     ) { }
 
   getUserData() {
-    this.storageService.get(AuthConstants.uid).then(res => {
+    this.storageService.get(AuthConstants.personNumber).then(res => {
       this.userData$.next(res);
     })
   }
@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   signout () {
-    this.storageService.removeItem(AuthConstants.uid).then(res => {
+    this.storageService.removeItem(AuthConstants.personNumber).then(res => {
       this.userData$.next('');
       this.router.navigate(['signin']);
     })
