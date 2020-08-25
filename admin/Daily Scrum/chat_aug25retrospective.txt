@@ -1,0 +1,283 @@
+[2020/08/10, 16:39:36] Demi: I'm getting Network error when I try to login with the latest app😓
+[2020/08/10, 16:45:14] Julian Jacobs: i don't think so
+[2020/08/10, 16:45:22] Julian Jacobs: i'm still figuring out things for the bacl
+[2020/08/10, 16:46:20] Julian Jacobs: display the number of orders on dh-staff_main
+[2020/08/10, 16:48:58] Senate⚡️: I thought I did that? No?
+[2020/08/10, 16:50:09] Senate⚡️: Oh 😓 doesn’t it count for a lot of marks?
+[2020/08/10, 17:11:12] Julian Jacobs: no
+[2020/08/10, 17:11:24] Julian Jacobs: i mean you can check but no number is displayed
+[2020/08/10, 17:11:34] Julian Jacobs: idk should i do that instead?
+[2020/08/10, 17:11:58] Julian Jacobs: and you're running the server?
+[2020/08/10, 17:13:10] Julian Jacobs: when i get Network Error it's because i'm not running the server
+[2020/08/10, 17:15:23] Julian Jacobs: i'm struggling to get the order query to work. i've only gotten it to work 3 times i'm not sure what's happening
+[2020/08/10, 17:20:26] Demi: Ya now I'm running the server but nothing is happening 
+I'll try figure it out
+
+What exactly are you doing now, cause looking at this it's already connected so we can help do other things cause for me the connection was the confusing part
+[2020/08/10, 17:34:23] Julian Jacobs: ok
+[2020/08/10, 17:34:30] Julian Jacobs: i was doing the actual ordering system
+[2020/08/10, 17:34:39] Julian Jacobs: i figured it out now
+[2020/08/10, 17:38:26] Julian Jacobs: you can do sign up
+[2020/08/10, 17:39:12] Demi: Aiit
+Upload the latest version
+[2020/08/10, 17:39:43] Demi: That might take me a while I can't log in meaning I think for some reason the server isn't connecting to my local mysql
+[2020/08/10, 18:01:52] Demi: Can you do the sign up page
+Cause my stuff isn't connecting
+[2020/08/10, 19:04:48] Julian Jacobs: i did now. i think all the necessary functions are there
+[2020/08/10, 19:07:49] Julian Jacobs: there's also a new dump
+[2020/08/11, 00:05:39] Demi: Cool
+Then you're presenting
+[2020/08/11, 15:32:17] Senate⚡️: The code to display is there but it might need to be tweaked to the database name or something like that
+[2020/08/11, 15:32:57] Demi: Dudu
+Kabelo
+Where are you
+[2020/08/11, 15:32:58] Demi: ?
+[2020/08/11, 15:35:29] Kabelo AKA Kabi: i'm trying to log on but you know my connection problems
+[2020/08/11, 15:36:55] Senate⚡️: Okay
+[2020/08/11, 15:37:08] Duduzile Coms: Coming
+[2020/08/11, 16:14:11] Demi: Can we have a quick meeting
+[2020/08/11, 16:14:34] Kabelo AKA Kabi: where
+[2020/08/11, 16:16:47] Senate⚡️: Please!
+[2020/08/11, 16:17:02] Demi: Teams
+‎[2020/08/12, 09:38:05] Senate⚡️: ‎image omitted
+[2020/08/12, 09:44:18] Julian Jacobs: calendar.google.com probably
+[2020/08/12, 09:48:27] Senate⚡️: Thanks, I got it. Is Friday 10:30 fine?
+[2020/08/12, 09:51:40] Julian Jacobs: yeah i'm free
+[2020/08/12, 10:52:22] Demi: Can we make it in the afternoon? Around 1?
+If we can't then it's fine
+[2020/08/12, 11:15:12] Senate⚡️: Okay, he’s busy at 13:00 so I’ll book 14:30
+[2020/08/12, 11:18:17] Senate⚡️: Julian are you free then? Your calendar says you have something at 14:15
+[2020/08/13, 12:26:48] Julian Jacobs: i am not free then
+[2020/08/13, 13:58:54] Senate⚡️: Okay cool. I booked 3:15
+[2020/08/14, 14:52:14] Demi: I can't make the meeting
+Load shedding I don't think it will be back by 3:30
+I'll try to make it if my battery isn't dead and I manage to get good enough network coverage
+[2020/08/14, 14:59:37] Senate⚡️: Okay 😰 please try your bestest
+[2020/08/14, 15:00:10] Senate⚡️: Everyone else, please be there, it’s at 15:15 🙌🏽
+[2020/08/14, 15:13:33] Duduzile Coms: Is there a link?
+[2020/08/14, 15:13:53] Julian Jacobs: meet.google.com/xjv-fuhq-jtt
+[2020/08/14, 15:14:01] Duduzile Coms: Thank you
+[2020/08/14, 15:15:15] Senate⚡️: Wait, did I send the invitation to the wrong Duduzile Nhlapo? 💀 cause the person accepted the invitation 😂
+[2020/08/14, 15:16:35] Julian Jacobs: it's difficult to follow the link
+[2020/08/14, 15:17:00] Senate⚡️: Ah I see
+[2020/08/14, 15:17:10] Senate⚡️: @27727232970 were waiting for you
+[2020/08/14, 15:17:16] Julian Jacobs: like i have to copy the text and then paste it somewhere and then copy the link
+[2020/08/14, 15:17:29] Senate⚡️: Hectic
+[2020/08/14, 15:17:31] Duduzile Coms: Yep
+[2020/08/14, 15:19:06] Senate⚡️: Oh I’m sorry, I’ll be more careful next time
+[2020/08/14, 15:19:52] Duduzile Coms: Can’t we start without him?
+[2020/08/14, 15:40:13] Kabelo AKA Kabi: lol i'm at the mall
+‎[2020/08/14, 15:47:35] Demi: ‎image omitted
+[2020/08/15, 12:58:23] Demi: Has anyone figured out how to use firebase?
+[2020/08/15, 13:20:00] Duduzile Coms: It's a bit difficult but I'm getting there
+[2020/08/15, 13:22:11] Kabelo AKA Kabi: i'm not having much luck on my side
+[2020/08/15, 14:01:17] Demi: Keep trying because we need to figure this our before the next review. Report back if you figure it out
+[2020/08/15, 15:07:36] Duduzile Coms: Okay I will
+[2020/08/15, 20:46:25] Kabelo AKA Kabi: no problem
+[2020/08/16, 20:34:51] Demi: Some of the tasks have been uploaded. Click on your task to see the description, this will be the format from now on
+
+The rest will follow soon
+We only have a short time before the next sprint and we have more to do so everyone should hurry up with their tasks.
+
+Follow exactly what is written in the description and if you feel something is not right message me and we can fix it.
+
+Open each user story to see all your tasks. 
+
+
+
+Uhm the database how close is it to being done?
+[2020/08/16, 20:38:19] Demi: Since the next Retrospective is on the 25th
+We should meet Rylan on the 24th
+[2020/08/16, 21:28:18] Demi: I've uploaded all the tasks.
+If something comes up during the week I'll add more
+
+Also daily scrum, this guy checks and we saw it so let's make an effort cause it's free marks unless you all don't mind losing those marks
+[2020/08/16, 21:29:23] Demi: Unless something comes up
+Our next meeting is on the 23rd at 4:30
+
+Kabelo make it to the meeting.
+[2020/08/16, 21:49:31] Kabelo AKA Kabi: yea you see this is good prior warning
+[2020/08/17, 04:00:01] Demi: Finally figured out how to read from and write to firebase 😓
+I'll start on the structures and other stuff but that might take some time
+[2020/08/17, 14:20:55] Kabelo AKA Kabi: this man up at 4am figuring firebase out. what a boss
+[2020/08/17, 17:11:19] Demi: Nah not even 😂 just glad we finally figured it out
+[2020/08/17, 22:35:09] Kabelo AKA Kabi: yea it was stressing me out i was even doing some research on microsoft azure to see if we could use that
+[2020/08/18, 02:33:41] Demi: I forgot about the MS database
+[2020/08/18, 10:10:27] Kabelo AKA Kabi: it's pure sql, read and write. not sure about how its features differ from those of firebase with a free account but it looks a lot more straight forward
+[2020/08/18, 12:45:59] Demi: Keep working on that while I work on firebase. If you can figure out that database before I do with mine then we might go with that one
+[2020/08/18, 13:05:38] Kabelo AKA Kabi: sure. thing is i tried making an account with my wits email account and it said i'm not allowed to create a free azure database which is very weird. but i'll keep going at it
+[2020/08/19, 15:36:14] Senate⚡️: I sent an email to you guys with just a few objectives we should probably have completed before the sprint retrospective. I think they're all fairly reasonable
+[2020/08/20, 02:55:30] Demi: So I've created most of the database
+Everyone should look at it as it helps with this week's tasks
+I created a dining hall collection with different dining halls and their various meals and the prices of those meals
+All that's left in the database is the comment and the ordering
+
+Also firebase has it's own authentication I think we should use that
+I've implemented the signing in and creating account on node
+So all I'm left with on node is to write the code for send and recieving reviews.
+Also for pushing the order and checking how many has been ordered
+
+I trust everyone has familiarized themselves with firebase cause there's gang vids explaining it in detail.
+I'll upload my code when I'm done but you can see the actual database with the dining halls and the users under authentication and cloud store firestore
+[2020/08/20, 02:57:23] Demi: Also I trust everyone has at least started their tasks 
+Cause time is short and we're meeting on sunday then meeting with rylan on Monday for sprint review 
+
+@27732121491 set the meeting with rylan on Monday, preferably in the afternoon
+[2020/08/20, 18:40:49] Senate⚡️: Okay
+[2020/08/20, 18:41:57] Senate⚡️: I just wanna know, can I continue on the app that I have or have you any changes been made to it? @27813501310 @27604103099?
+[2020/08/20, 18:43:02] Julian Jacobs: idk what app you have
+[2020/08/20, 18:55:54] Senate⚡️: The one that I uploaded on GitHub
+[2020/08/20, 18:58:50] Julian Jacobs: yeah i changed it
+[2020/08/20, 18:59:38] Julian Jacobs: if you uploaded anything before the retrospective, what i showed in the retrospective is what i pushed to the test branch
+[2020/08/20, 19:00:13] Julian Jacobs: can we have one main branch and then everyone do what they need to on their own separate branch
+[2020/08/20, 19:01:14] Julian Jacobs: i think this might because we're tracking one version of the work when i think branching is meant to make it so that everyone makes changes relevant to their task to a copy of the current main product and then they just add it on
+[2020/08/20, 19:04:33] Senate⚡️: Alright I’ll use your version and create my own branch
+[2020/08/20, 19:05:31] Julian Jacobs: i don't think my version has the back end stuff
+[2020/08/20, 19:06:12] Julian Jacobs: i think the test branch would be better? idk what changes have been made to it since i last worked on it so it's probably the most up to date version
+[2020/08/20, 19:07:04] Senate⚡️: Okay 🥴 the back end stuff is probably @27813501310 then. Dudu which version should I use?
+[2020/08/20, 19:09:09] Julian Jacobs: i checked and test was modified 2 days ago
+[2020/08/20, 19:09:18] Julian Jacobs: so test is the most recent version
+[2020/08/21, 03:27:53] Demi: So I've uploaded the back end important code
+I havent uploaded the node module cause it'll take too long and I'm going to bed but I'll do it later today
+
+Julian combine it, my code does everything it needs to do, I've tested it but you also have to test it cause of firebase.
+Try running firebase login on your console
+If it's giving you errors then you'll have to watch youtube vids on how to setup the proper environment for firebase I also had to do that and read multiple pages.I don't think anything apart from the connection needs to be touched or added.
+If you can wait for me to upload the node modules then you might not need to do much setting up.
+
+The code is mostly commented out but just uncomment each block of code and you see commented lines that explain. Also the variable names are straight forward. If it has a weird name don't touch it
+
+
+Everybody should have their stuff ready by Sunday 4:30pm
+[2020/08/21, 10:29:02] Julian Jacobs: what am i editing? backend or Firebase backend?
+[2020/08/21, 10:55:32] Julian Jacobs: i don't think i'm sure what i'm supposed to be combining and with what?
+[2020/08/21, 11:01:41] Demi: Node
+When a user clicks on something in the frontend
+The relevant code is called
+[2020/08/21, 11:01:46] Demi: In the backend
+[2020/08/21, 11:02:16] Demi: It's basically what you did last semester 
+Except this time we're using firebase
+[2020/08/21, 11:02:46] Julian Jacobs: so like making the code for the SQL work for Firebase
+[2020/08/21, 11:03:21] Demi: What?
+[2020/08/21, 11:03:22] Julian Jacobs: is there already code for retrieval and stuff for Firebase or do i have to write it
+‎[2020/08/21, 11:04:14] Julian Jacobs: ‎image omitted
+[2020/08/21, 11:04:16] Demi: The first line says I've uploaded the code
+[2020/08/21, 11:04:40] Demi: This explains everything
+‎[2020/08/21, 11:05:06] Julian Jacobs: ‎image omitted
+[2020/08/21, 11:05:12] Julian Jacobs: is this the code?
+[2020/08/21, 11:05:13] Demi: What were need from this is the 
+app.post(/
+[2020/08/21, 11:05:44] Demi: Ya
+Every file in that folder is important
+[2020/08/21, 11:06:08] Julian Jacobs: that's what i was asking. am i writing for backend or Firebase backend?
+[2020/08/21, 11:07:10] Julian Jacobs: ok yeah i can do that
+[2020/08/21, 11:07:36] Julian Jacobs: am i doing it only for creating users? so only sign up?
+[2020/08/21, 11:07:55] Demi: Yeah
+So like when a user clicks create account take the values and send it to the back end and call the block of code for signing up
+[2020/08/21, 11:09:28] Demi: No
+For signing up
+Signing in
+Posting reviews
+Placing orders
+Getting comments and putting them in rue right place in the frontend
+[2020/08/21, 11:09:47] Julian Jacobs: but there's only skeleton code for the creating users
+[2020/08/21, 11:10:13] Julian Jacobs: ok i think i'm going to focus on code coverage and testing today
+[2020/08/21, 11:10:25] Julian Jacobs: and i'll see if i can do the integration tomorrow
+[2020/08/21, 11:10:29] Demi: Also for the staff to get how many people ordered a particular meal
+[2020/08/21, 11:10:38] Demi: Just have everything done by Sunday
+[2020/08/21, 11:11:42] Demi: I'd advice getting started on firebase early 
+Cause setting it up is a problem and spent a lot of time just trying to get it to connect
+[2020/08/21, 11:12:29] Julian Jacobs: ok send the resources that helped you
+[2020/08/21, 11:14:39] Demi: https://www.youtube.com/playlist?list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ
+
+Everyone needs to watch it cause everyone needs to set their various environment
+Also when everyone has downloaded the service key we need to delete it off github, I already got an email warning
+[2020/08/21, 11:15:08] Demi: https://www.youtube.com/playlist?list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB
+[2020/08/21, 11:17:46] Demi: https://youtu.be/Z87OZtIYC_0
+[2020/08/21, 21:41:43] Julian Jacobs: i just got the build to pass
+[2020/08/21, 21:42:01] Julian Jacobs: the coverage is awful but that's another day's problem
+[2020/08/22, 19:44:17] Julian Jacobs: can anyone help me with the coverage? i'm really not sure what is going on
+[2020/08/22, 20:26:52] Duduzile Coms: I'll look through it and see what I can do
+[2020/08/23, 11:05:16] Julian Jacobs: i found out i can only create new users if i change the rules of the Firebase
+[2020/08/23, 11:05:56] Julian Jacobs: i changed it to see if it worked and then i changed it back because i didn't want anything to break
+[2020/08/23, 11:11:31] Demi: The call was an accident
+[2020/08/23, 11:11:46] Demi: Why can't you create new users?
+[2020/08/23, 11:11:51] Demi: Did it work?
+[2020/08/23, 11:11:57] Julian Jacobs: permissions error
+[2020/08/23, 11:12:11] Julian Jacobs: when i changed the rules yeah
+[2020/08/23, 11:13:11] Demi: Then keep it changed cause you might need to create new users.
+Just make sure it doesn't affect anyone else
+[2020/08/23, 11:13:35] Julian Jacobs: i can't be sure it won't affect other things
+[2020/08/23, 11:13:40] Julian Jacobs: that's why i undid it
+[2020/08/23, 11:14:16] Julian Jacobs: i think the rules have to be reconsidered i'll give you a detailed output of the permission error
+[2020/08/23, 11:14:23] Demi: What line did you add or alter?
+[2020/08/23, 11:17:08] Julian Jacobs: of the rules?
+[2020/08/23, 11:17:28] Julian Jacobs: you can check the history thing
+[2020/08/23, 11:17:48] Julian Jacobs: i changed the false to true on line 5
+[2020/08/23, 11:19:40] Demi: Aiit
+Keep it on true for now
+We're going to have to experiment so keep it on true. And just test the other part of the code to make sure they're working 
+I'm assuming you tried to create a new user using the code
+[2020/08/23, 11:23:01] Julian Jacobs: yeah
+[2020/08/23, 11:23:09] Julian Jacobs: on trying to create a new user
+[2020/08/23, 11:32:31] Julian Jacobs: also the format for new user's data you gave me doesn't match the users on the Firestore
+[2020/08/23, 11:34:04] Demi: What format?
+It should match cause I created the user holly wood using the node js I gave you. And I also signed in with that user to make sure it worked
+[2020/08/23, 11:35:30] Demi: So what the code is supposed to do is create a user ok the authentication table
+Then add the unique ID and extra info to the users collection in firestore. That way we can store anything from the user that we want
+[2020/08/23, 11:35:42] Demi: *on
+‎[2020/08/23, 11:38:35] Julian Jacobs: ‎image omitted
+‎[2020/08/23, 11:38:36] Julian Jacobs: ‎image omitted
+[2020/08/23, 11:39:13] Julian Jacobs: i diiiiid use the Holly Wood format though
+[2020/08/23, 11:42:12] Demi: Oh what do you mean by format?
+Student number is:123456@students.wits.ac.za 
+Password:123456789
+
+I had to make it an email cause it needed to be an email cause of the authentication
+[2020/08/23, 11:43:24] Demi: The documents are the unique key that is given to them by the authentication table.
+I had to do it this way cause it's safer and takes advantage of the firebase authentication
+[2020/08/23, 11:59:13] Julian Jacobs: yeah i think i see what you mean
+[2020/08/23, 11:59:38] Julian Jacobs: i was confused because the other entries have DH ID as an element
+[2020/08/23, 12:01:42] Demi: Oh I see
+It's because their role is 1(owners of dining halls) and the DH ID is the dining hall they own.
+It matches the dining hall documents in the dining hall collection 
+Role 0 is student
+[2020/08/23, 16:42:34] Demi: Where's everyone?
+‎[2020/08/23, 17:18:44] Senate⚡️: ‎image omitted
+[2020/08/23, 17:21:10] Demi: Kabz you're doing the daily scrum
+Also you missed the meeting even though you said you wouldn't cause I reminded you early, please start taking this seriously
+[2020/08/23, 17:21:49] Demi: @27727232970 @27813501310 
+Upload your diagrams to taiga
+And go to the github wiki and look for the diagrams page then upload your diagrams
+[2020/08/23, 17:22:09] Duduzile Coms: 👍🏾
+[2020/08/23, 17:25:53] Kabelo AKA Kabi: yea i went to the google meet instead and found no one there
+[2020/08/23, 17:26:49] Julian Jacobs: we've never met on google Meet for group discussions before
+[2020/08/23, 17:27:48] Demi: We were on teams 
+I specifically said Sunday 4:30 and you said you'll be there cause I reminded you early
+
+Just upload your diagrams and so the daily scrum
+Also make a summary of our last meeting with Rylan, use the format Senate used and send it to ke
+[2020/08/23, 17:27:49] Demi: Me
+[2020/08/23, 17:28:01] Demi: *do
+[2020/08/23, 17:31:15] Kabelo AKA Kabi: i thought today was the meeting with rylan
+[2020/08/23, 17:31:15] Kabelo AKA Kabi: i was even the early and everything
+[2020/08/23, 17:31:16] Kabelo AKA Kabi: there
+[2020/08/23, 17:31:16] Kabelo AKA Kabi: is there a recording of the meeting?
+‎[2020/08/23, 17:35:37] Demi: ‎image omitted
+‎[2020/08/23, 17:36:33] Demi: ‎image omitted
+[2020/08/23, 17:37:55] Kabelo AKA Kabi: yea i know i just realised 😓
+[2020/08/23, 17:38:44] Kabelo AKA Kabi: anyway how do i get rylan's meeting recording?
+[2020/08/23, 17:41:48] Demi: Summary 👆🏾
+Or ask him
+Just make sure everything is ready by tomorrow.
+[2020/08/23, 17:47:45] Senate⚡️: I don’t think that there’s a summary
+[2020/08/23, 17:48:02] Senate⚡️: I already made and uploaded the summary
+[2020/08/23, 17:59:40] Kabelo AKA Kabi: that's what i was thinking. i saw yours on taiga so maybe i have to make a more substantive one?
+[2020/08/23, 19:25:21] Julian Jacobs: we also need a logout
+[2020/08/24, 13:08:46] Julian Jacobs: Senate, you're presenting right?
+[2020/08/24, 13:09:06] Julian Jacobs: you have and are most familiar with the most recent version of the code
+[2020/08/24, 13:22:16] Senate⚡️: Okay, I’ll create one now
+[2020/08/24, 13:22:39] Senate⚡️: Okay yeah sure. @27742777535, you’ll do the back end right?
+[2020/08/24, 14:04:57] Senate⚡️: Hi all. Please don’t forget that we have a meeting with Rylan *TODAY* at *14:15* on *google meet* 
+https://meet.google.com/acf-omhr-orb
+[2020/08/24, 14:15:03] Demi: I don't think we need the backend for this presentation
