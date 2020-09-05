@@ -9,7 +9,7 @@ import { StorageService } from '../services/storage.service';
 export class IndexGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise(resolve => {
-      this.storageService.get(AuthConstants.uid).then( res => {
+      this.storageService.get(AuthConstants.personNumber).then( res => {
         if (res) {
           this.router.navigate(['home']);
           resolve(false);

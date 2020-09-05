@@ -15,7 +15,8 @@ export class MakeReviewPage implements OnInit {
 
   submitReview(numRating: string){
     //some back end connecting stuff
-    this.router.navigate(['main']);
+    console.log(numRating)
+    this.router.navigate(['home/main']);
   }
 
 }

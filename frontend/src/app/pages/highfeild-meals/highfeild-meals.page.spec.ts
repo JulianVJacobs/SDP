@@ -5,6 +5,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { HighfeildMealsPage } from './highfeild-meals.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 describe('HighfeildMealsPage', () => {
   let component: HighfeildMealsPage;
@@ -14,7 +18,15 @@ describe('HighfeildMealsPage', () => {
     TestBed.configureTestingModule({
       declarations: [ HighfeildMealsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
+      imports: [
+        IonicModule.forRoot(), 
+        RouterTestingModule, 
+        HttpClientTestingModule,
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HighfeildMealsPage);

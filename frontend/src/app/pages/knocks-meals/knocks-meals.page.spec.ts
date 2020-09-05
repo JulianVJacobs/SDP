@@ -5,6 +5,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { KnocksMealsPage } from './knocks-meals.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 describe('KnocksMealsPage', () => {
   let component: KnocksMealsPage;
@@ -14,7 +18,15 @@ describe('KnocksMealsPage', () => {
     TestBed.configureTestingModule({
       declarations: [ KnocksMealsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
+      imports: [
+        IonicModule.forRoot(), 
+        RouterTestingModule, 
+        AngularFirestoreModule,
+        HttpClientTestingModule,
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(KnocksMealsPage);

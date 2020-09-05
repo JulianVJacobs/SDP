@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.storageService.get(AuthConstants.uid).then( res => {
+    this.storageService.get(AuthConstants.personNumber).then( res => {
       switch(res.Role){
         case 0:
           this.router.navigate(['choose-service'])

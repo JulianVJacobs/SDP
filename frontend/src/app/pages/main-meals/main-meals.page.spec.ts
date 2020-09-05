@@ -2,6 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from "@angular/router/testing";
 import { MainMealsPage } from './main-meals.page';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 describe('MainMealsPage', () => {
   let component: MainMealsPage;
@@ -10,10 +16,16 @@ describe('MainMealsPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MainMealsPage ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         IonicModule.forRoot(), 
-        RouterTestingModule 
-      ]
+        RouterTestingModule, 
+        HttpClientTestingModule,
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MainMealsPage);
