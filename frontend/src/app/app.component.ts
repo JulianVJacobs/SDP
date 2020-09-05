@@ -24,4 +24,12 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  public appPages = [
+    {
+    title: 'MainTabs',
+    url: '/main-tabs',
+    icon: 'list'
+    }
+  ]
 }

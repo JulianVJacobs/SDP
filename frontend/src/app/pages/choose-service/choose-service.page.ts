@@ -20,7 +20,7 @@ export class ChooseServicePage implements OnInit {
   }
 
   bookAction(){
-    this.router.navigate(['buy-books']);
+    this.router.navigate(['main-tabs']);
   }
 
 }

@@ -14,7 +14,7 @@ const routes: Routes = [
         children:[
           {
           path: '',
-          loadChildren: '.../buy-books/buy-books.module#buy-booksPageModule' 
+          loadChildren: '../buy-books/buy-books.module#BuyBooksPageModule' 
           }
         ]
       },
@@ -24,7 +24,7 @@ const routes: Routes = [
         children:[
           {
           path: '',
-          loadChildren: '.../sell-books/sell-books.module#sell-booksPageModule' 
+          loadChildren: '../sell-books/sell-books.module#SellBooksPageModule' 
           }
         ]
       },
@@ -35,6 +35,11 @@ const routes: Routes = [
       }
     ]
 
+  },
+  {
+    path: '',
+    redirectTo: '/main-tabs/buy-books',
+    pathMatch: 'full'
   }
 ];
 

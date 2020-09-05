@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>mainTabs</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
 
-<ion-content>
+      <ion-tab-button tab= "buy-books">
+        <ion-icon name="flash"></ion-icon>
+        <ion-label>Buy</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab= "sell-books">
+        <ion-icon name="send"></ion-icon>
+        <ion-label>sell</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
 
 </ion-content>
