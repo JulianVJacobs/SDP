@@ -14,8 +14,8 @@ import { StorageService } from 'src/app/services/storage.service';
 export class DhStaffMainPage implements OnInit {
   public bookings = {
     '1st Meal': 1,
-    '2nd Meal': 0,
-    '3rd Meal': 0
+    '2nd Meal': 4,
+    '3rd Meal': 4
   }
   public total = 0;
     
@@ -27,7 +27,7 @@ export class DhStaffMainPage implements OnInit {
   ngOnInit() {
     var today = new Date;
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var dh= 'Cpnvocation';
+    var dh= 'Convocation';
     this.storageService.get(AuthConstants.personNumber)
       .then((res) => {
         dh = res['DH ID'];

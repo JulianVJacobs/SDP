@@ -39,12 +39,12 @@ export class LoginPage implements OnInit {
             this.router.navigate(['home']);
           })
           .catch((error) => {
-          this.toastService.presentToast("Error.");
+          this.toastService.presentToast(error.message);
           console.dir(error);
           });  
       })
       .catch((error) => {
-          this.toastService.presentToast("Error.");
+          this.toastService.presentToast(error.message);
           console.dir(error);
       });
   }

@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-xdescribe('MainMealsPage', () => {
+describe('MainMealsPage', () => {
   let component: MainMealsPage;
   let fixture: ComponentFixture<MainMealsPage>;
 

@@ -10,7 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-xdescribe('HighfeildMealsPage', () => {
+describe('HighfeildMealsPage', () => {
   let component: HighfeildMealsPage;
   let fixture: ComponentFixture<HighfeildMealsPage>;
 
