@@ -85,7 +85,7 @@ describe('HighfeildMealsPage', () => {
       expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].textContent).toBe("Order");
     });
 
-    xit('should have a click event', () => {
+    it('should have a click event', () => {
       expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].click).toBeTruthy();
     });
 
