@@ -13,6 +13,11 @@ export const routes: Routes = [
     path: 'landing',
     loadChildren: () => import('./pages/landing/landing.module').then( m => m.LandingPageModule)
   },
+  { 
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -56,9 +61,19 @@ export const routes: Routes = [
   {
     path: 'make-review',
     loadChildren: () => import('./pages/make-review/make-review.module').then( m => m.MakeReviewPageModule)
-  }
-];
+  },
+  {
+    path: 'choose-service',
+    loadChildren: () => import('./pages/choose-service/choose-service.module').then( m => m.ChooseServicePageModule)
+  },
+  {
+    path: 'main-tabs',
+    loadChildren: () => import('./pages/main-tabs/main-tabs.module').then( m => m.MainTabsPageModule)
+  },
 
+  
+];
+ 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

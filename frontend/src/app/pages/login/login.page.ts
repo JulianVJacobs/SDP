@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
           .then((user) => {
             AuthConstants.uid = res.user.uid;
             this.storageService.store(AuthConstants.uid, user.data());
-            this.router.navigate(['home']);
+            this.router.navigate(['./home']);
           })
           .catch((error) => {
             console.dir(error);

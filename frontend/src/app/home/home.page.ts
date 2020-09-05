@@ -21,11 +21,11 @@ export class HomePage implements OnInit {
     this.storageService.get(AuthConstants.uid).then( res => {
       switch(res.Role){
         case 0:
-          this.router.navigate(['home/main'])
+          this.router.navigate(['choose-service'])
         break;
 
         case 1:
-          this.router.navigate(['home/dh-staff-main'])
+          this.router.navigate(['dh-staff-main'])
         break;
       }
     });
