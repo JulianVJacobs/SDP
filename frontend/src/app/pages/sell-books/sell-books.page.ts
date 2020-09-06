@@ -6,6 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sell-books.page.scss'],
 })
 export class SellBooksPage implements OnInit {
+  public data = {
+    meta: {
+
+    },
+    data: {
+      Description: '',
+      Image: '',
+      Owner: '',
+      Price: '',
+      Title: ''
+    }
+  }
 
   constructor() { }
 
