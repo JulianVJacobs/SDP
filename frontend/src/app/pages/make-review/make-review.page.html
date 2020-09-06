@@ -5,35 +5,21 @@
     <h1>Review Past Meal</h1>
   </ion-text>
 
-  <fieldset class="rating">
-    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-  
-    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-  
-    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    
-    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-   
-    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-    
-  </fieldset>
-
- 
-
-  <!-- <div class="input">
+  <div class="input">
     <form>
       <ion-list>
 
         <ion-item>
-          <ion-label position="stacked">Write a short comment</ion-label>
-          <ion-input name="reviewComment" ></ion-input>
+          <ion-label position="stacked">Write a short comment <br>(fewer than 50 charecters)</ion-label>
+          <ion-input type="text" name="reviewComment" maxlength="50"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="stacked">Rate the meal
-            <br> 1 = bad, 5 = great
-          </ion-label>
-          <ion-input type="Number" name="numRating"></ion-input>
+          <ion-label position="stacked">Rate the meal <br></ion-label>
+          <ion-range min="1" max="5" step="1" value="3" snaps color="warning" pin="true" (ion-change)="setRating($event.value)">
+            <ion-icon slot="start" color="warning" name="thumbs-down"></ion-icon>
+            <ion-icon slot="end" color="warning" name="thumbs-up"></ion-icon>
+          </ion-range>
         </ion-item>
 
       </ion-list>
@@ -41,7 +27,7 @@
   </div>
 
   <div class = "actions">
-    <ion-button expand="block" (click)="submitReview(numRating)">Submit Review</ion-button>
-  </div> -->
+    <ion-button expand="block" (click)="submitReview(value)">Submit Review</ion-button>
+  </div>
 
 </ion-content>

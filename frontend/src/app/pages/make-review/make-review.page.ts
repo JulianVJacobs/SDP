@@ -13,7 +13,7 @@ export class MakeReviewPage implements OnInit {
   ngOnInit() {
   }
 
-  starHandler(rating){
+  setRating(rating: string){
     console.log("changed rating: ",rating);
     // do your stuff
   }
@@ -21,7 +21,7 @@ export class MakeReviewPage implements OnInit {
   submitReview(numRating: string){
     //some back end connecting stuff
     console.log(numRating)
-    this.router.navigate(['home/main']);
+    this.router.navigate(['main']);
   }
 
 }
