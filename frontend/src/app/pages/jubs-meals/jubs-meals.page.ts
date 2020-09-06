@@ -72,7 +72,7 @@ export class JubsMealsPage implements OnInit {
     }
   }
   
-  reviewAction(){
+  reviewAction(num: string){
     this.router.navigate(['make-review']);
   }
 

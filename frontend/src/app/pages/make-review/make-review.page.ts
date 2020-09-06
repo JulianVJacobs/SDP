@@ -13,7 +13,7 @@ export class MakeReviewPage implements OnInit {
   ngOnInit() {
   }
 
-  logRatingChange(rating){
+  starHandler(rating){
     console.log("changed rating: ",rating);
     // do your stuff
   }
