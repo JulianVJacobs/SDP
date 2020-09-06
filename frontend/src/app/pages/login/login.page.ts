@@ -48,4 +48,8 @@ export class LoginPage implements OnInit {
           console.dir(error);
       });
   }
+
+  signupAction(){
+    this.router.navigate(['signup']);
+  }
 }

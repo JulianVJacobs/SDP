@@ -56,4 +56,8 @@ export class SignupPage implements OnInit {
           console.dir(error);
       });
   }
+
+  loginAction(){
+    this.router.navigate(['login']);
+  }
 }
