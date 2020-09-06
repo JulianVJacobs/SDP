@@ -32,6 +32,7 @@
     "angularfire2": "^4.0.0-rc0",
     "core-js": "^2.5.4",
     "firebase": "^7.19.0",
+    "ionic5-star-rating": "https://github.com/JeongJun-Lee/ionic5-star-rating/tarball/master",
     "ng": "0.0.0",
     "npm-force-resolutions": "0.0.3",
     "rxjs": "~6.5.1",

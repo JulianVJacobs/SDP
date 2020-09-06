@@ -13,6 +13,11 @@ export class MakeReviewPage implements OnInit {
   ngOnInit() {
   }
 
+  logRatingChange(rating){
+    console.log("changed rating: ",rating);
+    // do your stuff
+  }
+
   submitReview(numRating: string){
     //some back end connecting stuff
     console.log(numRating)

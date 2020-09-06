@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MakeReviewPage } from './make-review.page';
 
+import { StarRatingModule } from 'ionic5-star-rating';
+import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +14,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+    StarRatingModule
+  ],
   exports: [RouterModule],
 })
 export class MakeReviewPageRoutingModule {}
