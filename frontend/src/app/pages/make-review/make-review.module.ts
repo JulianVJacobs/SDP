@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MakeReviewPageRoutingModule } from './make-review-routing.module';
 
 import { MakeReviewPage } from './make-review.page';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MakeReviewPage } from './make-review.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MakeReviewPageRoutingModule
+    MakeReviewPageRoutingModule,
+    NgbModule
   ],
   declarations: [MakeReviewPage]
 })

@@ -3,7 +3,7 @@
     <h1>Review Past Meal</h1>
   </ion-text>
 
-  <ionic5-star-rating #rating>
+  <!-- <ionic5-star-rating #rating>
         activeIcon = "ios-star"
         defaultIcon = "ios-star-outline"
         activeColor = "#488aff" 
@@ -27,9 +27,16 @@
           formControlName="starRating">
       </ionic5-star-rating>
 
-  </form>
+  </form> -->
 
-  <div class="input">
+  <ngb-rating 
+  [(rate)]="currentRate" 
+  [starTemplate]="t" 
+  [readonly]="false" 
+  max="5">
+  </ngb-rating>
+
+  <!-- <div class="input">
     <form>
       <ion-list>
 
@@ -51,6 +58,6 @@
 
   <div class = "actions">
     <ion-button expand="block" (click)="submitReview(numRating)">Submit Review</ion-button>
-  </div>
+  </div> -->
 
 </ion-content>

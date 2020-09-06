@@ -51,7 +51,7 @@ export class ConvoMealsPage implements OnInit {
   }
 
   reviewAction(){
-    this.router.navigate(['home/main/make-review']);
+    this.router.navigate(['make-review']);
   }
 
 }

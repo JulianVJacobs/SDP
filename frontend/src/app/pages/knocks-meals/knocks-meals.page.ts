@@ -73,7 +73,7 @@ export class KnocksMealsPage implements OnInit {
   }
 
   reviewAction(){
-    this.router.navigate(['home/main/make-review']);
+    this.router.navigate(['make-review']);
   }
 
 }
