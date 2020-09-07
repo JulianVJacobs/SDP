@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from "angular/router/testing";
 import { IonicModule } from '@ionic/angular';
 
 import { BuyBooksPage } from './buy-books.page';
@@ -12,7 +13,7 @@ describe('BuyBooksPage', () => {
     TestBed.configureTestingModule({
       declarations: [ BuyBooksPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA];
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(),RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BuyBooksPage);
@@ -24,13 +25,5 @@ describe('BuyBooksPage', () => {
     expect(component).toBeTruthy();
   });
   
-  it('should expect at least one <h1> tag' , () => {
-    expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
-  });
   
-  describe('<h1>', () => {
-    it('should have the text "Buy Books" before ngOnInit() is called', () => {
-      expect(fixture.nativeElement.querySelector('h1').textContent).toBe("Buy Books");
-    });
-  });
 });
