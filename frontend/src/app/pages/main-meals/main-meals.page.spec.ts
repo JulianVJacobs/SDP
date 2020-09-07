@@ -39,7 +39,7 @@ describe('LoginPage', () => {
     expect(component).toBeTruthy();
   });
 
-  /*it('should have a ngOnInit() function', () => {
+  it('should have a ngOnInit() function', () => {
     expect(component.ngOnInit).toBeTruthy();
   });
 
@@ -119,5 +119,5 @@ describe('LoginPage', () => {
       fixture.nativeElement.getElementsByTagName('ion-button')[1].click();
       expect(component.reviewAction).toHaveBeenCalled();
     });
-  });*/
+  });
 });
