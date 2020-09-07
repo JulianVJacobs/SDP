@@ -3,8 +3,9 @@ import { IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from "@angular/router/testing";
 import { MainMealsPage } from './main-meals.page';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import {AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -24,8 +25,9 @@ describe('MainMealsPage', () => {
         AngularFirestoreModule,
         AngularFireAuthModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFireAuthModule
+        AngularFirestoreModule
       ],
+      providers: [AuthService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(MainMealsPage);
