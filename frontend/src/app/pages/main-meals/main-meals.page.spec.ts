@@ -1,28 +1,28 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
 import { RouterTestingModule } from "@angular/router/testing";
-import { MainMealsPage } from './main-meals.page';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import {AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { IonicModule } from '@ionic/angular';
 
-describe('MainMealsPage', () => {
-  let component: MainMealsPage;
-  let fixture: ComponentFixture<MainMealsPage>;
+import { LoginPage } from './login.page';
+import { AuthService } from 'src/app/services/auth.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+describe('LoginPage', () => {
+  let component: LoginPage;
+  let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainMealsPage ],
+      declarations: [ LoginPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         IonicModule.forRoot(), 
         RouterTestingModule, 
         HttpClientTestingModule,
-        AngularFirestoreModule,
         AngularFireAuthModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule
