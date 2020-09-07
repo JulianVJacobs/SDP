@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import firebase from '@firebase/app';
+import '@firebase/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { StorageService } from 'src/app/services/storage.service';
+import {ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'app-make-review',
@@ -20,7 +26,8 @@ export class MakeReviewPage implements OnInit {
 
   submitReview(numRating: string){
     //some back end connecting stuff
-    console.log(numRating)
+    console.log(numRating);
+  
     this.router.navigate(['main']);
   }
 
