@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { BuyBooksPage } from './buy-books.page';
-import { Custom_Elements_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('BuyBooksPage', () => {
   let component: BuyBooksPage;
