@@ -21,4 +21,14 @@ describe('BuyBooksPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should expect at least one <h1> tag' , () => {
+    expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
+  });
+  
+  describe('h1', () => {
+    it('should have the text "Buy Books" before ngOnInit() is called', () => {
+      expect(fixture.nativeElement.querySelector('h1').textContent).toBe("Buy Books");
+    });
+  });
 });
