@@ -37,4 +37,34 @@ describe('MakeReviewPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should have an setRating() function', () => {
+    expect(component.setRating).toBeTruthy();
+  });
+  
+  it('should have an submitReview() function', () => {
+    expect(component.submitReview).toBeTruthy();
+  });
+  
+  it('should have at least one <h1> tag', () => {
+    expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-list>', () => {
+    expect(fixture.nativeElement.querySelector('ion-list')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-item>', () => {
+    expect(fixture.nativeElement.querySelector('ion-item')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-button>', () => {
+    expect(fixture.nativeElement.querySelector('ion-button')).toBeTruthy();
+  });
+  
+  describe('<h1>', () => {
+    it('should have the text "Review Past Meal" before ngOnInit() is called', () => {
+      expect(fixture.nativeElement.querySelector('h1').textContent).toBe("Review Past Meal");
+    });
+  });
 });
