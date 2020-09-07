@@ -38,7 +38,7 @@ describe('ConvoMealsPage', () => {
     expect(component).toBeTruthy();
   });
 
-  /*it('should have at least one <h1> tag', () => {
+  it('should have at least one <h1> tag', () => {
     expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
   });
 
@@ -104,6 +104,6 @@ describe('ConvoMealsPage', () => {
       fixture.nativeElement.getElementsByTagName('ion-button')[1].click();
       expect(component.reviewAction).toHaveBeenCalled();
     });
-  });*/
+  });
 });
 
