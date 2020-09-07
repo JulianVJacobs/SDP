@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>sellBooks</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-<ion-content>
+  <ion-text>
+    <h1>Sell Books</h1>
+  </ion-text>
+
+      <ion-list>
+      <form class="ion-padding" (submit)="addBook()">
+        <ion-item>
+          <ion-list>
+          <ion-input name="bookName" [(ngModel)]="bookName" placeholder="Book Name"></ion-input>
+          <ion-input name="bookPrice" [(ngModel)]="bookPrice" placeholder="Book Price"></ion-input>
+          </ion-list> 
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-list>
+          <ion-label>Upload image</ion-label>
+          <input type="file" name="inputFile" (change)="chooseFile($event)" required>
+          </ion-list>
+        </ion-item>
+    
+        <ion-button type="submit">Add</ion-button>
+      </form>
+
+    </ion-list>
 
 </ion-content>

@@ -75,8 +75,8 @@ export class HighfeildMealsPage implements OnInit {
     }
   }
 
-  reviewAction() {
-    this.router.navigate(['home/main/make-review']);
+  reviewAction(num: string) {
+    this.router.navigate(['make-review']);
   }
 
 }

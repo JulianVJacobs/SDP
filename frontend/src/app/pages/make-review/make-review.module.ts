@@ -14,7 +14,7 @@ import { MakeReviewPage } from './make-review.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MakeReviewPageRoutingModule
+    MakeReviewPageRoutingModule,
   ],
   declarations: [MakeReviewPage]
 })

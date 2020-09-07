@@ -1,52 +1,17 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <ion-list>
-  <ion-text>
-    <h1>Convocation</h1>
-  </ion-text>
-  <ion-card>
-    <img src="../../assets/images/chickenBurger.jpg"/>
-    <ion-card-header>
-      <ion-card-title>Chicken Burger</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      A Scrumbcious chicken burger, served with freshly fried chips. <br>
-      Allergens:
-      Wheat
-    </ion-card-content>
-    <ion-button (click)="orderAction(1)">Order</ion-button>
-    <ion-button (click)="reviewAction()">Make Review</ion-button>
-  </ion-card>
+    <ion-text>
+      <h1>Buy Books</h1>
+    </ion-text>
 
-  <ion-card>
-    <img src="../../assets/images/beefPizza.jpg"/>
-    <ion-card-header>
-      <ion-card-title>Mince Pizza</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      A Mouth Watering beef mince pizza, served with freshly fried chips.<br>
-      Allergens:
-      Wheat, Milk, 
-    </ion-card-content>
-    <ion-button (click)="orderAction(2)">Order</ion-button>
-    <ion-button (click)="reviewAction()">Make Review</ion-button>
-  </ion-card>
-
-  <ion-card>
-    <img src="../../assets/images/sausageRoll.jpg"/>
-    <ion-card-header>
-      <ion-card-title>Sausage Roll</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      A Delicious sausage roll, served with freshly fried chips.<br>
-      Allergens:
-      Wheat, Milk, 
-    </ion-card-content>
-    <ion-button (click)="orderAction(3)">Order</ion-button>
-    <ion-button (click)="reviewAction()">Make Review</ion-button>
-  </ion-card>
-
-  
-</ion-list>
+    <ion-list>
+      <ion-item *ngFor="let item of items | async">
+        <ion-thumbnail slot="start" *ngIf="item.imageUrl">
+          <img [src]="item.imageUrl" alt="">
+        </ion-thumbnail>
+        <ion-label>{{ item.title }}</ion-label>
+        <ion-button slot="end" color="danger" (click)="buy(item)">Buy</ion-button>
+      </ion-item>
+    </ion-list>
 
 </ion-content>
