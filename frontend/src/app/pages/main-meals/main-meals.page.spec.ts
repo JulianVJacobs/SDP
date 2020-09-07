@@ -6,18 +6,18 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login.page';
+import { MainMealsPage } from './main-meals.page';
 import { AuthService } from 'src/app/services/auth.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-describe('LoginPage', () => {
+describe('MainMealsPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginPage ],
+      declarations: [ MainMealPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         IonicModule.forRoot(), 
