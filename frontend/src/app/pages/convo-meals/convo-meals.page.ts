@@ -4,8 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { AuthConstants } from 'src/app/config/auth-constants';
-import firebase from '@firebase/app'
-import '@firebase/auth'
+import firebase from '@firebase/app';
+import '@firebase/auth';
 
 @Component({
   selector: 'app-convo-meals',
