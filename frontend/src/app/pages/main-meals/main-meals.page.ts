@@ -44,7 +44,7 @@ export class MainMealsPage implements OnInit {
     var data = {Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), uid: uid};
 
     if (num == "1") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Beef Wrap/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Main/Meals/Beef wrap/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -54,7 +54,7 @@ export class MainMealsPage implements OnInit {
     }
 
     if (num == "2") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Pasta and Tuna Salad/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Main/Meals/Pasta and tuna salad/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -64,7 +64,7 @@ export class MainMealsPage implements OnInit {
     }
 
     if (num == "3") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Snack (Pack)/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Main/Meals/Snacks (Pack)/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
