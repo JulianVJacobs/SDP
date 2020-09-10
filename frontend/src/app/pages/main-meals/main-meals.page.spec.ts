@@ -75,7 +75,7 @@ describe('MainMealsPage', () => {
 
     // it('should have an expand property set to block', () => {
     //   expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].expand).toBe('block');
-    // });
+    // });second mink
 
     it('should have the text "Order"', () => {
       expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].textContent).toBe("Order");
