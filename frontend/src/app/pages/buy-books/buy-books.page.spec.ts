@@ -25,10 +25,6 @@ describe('BuyBooksPage', () => {
     expect(component).toBeTruthy();
   });
   
-  it('should have an addTodo() function', () => {
-    expect(component.addTodo).toBeTruthy();
-  });
-  
   it('should have at least one <h1> tag', () => {
     expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
   });
