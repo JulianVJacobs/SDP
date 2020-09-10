@@ -13,9 +13,9 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class DhStaffMainPage implements OnInit {
   public bookings = {
-    '1st Meal': 1,
-    '2nd Meal': 4,
-    '3rd Meal': 4
+    '1st Meal': 0,
+    '2nd Meal': 0,
+    '3rd Meal': 0
   }
   public total = 0;
     
