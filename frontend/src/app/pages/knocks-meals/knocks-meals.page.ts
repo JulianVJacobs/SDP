@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthConstants } from 'src/app/config/auth-constants';
 import { ToastService } from 'src/app/services/toast.service';
+import firebase from '@firebase/app';
+import '@firebase/auth';
 
 @Component({
   selector: 'app-knocks-meals',
@@ -38,11 +40,11 @@ export class KnocksMealsPage implements OnInit {
 
   async orderAction(num: string){
     var today = new Date;
-    var data = { 'Ordered By': AuthConstants.personNumber, Time: today.getTime(), Date: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() };
-
+    var uid = firebase.auth().currentUser.uid;
+    var data = {Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), uid: uid};
 
     if (num == "1") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Fish and Chips/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Knockando/Meals/Fish and chips/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -52,7 +54,7 @@ export class KnocksMealsPage implements OnInit {
     }
 
     if (num == "2") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Beef Stew/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Knockando/Meals/Rice and beef stew/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -62,7 +64,7 @@ export class KnocksMealsPage implements OnInit {
     }
 
     if (num == "3") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Tuna-Mayo Sandwich/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Knockando/Meals/Tuna Mayo sandwich/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })

@@ -1,4 +1,5 @@
-
+import firebase from '@firebase/app';
+import '@firebase/auth';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -41,11 +42,11 @@ export class HighfeildMealsPage implements OnInit {
   async orderAction(num: string) {
     //backend
     var today = new Date;
-    var data = { 'Ordered By': AuthConstants.personNumber, Time: today.getTime(), Date: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() };
-
+    var uid = firebase.auth().currentUser.uid;
+    var data = {Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), uid: uid};
 
     if (num == "1") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Chicken Pizza/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Highfield/Meals/Chicken Pizza/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -55,7 +56,7 @@ export class HighfeildMealsPage implements OnInit {
     }
 
     if (num == "2") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Beef Lasagna/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Highfield/Meals/Beef Lasagna/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -65,7 +66,7 @@ export class HighfeildMealsPage implements OnInit {
     }
 
     if (num == "3") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Coucous and Chicken/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Highfield/Meals/Couscous and Chicken/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
