@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthConstants } from 'src/app/config/auth-constants';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-make-review',
@@ -9,12 +10,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./make-review.page.scss'],
 })
 export class MakeReviewPage implements OnInit {
-  public review = {
+  public data = {
     meta: {
       'Dining Hall': '',
       Meal: ''
     },
     content: {
+      uid: '',
       Rating: '',
       Date: '',
       'Posted By': '',
@@ -25,6 +27,7 @@ export class MakeReviewPage implements OnInit {
 
   constructor(
     private router: Router,
+    private auth: AngularFireAuth,
     private firestore: AngularFirestore
     ) {}
 
@@ -42,15 +45,19 @@ export class MakeReviewPage implements OnInit {
     //some back end connecting stuff
     var today = new Date;
 
-    this.review.content.Rating = numRating;
-    this.review.content.Time = today.getTime();
-    this.review.content.Date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    this.review.content['Posted By'] = AuthConstants.personNumber;
+    // this.review.content.Rating = numRating;
+    this.data.content.Time = today.getTime();
+    this.data.content.Date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    // this.review.content['Posted By'] = AuthConstants.personNumber;
+    // console.log(this.auth.currentUser)
 
-    this.firestore.firestore.collection("Dining Halls/"+this.review.meta['Dining Hall']+"/Meals/"+this.review.meta.Meal+"/Comments").doc().set(this.review.content)
-      .catch((error) => {
-        console.dir(error);
-      });
+    this.auth.currentUser.then((res) => {
+      this.data.content.uid = res.uid;
+      this.firestore.firestore.collection("Dining Halls/"+this.data.meta['Dining Hall']+"/Meals/"+this.data.meta.Meal+"/Comments").doc().set(this.data.content)
+        .catch((error) => {
+          console.dir('error',error);
+        })
+    });
 
     console.log(numRating)
     this.router.navigate(['main']);
