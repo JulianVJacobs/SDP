@@ -7,7 +7,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { IonicModule } from '@ionic/angular';
 
 import { EohMealsPage } from './eoh-meals.page';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 import { AuthService } from 'src/app/services/auth.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
