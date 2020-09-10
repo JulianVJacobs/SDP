@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-//import { AngularFireModule } from '@angular/fire';
-//import { AngularFireAuthModule } from '@angular/fire/auth';
-//import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { IonicModule } from '@ionic/angular';
 
 import { MainMealsPage } from './main-meals.page';
@@ -12,7 +12,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 describe('MainMealsPage', () => {
-  let component: MainMealPage;
+  let component: MainMealsPage;
   let fixture: ComponentFixture<MainMealsPage>;
 
   beforeEach(async(() => {
