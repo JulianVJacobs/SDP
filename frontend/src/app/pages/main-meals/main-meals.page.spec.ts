@@ -107,7 +107,7 @@ describe('MainMealsPage', () => {
 
     it('should have a click event', () => {
       expect(fixture.nativeElement.getElementsByTagName('ion-button')[1].click).toBeTruthy();
-    });
+    });mink
 
     it('should call reviewAction() when clicked', () => {
       let spy = spyOn(component,'reviewAction');
