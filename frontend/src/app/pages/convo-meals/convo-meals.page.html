@@ -11,8 +11,11 @@
     <ion-card-content>
       A Scrumbcious mince pizza, served with freshly fried chips. <br>
       Allergens:
-      Wheat
-      <ion-label>Rating </ion-label>
+      Wheat, Cows Milk <br>
+      <ion-label>
+          <ion-icon slot="start" color="warning" name="star"></ion-icon>
+          Rating from database
+      </ion-label>
     </ion-card-content>
     <ion-button (click)="orderAction('Mince Pizza')">Order</ion-button>
     <ion-button (click)="reviewAction(1)">Make Review</ion-button>
@@ -26,7 +29,12 @@
     <ion-card-content>
       A Mouth Watering chicken burger,served with freshly fried chips.<br>
       Allergens:
-      Wheat
+      Wheat <br>
+
+      <ion-label>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        Rating from database
+     </ion-label>
     </ion-card-content>
     <ion-button (click)="orderAction('Chicken Burger')">Order</ion-button>
     <ion-button (click)="reviewAction(2)">Make Review</ion-button>
@@ -40,7 +48,12 @@
     <ion-card-content>
       A Delicious sausage roll, served with freshly fried chips..<br>
       Allergens:
-      Wheat
+      Wheat <br>
+
+      <ion-label>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        Rating from database
+    </ion-label>
     </ion-card-content>
     <ion-button (click)="orderAction('Sausage Roll')">Order</ion-button>
     <ion-button (click)="reviewAction(3)">Make Review</ion-button>

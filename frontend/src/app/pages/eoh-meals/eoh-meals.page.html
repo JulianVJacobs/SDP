@@ -14,7 +14,12 @@
     <ion-card-content>
       A Scrumbcious chicken stew, served with freshly cooked rice. <br>
       Allergens:
-      Wheat
+      Wheat <br>
+
+    <ion-label>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        Rating from database
+    </ion-label>
     </ion-card-content>
     <ion-button (click)="orderAction(1)">Order</ion-button>
     <ion-button (click)="reviewAction(1)">Make Review</ion-button>
@@ -28,7 +33,12 @@
     <ion-card-content>
       A Mouth Watering vegetarian lasanga.<br>
       Allergens:
-      Wheat, Milk, 
+      Wheat, Cows Milk
+      
+      <ion-label>
+        <ion-icon slot="start" color="warning" name="star"></ion-icon>
+        Rating from database
+    </ion-label>
     </ion-card-content>
     <ion-button (click)="orderAction(2)">Order</ion-button>
     <ion-button (click)="reviewAction(2)">Make Review</ion-button>
@@ -41,8 +51,11 @@
     </ion-card-header>
     <ion-card-content>
       A Delicious steak, served with freshly baked potato wedges.<br>
-      Allergens:
-      Wheat, Milk, 
+      
+    <ion-label>
+      <ion-icon slot="start" color="warning" name="star"></ion-icon>
+      Rating from database
+    </ion-label>
     </ion-card-content>
     <ion-button (click)="orderAction(3)">Order</ion-button>
     <ion-button (click)="reviewAction(3)">Make Review</ion-button>
