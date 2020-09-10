@@ -18,3 +18,19 @@ script:
 
 after_script:
   - cat ../coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+after_failure:
+
+addons:
+  artifacts:
+    paths:
+       - $(git ls-files -o | tr "\n" ":")
+
+deploy:
+
+- provider: s3
+- access_key_id: $ARTIFACTS_KEY
+- secret_access_key: $ARTIFACTS_SECRET
+- bucket: $ARTIFACTS_BUCKET
+- skip_cleanup: true
+- acl: public_read
