@@ -19,7 +19,7 @@ xdescribe('EohMealsPage', () => {
 
    beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginPage ],
+      declarations: [ EohMealsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         IonicModule.forRoot(), 
