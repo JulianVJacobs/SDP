@@ -79,8 +79,6 @@ export class SellBooksPage implements OnInit {
     return this.loading.present();
   }
 
-
-
   remove(item){
     console.log(item);
     if(item.imageUrl) {

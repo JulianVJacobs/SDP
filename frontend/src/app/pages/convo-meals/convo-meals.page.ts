@@ -4,6 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { AuthConstants } from 'src/app/config/auth-constants';
+import firebase from '@firebase/app'
+import '@firebase/auth'
 
 @Component({
   selector: 'app-convo-meals',
@@ -40,7 +42,8 @@ export class ConvoMealsPage implements OnInit {
 
   orderAction(item: string){
     var today = new Date;
-    var data = {'Ordered By': AuthConstants.personNumber, Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()};
+    var uid = firebase.auth().currentUser.uid;
+    var data = {Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), uid: uid};
     this.firestore.firestore.collection('Dining Halls/Convocation/Meals/'+item+'/Order').doc().set(data)
       .then(() => {
         this.toastService.presentToast('Order Placed');
@@ -50,7 +53,7 @@ export class ConvoMealsPage implements OnInit {
       })
   }
 
-  reviewAction(){
+  reviewAction(item: string){
     this.router.navigate(['make-review']);
   }
 

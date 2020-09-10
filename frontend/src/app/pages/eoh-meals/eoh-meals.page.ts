@@ -4,6 +4,8 @@ import { ToastController} from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastService } from 'src/app/services/toast.service';
 import { AuthConstants } from 'src/app/config/auth-constants';
+import firebase from '@firebase/app';
+import '@firebase/auth';
 
 @Component({
   selector: 'app-eoh-meals',
@@ -39,11 +41,13 @@ export class EohMealsPage implements OnInit {
 
   async orderAction(num: string){
     var today = new Date;
-    var data = { 'Ordered By': AuthConstants.personNumber, Time: today.getTime(), Date: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() };
+    var uid = firebase.auth().currentUser.uid;
+    var data = {uid: uid, Time: today.getTime(), Date: today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() };
+
 
 
     if (num == "1") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Rice and Chicken/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Ernest Oppenheimer/Meals/Rice and chicken/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -53,7 +57,7 @@ export class EohMealsPage implements OnInit {
     }
 
     if (num == "2") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Vegetarian Lasagna/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Ernest Oppenheimer/Meals/Vegetarian Lasagna/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
@@ -63,7 +67,7 @@ export class EohMealsPage implements OnInit {
     }
 
     if (num == "3") { //
-      this.firestore.firestore.collection('Dining Halls/Convocation/Meals/Steak and Wedges/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/Ernest Oppenheimer/Meals/Wedges and Steak/Order').doc().set(data)
         .then(() => {
           this.toastService.presentToast('Order Placed');
         })
