@@ -7,7 +7,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
-import { AuthService } from 'src/app/services/auth.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -27,7 +26,7 @@ describe('LoginPage', () => {
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule
       ],
-      providers: [AuthService]
+      providers: []
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginPage);
