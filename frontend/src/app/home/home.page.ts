@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { Router } from '@angular/router';
-import { AuthConstants } from '../config/auth-constants';
+import { firebase } from '@firebase/app';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +17,7 @@ export class HomePage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.storageService.get(AuthConstants.personNumber).then( res => {
+    this.storageService.get(firebase.auth().currentUser.uid).then( res => {
       switch(res.Role){
         case 0:
           this.router.navigate(['choose-service'])

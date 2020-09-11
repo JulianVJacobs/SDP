@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AuthConstants } from 'src/app/config/auth-constants';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
@@ -14,6 +13,7 @@ import { ToastService } from 'src/app/services/toast.service';
 
 export class LoginPage implements OnInit {
   public data = {
+    uid: '',
     personNumber: '',
     password: ''
   }
@@ -32,10 +32,10 @@ export class LoginPage implements OnInit {
   mainAction(){
     this.auth.signInWithEmailAndPassword(this.data.personNumber + '@students.wits.ac.za',this.data.password)
       .then((res) => {
-        this.firestore.firestore.collection('users').doc(res.user.uid).get()
+          this.data.uid = res.user.uid;
+          this.firestore.firestore.collection('users').doc(res.user.uid).get()
           .then((user) => {
-            AuthConstants.personNumber = this.data.personNumber;
-            this.storageService.store(AuthConstants.personNumber, user.data());
+            this.storageService.store(this.data.uid, user.data());
             this.router.navigate(['home']);
           })
           .catch((error) => {

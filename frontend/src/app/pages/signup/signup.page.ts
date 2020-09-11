@@ -4,7 +4,6 @@ import { StorageService } from 'src/app/services/storage.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AuthConstants } from 'src/app/config/auth-constants';
 
 @Component({
   selector: 'app-signup',
@@ -14,10 +13,11 @@ import { AuthConstants } from 'src/app/config/auth-constants';
 export class SignupPage implements OnInit {
   public data = {
     auth: {
-      PersonNumber : '',
+      uid: '',
       Password: ''
     },
     user: {
+      'Student Number' : '',
       Name: '',
       Surname: '',
       Role: 0,
@@ -38,12 +38,13 @@ export class SignupPage implements OnInit {
   }
 // sign up
   mainAction(){
-      this.auth.createUserWithEmailAndPassword(this.data.auth.PersonNumber + '@students.wits.ac.za',this.data.auth.Password)
+      this.auth.createUserWithEmailAndPassword(this.data.user['Student Number'] + '@students.wits.ac.za',this.data.auth.Password)
         .then((res) => {
+          this.data.auth.uid = res.user.uid;
           this.firestore.collection('users').doc(res.user.uid).set(this.data.user)
             .then(()=>{
-              AuthConstants.personNumber = this.data.auth.PersonNumber;
-              this.storageService.store(AuthConstants.personNumber, this.data.user);
+              console.log(this.data.auth.uid);
+              this.storageService.store(this.data.auth.uid, this.data.user);
               this.router.navigate(['home']);
             })
             .catch((error) => {

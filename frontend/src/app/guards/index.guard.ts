@@ -1,7 +1,7 @@
 import { Injectable, resolveForwardRef } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AuthConstants } from '../config/auth-constants';
 import { StorageService } from '../services/storage.service';
+import { firebase } from '@firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { StorageService } from '../services/storage.service';
 export class IndexGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise(resolve => {
-      this.storageService.get(AuthConstants.personNumber).then( res => {
+      this.storageService.get(firebase.auth().currentUser.uid).then( res => {
         if (res) {
           this.router.navigate(['home']);
           resolve(false);

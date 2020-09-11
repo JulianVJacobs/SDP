@@ -1,0 +1,87 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ToastService } from 'src/app/services/toast.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { firebase } from '@firebase/app';
+import '@firebase/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+@Component({
+  selector: 'app-meals',
+  templateUrl: './meals.page.html',
+  styleUrls: ['./meals.page.scss'],
+})
+export class MealsPage implements OnInit {
+  public menu = [];
+  public review = false; 
+  public data = {
+      uid: '',
+      Rating: 3,
+      Date: '',
+      'Posted By': '',
+      'Time': new Number,
+      Comment: ''
+  }
+
+  constructor(
+    private router: Router,
+    private firestore: AngularFirestore, 
+    private auth: AngularFireAuth,
+    public toastService: ToastService,
+    public storageService: StorageService
+    ) { }
+
+  ngOnInit() {
+    this.firestore.firestore.collection('Dining Halls').doc(history.state['Dining Hall']).get()
+      .then((res) => {
+        for(var meal in res.data()){
+          this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals").doc(res.data()[meal]).get()
+            .then((res) => {
+              this.menu.push(res.data());
+              })
+            .catch((error) => {
+              console.dir(error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.dir(error);
+      });
+  }
+
+  orderAction(item: string){
+    var today = new Date;
+    var data = {Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), uid: firebase.auth().currentUser.uid};
+      this.firestore.firestore.collection('Dining Halls/'+history.state['Dining Hall']+'/Meals/'+item+'/Order').doc().set(data)
+      .then(() => {
+        this.toastService.presentToast('Order Placed');
+      })
+      .catch((error) => {
+        console.dir(error);
+      })
+  }
+
+  submit(meal: string){
+    var today = new Date;
+    // this.data.meta
+    this.data.Time = today.getTime();
+    this.data.Date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    this.auth.currentUser.then((res) => {
+      this.data.uid = res.uid;
+      this.storageService.get(res.uid)
+        .then((res) => {
+          this.data["Posted By"] = res['Student Number']
+          this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/"+meal+"/Comments").doc().set(this.data)
+          this.toastService.presentToast('Review submitted.');
+          this.router.navigate(['main']);
+        })
+        .catch((error) => {
+          console.dir('error',error);
+        })
+    })
+    .catch((error) => {
+      console.dir('error',error);
+    });
+  }
+}
