@@ -15,7 +15,7 @@
 
       <ion-item>
         <ion-label>Current Account Balance</ion-label>
-        <ion-label>from database</ion-label>
+        <ion-label *ngIf="user">{{user['Amount Left']}}</ion-label>
       </ion-item>
     </ion-list>
 

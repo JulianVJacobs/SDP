@@ -8,15 +8,15 @@
       <form class="ion-padding" (submit)="addBook()">
         <ion-item>
           <ion-list>
-          <ion-input name="bookName" [(ngModel)]="bookName" placeholder="Book Name"></ion-input>
-          <ion-input name="bookPrice" [(ngModel)]="bookPrice" placeholder="Book Price"></ion-input>
+          <ion-input name="bookName" [(ngModel)]="data.Title" placeholder="Book Name"></ion-input>
+          <ion-input name="bookPrice" [(ngModel)]="data.Price" placeholder="Book Price"></ion-input>
           </ion-list> 
         </ion-item>
 
         <ion-item lines="none">
           <ion-list>
-          <ion-label>Upload image</ion-label>
-          <input type="file" name="inputFile" (change)="chooseFile($event)" required>
+          <ion-label>Upload images</ion-label>
+          <input type="file" name="inputFile" (change)="images = $event.target.files" multiple required>
           </ion-list>
         </ion-item>
     

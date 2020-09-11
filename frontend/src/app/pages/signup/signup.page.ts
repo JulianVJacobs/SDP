@@ -22,7 +22,7 @@ export class SignupPage implements OnInit {
       Surname: '',
       Role: 0,
       'Phone number': '',
-      'Amount Left': ''
+      'Amount Left': 0
     }
   };
 
