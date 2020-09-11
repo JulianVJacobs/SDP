@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/firestore";
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { LoadingController } from '@ionic/angular';
-import { StorageService } from 'src/app/services/storage.service';
-import { firebase } from '@firebase/app';
-import '@firebase/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-sell-books',
@@ -17,74 +15,42 @@ export class SellBooksPage implements OnInit {
       Description: '',
       'Image-URL': [],
       'Image-REF': [],
-      Owner: firebase.auth().currentUser.uid,
+      Owner: '',
       Price: '',
-      Title: ''
+      Title: '',
+      id: ''
   }
-
-  items: Observable<any[]>;
-
-  bookName: string = '';
-  bookPrice: string = '';
-  itemsRef: AngularFirestoreCollection;
-
-  selectedFile: any;
-  loading: HTMLIonLoadingElement;
+  public images: FileList
 
   constructor(
     private firestore: AngularFirestore, 
     private storage: AngularFireStorage, 
-    private storageService: StorageService,
-    private loadingController: LoadingController
+    private toast: ToastService,
+    private auth: AngularFireAuth
     ) { }
 
-  chooseFile (event) {
-    this.selectedFile = event.target.files
-  }
-
   addBook(){
-    // this.data.
-    // this.firestore.firestore.collection('Books').
-  //   this.itemsRef.add({
-  //     title: this.bookName,
-  //     price: this.bookPrice
-  //   })
-  //   .then(async resp => {
+    this.auth.currentUser.then((res) => {
+      this.data.Owner = res.uid;
+      for (var i =0; i < this.images.length; ++i){
+        this.storage.storage.ref().child('book_pic/'+this.images.item(i).name).put(this.images.item(i))
+            .then((res) => {
+              this.data["Image-REF"].push(res.ref.toString())
 
-  //     const imageUrl = await this.uploadFile(resp.id, this.selectedFile)
-
-  //     this.itemsRef.doc(resp.id).update({
-  //       id: resp.id,
-  //       imageUrl: imageUrl || null
-  //     })
-  //   }).catch(error => {
-  //     console.log(error);
-  //   })
-  }
-
-  addImage(img: string){
-    this.storage.storage.ref().child('book_pic/'+img);
-  }
-
-  // async uploadFile(id, file): Promise<any> {
-  //   if(file && file.length) {
-  //     try {
-  //       await this.presentLoading();
-  //       this.storage.storage.ref('book_pic/'+).
-  //   //     const task = await this.storage.ref('book_pic').child(id).put(file[0])
-  //   //     this.loading.dismiss();
-  //   //     return this.storage.ref(`book_pic/${id}`).getDownloadURL().toPromise();
-  //   //   } catch (error) {
-  //   //     console.log(error);
-  //     }
-  //   }
-  // }
-
-  async presentLoading() {
-    this.loading = await this.loadingController.create({
-      message: 'Please wait...'
-    });
-    return this.loading.present();
+              this.firestore.firestore.collection('Books').add(this.data)
+                .then(() => {
+                  this.toast.presentToast("Successful upload");
+                })
+                .catch((err) => {
+                  console.dir(err);
+                });
+            })
+            .catch((err) => {
+              console.log('Failure');
+              console.dir(err);
+            });
+      }
+    })
   }
 
   remove(item){
@@ -92,7 +58,7 @@ export class SellBooksPage implements OnInit {
     if(item.imageUrl) {
       this.storage.ref(`book_pic/${item.id}`).delete()
     }
-    this.itemsRef.doc(item.id).delete()
+    // this.itemsRef.doc(item.id).delete()
   }
 
   ngOnInit() {

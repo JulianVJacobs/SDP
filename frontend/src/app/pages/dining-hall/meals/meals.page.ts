@@ -23,6 +23,7 @@ export class MealsPage implements OnInit {
       'Time': new Number,
       Comment: ''
   }
+  public average: Number;
 
   constructor(
     private router: Router,
@@ -73,6 +74,27 @@ export class MealsPage implements OnInit {
         .then((res) => {
           this.data["Posted By"] = res['Student Number']
           this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/"+meal+"/Comments").doc().set(this.data)
+          this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/").doc(meal).get()
+            .then((res) => {
+              var u = res.data();
+              u.ratings.push(this.data.Rating);
+              u['Average Rating'] = 0;
+              u.ratings.forEach((v) => {
+                u['Average Rating'] += v;
+              });
+              u['Average Rating'] /= u.ratings.length;
+              this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/").doc(meal)
+                .update({
+                  ratings: u.ratings,
+                  'Average Rating': u['Average Rating']
+                })
+                .catch((err) => {
+                  console.dir(err);
+                });
+            })
+            .catch((error) => {
+              console.dir('error',error);
+            });
           this.toastService.presentToast('Review submitted.');
           this.router.navigate(['main']);
         })

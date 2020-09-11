@@ -15,6 +15,10 @@
         <ion-button slot="end" color="danger" (click)="buy(item)">Buy</ion-button>
       </ion-item>
 
+      <ion-item>
+        <ion-label>Current Account Balance</ion-label>
+        <ion-label *ngIf="user">{{user['Amount Left']}}</ion-label>
+      </ion-item>
     </ion-list>
 
 </ion-content>
