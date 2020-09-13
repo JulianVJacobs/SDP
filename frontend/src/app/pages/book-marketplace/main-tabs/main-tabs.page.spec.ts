@@ -12,12 +12,12 @@ describe('MainTabsPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConvoMealsPage ],
+      declarations: [ MainTabsPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ConvoMealsPage);
+    fixture = TestBed.createComponent(MainTabsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
