@@ -5,7 +5,7 @@ node_js:
   - "12"
 
 addons:
-  chrome: stable
+  chrome: beta
   
 before_install:
   - cd frontend
