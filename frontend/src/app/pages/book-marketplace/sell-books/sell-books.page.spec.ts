@@ -3,7 +3,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SellBooksPage } from './sell-meals.page';
+import { SellBooksPage } from './sell-books.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('SellBooksPage', () => {
@@ -12,12 +12,12 @@ describe('SellBooksPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConvoMealsPage ],
+      declarations: [ SellBooksPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [IonicModule.forRoot(),RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ConvoMealsPage);
+    fixture = TestBed.createComponent(SellBooksPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
