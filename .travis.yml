@@ -14,7 +14,7 @@ before_script:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
-  - npm run test
+  - npm run test --browsers=ChromeHeadlessCI
 
 after_script:
   - cat ../coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
