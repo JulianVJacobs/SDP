@@ -5,13 +5,10 @@ node_js:
   - "12"
 
 addons:
-  chrome: beta
+  chrome: stable
   
 before_install:
   - cd frontend
-
-before_script:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
 
 script:
   - npm run test --browsers=ChromeHeadlessCI
