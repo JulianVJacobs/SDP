@@ -9,7 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
-fdescribe('IndexGuard', () => {
+describe('IndexGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -33,7 +33,7 @@ fdescribe('IndexGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  describe('canActivate():', () => {
+  xdescribe('canActivate():', () => {
     let guard: IndexGuard;
     let storageService: StorageService;
     let auth: AngularFireAuth;
