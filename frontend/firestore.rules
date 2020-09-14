@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	match /users/{userid}{
+    allow read: if request.auth != null;
+    allow write: if logged();
+    }
+    match /Books/{bookid}{
+    	allow read: if logged();
+      allow delete: if logged();
+      allow write: if logged() && isvalid();  
+    }
+    match /Dining%20Halls/{dhid}{
+    	allow read: if logged() ;
+    		match /Meals/{mealid=**}{
+      	allow read: if logged();
+        allow write: if logged();
+      	}
+    }
+    
+    function logged(){
+      	return request.auth != null;
+      }
+    function isvalid(){
+      	return request.resource.data.Owner == request.auth.uid;
+      }
+    
+  }
+}

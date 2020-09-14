@@ -1,7 +1,7 @@
-import { Injectable, resolveForwardRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
-import { firebase } from '@firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,9 @@ import { firebase } from '@firebase/app';
 export class IndexGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise(resolve => {
-      this.storageService.get(firebase.auth().currentUser.uid).then( res => {
+      this.auth.currentUser
+        .then((res) => {
+          this.storageService.get(res.uid).then( res => {
         if (res) {
           this.router.navigate(['home']);
           resolve(false);
@@ -20,8 +22,13 @@ export class IndexGuard implements CanActivate {
       }).catch(err => {
           resolve(false);
       });
+    })
     });
   }
 
-  constructor(public storageService: StorageService, private router: Router) { }
+  constructor(
+    public storageService: StorageService, 
+    private auth: AngularFireAuth,
+    private router: Router
+    ) { }
 }

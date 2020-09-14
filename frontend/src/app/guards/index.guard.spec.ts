@@ -5,12 +5,22 @@ import { Router } from '@angular/router';
 import { IndexGuard } from './index.guard';
 import { StorageService } from '../services/storage.service';
 import { throwError } from 'rxjs';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
 
-xdescribe('IndexGuard', () => {
+describe('IndexGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      providers: [IndexGuard]
+      imports: [
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        RouterTestingModule
+      ],
+      providers: [
+        IndexGuard,
+        StorageService,
+        AngularFireAuth
+      ]
     });
   });
 
@@ -23,9 +33,9 @@ xdescribe('IndexGuard', () => {
   }));  
 
   xdescribe('canActivate():', () => {
-    let location: Location;
     let guard: IndexGuard;
     let storageService: StorageService;
+    let auth: AngularFireAuth;
     let storageServiceSpy: any;
     let router: Router;
     let routerSpy: any;
@@ -38,7 +48,7 @@ xdescribe('IndexGuard', () => {
       
       storageServiceSpy.and.returnValue(Promise.resolve(false));
       router.initialNavigation();
-      guard = new IndexGuard(storageService,router); 
+      guard = new IndexGuard(storageService,auth,router); 
       
       guard.canActivate()
         .then((resolve) => {
@@ -56,7 +66,7 @@ xdescribe('IndexGuard', () => {
       
       storageServiceSpy.and.returnValue(Promise.resolve(true));
       router.initialNavigation();
-      guard = new IndexGuard(storageService,router); 
+      guard = new IndexGuard(storageService,auth,router); 
       
       guard.canActivate()
         .then((resolve) => {
@@ -74,7 +84,7 @@ xdescribe('IndexGuard', () => {
       
       storageServiceSpy.and.returnValue(Promise.resolve(throwError({})));
       router.initialNavigation();
-      guard = new IndexGuard(storageService,router); 
+      guard = new IndexGuard(storageService,auth,router); 
       
       guard.canActivate();
       done();

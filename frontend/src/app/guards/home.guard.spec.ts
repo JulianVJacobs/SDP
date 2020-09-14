@@ -7,18 +7,23 @@ import { StorageService } from '../services/storage.service';
 import { routes } from '../home/home-routing.module';
 import { HomePageModule } from '../home/home.module';
 import { throwError } from 'rxjs';
-import { firebase } from '@firebase/app';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
 
-xdescribe('HomeGuard', () => {
+describe('HomeGuard', () => {
   beforeEach(() => {
-    firebase.initializeApp(environment.firebaseConfig);
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes(routes),
         HomePageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig)
       ],
-      providers: [HomeGuard, StorageService]
+      providers: [
+        HomeGuard, 
+        StorageService,
+        AngularFireAuth
+      ]
     });
   });
 
@@ -30,10 +35,11 @@ xdescribe('HomeGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  describe('canActivate():', () => {
+  xdescribe('canActivate():', () => {
     let guard: HomeGuard;
     let storageService: StorageService;
     let storageServiceSpy: any;
+    let auth: AngularFireAuth;
     let router: Router;
     let routerSpy: any;
 
@@ -45,7 +51,7 @@ xdescribe('HomeGuard', () => {
 
       storageServiceSpy.and.returnValue(Promise.resolve(false));
       router.initialNavigation();
-      guard = new HomeGuard(storageService,router); 
+      guard = new HomeGuard(storageService,auth,router); 
       
       guard.canActivate()
         .then((resolve) => {
@@ -63,7 +69,7 @@ xdescribe('HomeGuard', () => {
       
       storageServiceSpy.and.returnValue(Promise.resolve(true));
       router.initialNavigation();
-      guard = new HomeGuard(storageService,router); 
+      guard = new HomeGuard(storageService,auth,router); 
       
       guard.canActivate()
         .then((resolve) => {
@@ -81,7 +87,7 @@ xdescribe('HomeGuard', () => {
       
       storageServiceSpy.and.returnValue(Promise.resolve(throwError({})));
       router.initialNavigation();
-      guard = new HomeGuard(storageService,router); 
+      guard = new HomeGuard(storageService,auth,router); 
       
       guard.canActivate();
       done();
