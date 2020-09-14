@@ -11,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 
-describe('HomeGuard', () => {
+fdescribe('HomeGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [

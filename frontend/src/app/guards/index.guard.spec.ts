@@ -6,14 +6,15 @@ import { IndexGuard } from './index.guard';
 import { StorageService } from '../services/storage.service';
 import { throwError } from 'rxjs';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
-describe('IndexGuard', () => {
+fdescribe('IndexGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
         AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
         RouterTestingModule
       ],
       providers: [
@@ -32,10 +33,11 @@ describe('IndexGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  xdescribe('canActivate():', () => {
+  describe('canActivate():', () => {
     let guard: IndexGuard;
     let storageService: StorageService;
     let auth: AngularFireAuth;
+    let authSpy: any;
     let storageServiceSpy: any;
     let router: Router;
     let routerSpy: any;
@@ -45,6 +47,9 @@ describe('IndexGuard', () => {
       storageServiceSpy = spyOn(storageService,'get');
       router = TestBed.get(Router);
       routerSpy = spyOn(router,'navigate');
+      auth = TestBed.get(AngularFireAuth);
+      authSpy = spyOn(auth,'signInWithEmailAndPassword').and.stub();
+      authSpy
       
       storageServiceSpy.and.returnValue(Promise.resolve(false));
       router.initialNavigation();
@@ -52,9 +57,12 @@ describe('IndexGuard', () => {
       
       guard.canActivate()
         .then((resolve) => {
-          expect(resolve).toBeTruthy();
-          expect(routerSpy).not.toHaveBeenCalled();
-          done();
+          authSpy.currentUser
+            .then((res) => {
+              expect(resolve).toBeTruthy();
+              expect(routerSpy).not.toHaveBeenCalled();
+              done();
+            })
       });
     });
 
