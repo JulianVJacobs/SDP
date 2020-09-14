@@ -34,12 +34,16 @@ export class BuyBooksPage implements OnInit {
                   .then((res) => {
                     var v = res.data();
                     v['Amount Left'] += parseFloat(item.Price);
-                    this.firestore.firestore.collection('users').doc(item.Owner).update({'Amount Left': v['Amount Left'] })
-                      .then(() => {
-                        this.firestore.firestore.collection('Books').doc(item.id).delete();
-                        this.toast.presentToast("Successful purchase");
-                        this.ngOnInit();
+                    this.firestore.firestore.collection('users').doc(item.Owner)
+                      .update(
+                        {
+                          'Amount Left': v['Amount Left'] 
                       })
+                        .then(() => {
+                          this.firestore.firestore.collection('Books').doc(item.id).delete();
+                          this.toast.presentToast("Successful purchase");
+                          this.ngOnInit();
+                        })
                   })              
                   .catch((err) => {
                     console.dir(err);

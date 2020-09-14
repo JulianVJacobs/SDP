@@ -23,6 +23,7 @@ export class MealsPage implements OnInit {
       'Time': new Number,
       Comment: ''
   }
+  public dh = '';
   public average: Number;
 
   constructor(
@@ -34,10 +35,11 @@ export class MealsPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.firestore.firestore.collection('Dining Halls').doc(history.state['Dining Hall']).get()
+    this.dh = history.state['Dining Hall'];
+    this.firestore.firestore.collection('Dining Halls').doc(this.dh).get()
       .then((res) => {
         for(var meal in res.data()){
-          this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals").doc(res.data()[meal]).get()
+          this.firestore.firestore.collection("Dining Halls/"+this.dh+"/Meals").doc(res.data()[meal]).get()
             .then((res) => {
               this.menu.push(res.data());
               })
@@ -54,7 +56,7 @@ export class MealsPage implements OnInit {
   orderAction(item: string){
     var today = new Date;
     var data = {Time: today.getTime(), Date: today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), uid: firebase.auth().currentUser.uid};
-      this.firestore.firestore.collection('Dining Halls/'+history.state['Dining Hall']+'/Meals/'+item+'/Order').doc().set(data)
+      this.firestore.firestore.collection('Dining Halls/'+this.dh+'/Meals/'+item+'/Order').doc().set(data)
       .then(() => {
         this.toastService.presentToast('Order Placed');
       })
@@ -73,8 +75,8 @@ export class MealsPage implements OnInit {
       this.storageService.get(res.uid)
         .then((res) => {
           this.data["Posted By"] = res['Student Number']
-          this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/"+meal+"/Comments").doc().set(this.data)
-          this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/").doc(meal).get()
+          this.firestore.firestore.collection("Dining Halls/"+this.dh+"/Meals/"+meal+"/Comments").doc().set(this.data)
+          this.firestore.firestore.collection("Dining Halls/"+this.dh+"/Meals/").doc(meal).get()
             .then((res) => {
               var u = res.data();
               u.ratings.push(this.data.Rating);
@@ -83,20 +85,22 @@ export class MealsPage implements OnInit {
                 u['Average Rating'] += v;
               });
               u['Average Rating'] /= u.ratings.length;
-              this.firestore.firestore.collection("Dining Halls/"+history.state['Dining Hall']+"/Meals/").doc(meal)
+              u.uid = this.data['Posted By']
+              this.firestore.firestore.collection("Dining Halls/"+this.dh+"/Meals/").doc(meal)
                 .update({
+                  uid: u.uid,
                   ratings: u.ratings,
                   'Average Rating': u['Average Rating']
                 })
                 .catch((err) => {
                   console.dir(err);
                 });
+                this.toastService.presentToast('Review submitted.');
+                this.router.navigate(['main']);
             })
             .catch((error) => {
               console.dir('error',error);
             });
-          this.toastService.presentToast('Review submitted.');
-          this.router.navigate(['main']);
         })
         .catch((error) => {
           console.dir('error',error);
