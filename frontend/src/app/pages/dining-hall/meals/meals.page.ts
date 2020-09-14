@@ -34,6 +34,7 @@ export class MealsPage implements OnInit {
     public storageService: StorageService
     ) { }
 
+  // it seems that ngOnInit isn't called everytime there's a reroute
   ngOnInit() {
     this.dh = history.state['Dining Hall'];
     this.firestore.firestore.collection('Dining Halls').doc(this.dh).get()

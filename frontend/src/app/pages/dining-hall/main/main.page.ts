@@ -18,6 +18,7 @@ export class MainPage implements OnInit {
     ) {}
 
   goto(num: string){
+    console.log(num)
     if(num == "1"){//convo
       this.router.navigateByUrl('/home/meals', { state : {
         'Dining Hall' : 'Convocation'

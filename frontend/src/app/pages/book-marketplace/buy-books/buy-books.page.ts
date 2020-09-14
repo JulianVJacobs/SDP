@@ -12,7 +12,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./buy-books.page.scss'],
 })
 export class BuyBooksPage implements OnInit {
- public items = []; public user: {};
+ public items = []; public user: {}; public uid: string;
 
   constructor(
     private firestore: AngularFirestore,
@@ -26,24 +26,41 @@ export class BuyBooksPage implements OnInit {
     if (this.user['Amount Left'] >= item.Price){
         this.auth.currentUser
           .then((res) => {
+            this.uid = res.uid;
             this.user['Amount Left'] = parseFloat(this.user['Amount Left']) - parseFloat(item.Price);
             this.firestore.firestore.collection('users').doc(res.uid).update({'Amount Left': this.user['Amount Left'] })
               .then(() => {
-                this.firestore.firestore.collection('Books').doc(item.id).delete();
-                this.firestore.firestore.collection('users').doc(item.Owner).get()
-                  .then((res) => {
-                    var v = res.data();
-                    v['Amount Left'] += parseFloat(item.Price);
-                    this.firestore.firestore.collection('users').doc(item.Owner)
-                      .update(
-                        {
-                          'Amount Left': v['Amount Left'] 
-                      })
-                        .then(() => {
-                          this.firestore.firestore.collection('Books').doc(item.id).delete();
-                          this.toast.presentToast("Successful purchase");
-                          this.ngOnInit();
-                        })
+                this.firestore.firestore.collection('Books').doc(item.id).get()
+                  .then((res) =>{
+                    this.firestore.firestore.collection('Books').doc(item.id).update({ id : this.uid })
+                      .then(() => {
+                        this.firestore.firestore.collection('Books').doc(item.id).delete()
+                          .then(() => {
+                            console.log("Book deleted.")
+                          })
+                          .catch((err) => {
+                            console.dir(err);
+                          });
+                      })   
+                      .catch((err) => {
+                        console.dir(err);
+                      });                 
+                  })
+                  .catch((err) => {
+                    console.dir(err);
+                  });
+            this.firestore.firestore.collection('users').doc(item.Owner).get()
+              .then((res) => {
+                var v = res.data();
+                v['Amount Left'] += parseFloat(item.Price);
+                this.firestore.firestore.collection('users').doc(item.Owner).update({ 'Amount Left': v['Amount Left'] })
+                    .then(() => {
+                      this.toast.presentToast("Successful purchase");
+                      this.ngOnInit();
+                    })
+                    .catch((err) => {
+                      console.dir(err);
+                    })
                   })              
                   .catch((err) => {
                     console.dir(err);
@@ -70,6 +87,7 @@ export class BuyBooksPage implements OnInit {
           this.user = res;
       })
     })
+    this.items = [];
     this.firestore.firestore.collection('Books').get()
       .then((res) => {
         res.docs.forEach((doc) => {
