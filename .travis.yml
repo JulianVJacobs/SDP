@@ -1,18 +1,14 @@
 dist: trusty
 
+dependencies:
+  - firebase_core : ^0.5.0
+
 language: node_js
 node_js:
   - "12"
-
-# addons:
-#   chrome: stable
   
 before_install:
   - cd frontend
-
-# before_script:
-  # - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
-  # - firefox --headless
 
 script:
   - npm run test -- --no-watch --code-coverage --reporters=coverage,coveralls --no-progress --browsers=FirefoxHeadless
