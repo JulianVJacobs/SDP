@@ -4,8 +4,8 @@ language: node_js
 node_js:
   - "12"
 
-addons:
-  chrome: stable
+# addons:
+#   chrome: stable
   
 before_install:
   - cd frontend
