@@ -35,7 +35,7 @@ module.exports = function (config) {
       },
       FirefoxHeadless: {
         base: 'Firefox',
-        flags: ['--headless']
+        flags: ['-headless']
       }
     },
     singleRun: false
