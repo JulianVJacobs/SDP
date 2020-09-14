@@ -10,12 +10,12 @@ node_js:
 before_install:
   - cd frontend
 
-before_script:
+# before_script:
   # - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &
-  - firefox --headless
+  # - firefox --headless
 
 script:
-  - npm run test -- --no-watch --code-coverage --reporters=coverage,coveralls --no-progress --browsers=Firefox
+  - npm run test -- --no-watch --code-coverage --reporters=coverage,coveralls --no-progress --browsers=FirefoxHeadless
 
 after_script:
   - cat ../coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
