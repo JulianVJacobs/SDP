@@ -34,7 +34,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       },
       FirefoxHeadless: {
-        base: 'ChromeHeadless',
+        base: 'firefox',
         flags: ['--headless']
       }
     },
