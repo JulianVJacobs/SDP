@@ -11,7 +11,10 @@ import { throwError } from 'rxjs';
 describe('HomeGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(routes),HomePageModule],
+      imports: [
+        RouterTestingModule.withRoutes(routes),
+        HomePageModule,
+      ],
       providers: [HomeGuard, StorageService]
     });
   });

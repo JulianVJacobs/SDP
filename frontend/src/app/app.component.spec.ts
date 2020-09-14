@@ -57,8 +57,8 @@ describe('AppRoutingModule', () => {
     router = TestBed.get(Router);
   }));
 
-  it('should have 13 routes', () => {
-    expect(router.config.length).toBe(13);
+  it('should have 9 routes', () => {
+    expect(router.config.length).toBe(9);
   });
 
   it('should have a / route', () => {
