@@ -36,7 +36,6 @@ export class BuyBooksPage implements OnInit {
                       .then(() => {
                         this.firestore.firestore.collection('Books').doc(item.id).delete()
                           .then(() => {
-                            console.log("Book deleted.")
                           })
                           .catch((err) => {
                             console.dir(err);
