@@ -9,6 +9,7 @@
 
       <div class="actions">
         <ion-card *ngFor="let item of items">
+
           <img [(src)]="item['Image-URL']" alt="">
           
           <ion-list>
@@ -16,6 +17,7 @@
             <ion-label>C {{ item.Price }} <br></ion-label>
             <ion-button expand="block" (click)="buy(item)">Buy</ion-button>
           </ion-list>
+
         </ion-card>
       </div>
       

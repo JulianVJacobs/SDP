@@ -6,7 +6,8 @@ import { BuyBooksPage } from './buy-books.page';
 const routes: Routes = [
   {
     path: '',
-    component: BuyBooksPage,
+    component: BuyBooksPage
+
   }
 ];
 
