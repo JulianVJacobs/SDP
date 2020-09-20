@@ -58,6 +58,7 @@ export class BuyBooksPage implements OnInit {
                     .then(() => {
                       this.toast.presentToast("Successful purchase");
                       this.ngOnInit();
+                      this.router.navigate(['main-tabs']);
                     })
                     .catch((err) => {
                       console.dir(err);
@@ -76,7 +77,6 @@ export class BuyBooksPage implements OnInit {
             console.dir(err);
           });
 
-          this.router.navigate(['main-tabs']);
     }
     else{
       this.toast.presentToast("You don't have enough credits for that.");
