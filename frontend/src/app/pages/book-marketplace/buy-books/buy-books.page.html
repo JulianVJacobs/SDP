@@ -8,16 +8,15 @@
       </ion-text>
 
       <div class="actions">
-        <ion-item id="rounded" *ngFor="let item of items">
-          <ion-thumbnail slot="start" *ngIf="item['Image-URL']">
-            <img [(src)]="item['Image-URL']" alt="">
-          </ion-thumbnail>
+        <ion-card *ngFor="let item of items">
+          <img [(src)]="item['Image-URL']" alt="">
+          
           <ion-list>
             <h1>{{ item.Title }}</h1>
-            <ion-label>C {{ item.Price }}</ion-label>
-            <ion-button (click)="buy(item)">Buy</ion-button>
+            <ion-label>C {{ item.Price }} <br></ion-label>
+            <ion-button expand="block" (click)="buy(item)">Buy</ion-button>
           </ion-list>
-        </ion-item>
+        </ion-card>
       </div>
       
     </ion-list>
