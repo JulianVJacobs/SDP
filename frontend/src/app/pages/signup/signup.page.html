@@ -20,6 +20,49 @@
           <ion-label position="stacked">Last Name</ion-label>
           <ion-input name="surname" [(ngModel)]="data.user.Surname"></ion-input>
         </ion-item>
+
+        <!-- not sure about that "PhoneNumber" so possible bugs -->
+        <ion-item>
+          <ion-label position="stacked">Phone Number</ion-label>
+          <ion-input type="tel" name="surname" [(ngModel)]="data.user.PhoneNumber"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Residence</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="bar">Barnato</ion-select-option>
+            <ion-select-option value="braam">Braamfontein Centre</ion-select-option>
+            <ion-select-option value="dw">David Webster</ion-select-option>
+            <ion-select-option value="eoh">EOH</ion-select-option>
+            <ion-select-option value="gir">Girton</ion-select-option>
+            <ion-select-option value="ih">International House</ion-select-option>
+            <ion-select-option value="jub">Jubilee</ion-select-option>
+            <ion-select-option value="jct">Junction</ion-select-option>
+            <ion-select-option value="kno">Knockando</ion-select-option>
+            <ion-select-option value="med">Medhurst</ion-select-option>
+            <ion-select-option value="men">Men’s Res</ion-select-option>
+            <ion-select-option value="nos">Noswal</ion-select-option>
+            <ion-select-option value="rei">Reith</ion-select-option>
+            <ion-select-option value="ren">Rennie House</ion-select-option>
+            <ion-select-option value="sun">Sunnyside</ion-select-option>
+            <ion-select-option value="wcv">West Campus Village</ion-select-option>
+            <ion-select-option value="yv">Yale Village</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Campus</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="main">Braamfontein Cluster</ion-select-option>
+            <ion-select-option value="parktown">Parktown Cluster</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Room Number</ion-label>
+          <ion-input name="roomNumber" type="password" [(ngModel)]="data.user.ResNumber"></ion-input>
+        </ion-item>
+
   
         <ion-item>
           <ion-label position="stacked">Password</ion-label>
