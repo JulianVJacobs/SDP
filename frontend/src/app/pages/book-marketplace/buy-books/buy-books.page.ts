@@ -5,6 +5,7 @@ import { LoadingController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-books',
@@ -19,7 +20,8 @@ export class BuyBooksPage implements OnInit {
     private storage: AngularFireStorage, 
     private auth: AngularFireAuth,
     private toast: ToastService,
-    private storageService: StorageService
+    private storageService: StorageService,
+    private router: Router
     ) { }
 
   buy(item: any){
@@ -56,6 +58,7 @@ export class BuyBooksPage implements OnInit {
                     .then(() => {
                       this.toast.presentToast("Successful purchase");
                       this.ngOnInit();
+                      this.router.navigate(['book-delivery']);
                     })
                     .catch((err) => {
                       console.dir(err);
@@ -73,6 +76,7 @@ export class BuyBooksPage implements OnInit {
           .catch((err) => {
             console.dir(err);
           });
+
     }
     else{
       this.toast.presentToast("You don't have enough credits for that.");

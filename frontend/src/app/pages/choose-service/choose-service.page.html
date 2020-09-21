@@ -1,21 +1,24 @@
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-text>
-    <h1>Choose a Service</h1>
-  </ion-text>
-  <div class="actions">
-      <ion-card (click)= "foodAction()">
-        <img src="../../assets/images/cfood.jpg"/>
-        <ion-card-header>
-          <ion-card-title>Dining Hall</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-
-      <ion-card (click)= "bookAction()">
-        <img src="../../assets/images/cbooks.jpg"/>
-        <ion-card-header>
-          <ion-card-title>Text Books</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-  </div>
+  <ion-list>
+    <ion-text>
+      <h1>Choose a Service</h1>
+    </ion-text>
+    <div class="actions">
+        <ion-card (click)= "foodAction()">
+          <img src="../../assets/images/cfood.jpg"/>
+          <ion-card-header>
+            <ion-card-title>Dining Hall</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+  
+        <ion-card (click)= "bookAction()">
+          <img src="../../assets/images/cbooks.jpg"/>
+          <ion-card-header>
+            <ion-card-title>Text Books</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </div>
+  </ion-list>
+  
 
 </ion-content>

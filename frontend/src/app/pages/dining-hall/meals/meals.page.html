@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 <ion-list>
 
-<div *ngFor="let item of menu" >
+<div class="actions" *ngFor="let item of menu" >
   <ion-card>
     <img src={{item.image}}/>
     <ion-card-header>
@@ -12,9 +12,9 @@
       Allergens:
       {{item.allergens}}
     </ion-card-content>
-    <ion-button (click)="orderAction(item.name)">Order</ion-button>
+    <ion-button expand="block"(click)="orderAction(item.name)">Order</ion-button>
     <div *ngIf="review == false; else reviewBlock">
-      <ion-button (click)="review = !review">Make Review</ion-button>
+      <ion-button expand="block" (click)="review = !review">Make Review</ion-button>
     </div>
     <ng-template #reviewBlock>
       <ion-list>
@@ -32,7 +32,7 @@
         </ion-item>
       </ion-list>
 
-      <ion-button (click)="review = !review; submit(item.name)">Submit</ion-button>
+      <ion-button expand="block" (click)="review = !review; submit(item.name)">Submit</ion-button>
     </ng-template>
   </ion-card>
 </div>

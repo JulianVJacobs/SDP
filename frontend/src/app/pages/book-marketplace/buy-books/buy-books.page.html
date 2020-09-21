@@ -4,22 +4,22 @@
 
       <ion-text>
         <h1>Buy Books</h1>
+        <h2 *ngIf="user">Balance:   C {{user['Amount Left']}}</h2>
       </ion-text>
 
-      <ion-item>
-        <ion-label>Account Balance</ion-label>
-        <ion-label *ngIf="user">{{user['Amount Left']}}</ion-label>
-      </ion-item>
+      <div class="actions">
+        <ion-card *ngFor="let item of items">
 
-      <ion-item *ngFor="let item of items">
-        <ion-thumbnail slot="start" *ngIf="item['Image-URL']">
           <img [(src)]="item['Image-URL']" alt="">
-        </ion-thumbnail>
-        <ion-label>{{ item.Title }}</ion-label>
-        <ion-label>{{ item.Price }}</ion-label>
-        <ion-button slot="end" color="danger" (click)="buy(item)">Buy</ion-button>
-      </ion-item>
+          
+          <ion-list>
+            <h1>{{ item.Title }}</h1>
+            <ion-label>C {{ item.Price }} <br></ion-label>
+            <ion-button expand="block" (click)="buy(item)">Buy</ion-button>
+          </ion-list>
 
+        </ion-card>
+      </div>
       
     </ion-list>
 
