@@ -41,11 +41,15 @@ export const routes: Routes = [
   {
     path: 'main-tabs',
     loadChildren: () => import('./pages/book-marketplace/main-tabs/main-tabs.module').then( m => m.MainTabsPageModule)
-  },   
+  },   {
+    path: 'book-message',
+    loadChildren: () => import('./pages/book-marketplace/book-message/book-message.module').then( m => m.BookMessagePageModule)
+  },
   {
-    path: 'book-delivery',
-    loadChildren: () => import('./pages/book-marketplace/book-delivery/book-delivery.module').then( m => m.BookDeliveryPageModule)
+    path: 'dh-message',
+    loadChildren: () => import('./pages/dining-hall/dh-message/dh-message.module').then( m => m.DhMessagePageModule)
   }
+  
  
 ];
  

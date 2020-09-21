@@ -22,12 +22,16 @@
    p{
     font-size:  15px;
     font-style: bold;
+    color: #ffffff;
+    a{
+      color: #1D63F0;
+    }
   }
   
    .actions{
       position: absolute;
       width: 90%;
-      bottom: 5%;
+      bottom: 0.5%;
       left: 2%;
       color: #ffffff;
       font-style: bold;

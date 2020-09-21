@@ -24,6 +24,10 @@ export class BuyBooksPage implements OnInit {
     private router: Router
     ) { }
 
+  message(item: any){
+    this.router.navigate(['book-message']);
+  }
+
   buy(item: any){
     if (this.user['Amount Left'] >= item.Price){
         this.auth.currentUser
@@ -58,7 +62,6 @@ export class BuyBooksPage implements OnInit {
                     .then(() => {
                       this.toast.presentToast("Successful purchase");
                       this.ngOnInit();
-                      this.router.navigate(['book-delivery']);
                     })
                     .catch((err) => {
                       console.dir(err);
