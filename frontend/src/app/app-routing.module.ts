@@ -41,16 +41,13 @@ export const routes: Routes = [
   {
     path: 'main-tabs',
     loadChildren: () => import('./pages/book-marketplace/main-tabs/main-tabs.module').then( m => m.MainTabsPageModule)
-  },   {
-    path: 'book-message',
-    loadChildren: () => import('./pages/book-marketplace/book-message/book-message.module').then( m => m.BookMessagePageModule)
   },
   {
-    path: 'dh-message',
-    loadChildren: () => import('./pages/dining-hall/dh-message/dh-message.module').then( m => m.DhMessagePageModule)
+    path: 'message',
+    loadChildren: () => import('./pages/message/message.module').then( m => m.MessagePageModule)
   }
   
- 
+
 ];
  
 @NgModule({

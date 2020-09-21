@@ -25,7 +25,7 @@ export class BuyBooksPage implements OnInit {
     ) { }
 
   message(item: any){
-    this.router.navigate(['book-message']);
+    this.router.navigate(['message']);
   }
 
   buy(item: any){
