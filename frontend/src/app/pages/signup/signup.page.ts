@@ -21,6 +21,9 @@ export class SignupPage implements OnInit {
       Name: '',
       Surname: '',
       Role: 0,
+      Campus: '',
+      Res: '',
+      'Res Number': '',
       'Phone number': '',
       'Amount Left': 0
     }

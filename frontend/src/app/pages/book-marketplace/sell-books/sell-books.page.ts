@@ -40,6 +40,15 @@ export class SellBooksPage implements OnInit {
               this.firestore.firestore.collection('Books').add(this.data)
                 .then(() => {
                   this.toast.presentToast("Successful upload");
+                  this.data = {
+                    Description: '',
+                    'Image-URL': [],
+                    'Image-REF': [],
+                    Owner: '',
+                    Price: '',
+                    Title: '',
+                    id: ''
+                  }
                 })
                 .catch((err) => {
                   console.dir(err);
