@@ -33,7 +33,8 @@ export class SellBooksPage implements OnInit {
     ) { }
 
   addBook(){
-      
+    this.auth.currentUser.then((res) => {
+      this.data.Owner = res.uid;
       for (var i =0; i < this.images.length; ++i){
         this.storage.storage.ref().child('book_pic/'+this.images.item(i).name).put(this.images.item(i))
             .then((res) => {

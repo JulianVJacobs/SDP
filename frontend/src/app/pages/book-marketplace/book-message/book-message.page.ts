@@ -19,8 +19,6 @@ export class BookMessagePage implements OnInit {
     Owner: '',
     message: ''
 }
-
- ;
   
   _chatSubscription;
   
@@ -39,7 +37,7 @@ export class BookMessagePage implements OnInit {
 
     sendMessage() {
       
-      this.storage.storage.ref().child('chats/').put
+      this.storage.storage.ref().child('chats/').push({
         username: this.username,
         message: this.message
       }).then( () => {
