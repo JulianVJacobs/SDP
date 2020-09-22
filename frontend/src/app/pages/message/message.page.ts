@@ -41,18 +41,23 @@ export class MessagePage implements OnInit {
       }
     }
   ]
-  */
+  */  
 
   ngOnInit() {
     this.item = history.state.item;
     this.auth.currentUser.then((res) => {
-      this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.item.Owner).get()
-        .then((res) => {
-          this.messages = res.data().Messages;
-        })
-        .catch((err) => {
+      this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.item.Owner)
+        .onSnapshot((snap) => {
+          try {
+            this.messages = snap.data().Messages;
+          }
+          catch {
+            this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.item.Owner).set({ Messages: [] })
+            this.ngOnInit();
+          }
+        },(err) => {
           console.dir(err);
-        });
+        })
       this.storageService.get(res.uid)
         .then((res) => {
           this.user = res;
@@ -76,22 +81,27 @@ export class MessagePage implements OnInit {
             Messages: this.messages
         })
         .then(() => {
-          this.reply.metadata.type = "received"
-          this.messages[-1] = this.reply;
-          this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid)
-            .update({ 
-                Messages: this.messages
+            this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid).get()
+              .then((res) => {
+                try {
+                  var m = res.data().Messages;
+                  this.reply.metadata.type = "received";
+                  m.push(this.reply);
+                }
+                catch {
+                  this.reply.metadata.type = "received";
+                  this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid)
+                    .set({ 
+                      Messages: this.reply
+                     })
+                  }
+                this.reply.content = '';
+              })
+              .catch((err) => {
+                console.dir(err);
+              })   
             })
-            .then(() => {
-              this.reply.content = '';
-            })
-            .catch((err) => {
-              console.dir(err);
-            });    
-        })
-        .catch((err) => {
-          console.dir(err);
-        });          
+                 
     })
   }
   
