@@ -35,6 +35,13 @@ export class BuyBooksPage implements OnInit {
     private router: Router
     ) { }
 
+  message(item: any){
+    // this.router.navigate(['message']);
+    this.router.navigateByUrl('message', { state : {
+      'item' : item
+    }});
+  }
+
   buy(item: any){
     if (this.user['Amount Left'] >= item.Price){
         this.auth.currentUser
