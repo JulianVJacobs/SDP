@@ -17,6 +17,11 @@ export class MainPage implements OnInit {
     private router: Router,
     ) {}
 
+  message(num: string){
+    //do something with num to get which dining hall it is
+    this.router.navigate(['message']);
+  }
+
   goto(num: string){
     console.log(num)
     if(num == "1"){//convo

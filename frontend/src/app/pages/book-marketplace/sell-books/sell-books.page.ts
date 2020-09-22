@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastService } from 'src/app/services/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sell-books',
@@ -21,12 +22,14 @@ export class SellBooksPage implements OnInit {
       id: ''
   }
   public images: FileList
+  
 
   constructor(
     private firestore: AngularFirestore, 
     private storage: AngularFireStorage, 
     private toast: ToastService,
-    private auth: AngularFireAuth
+    private auth: AngularFireAuth,
+    private router: Router
     ) { }
 
   addBook(){
@@ -49,6 +52,7 @@ export class SellBooksPage implements OnInit {
                     Title: '',
                     id: ''
                   }
+                  this.router.navigate(['sell-books']);
                 })
                 .catch((err) => {
                   console.dir(err);

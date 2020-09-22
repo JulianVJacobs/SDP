@@ -3,7 +3,7 @@
 }
   
    ion-text{
-     position: absolute;
+     position: relative;
      top: 10%;
   
      h1{
@@ -15,10 +15,10 @@
    }
   
    .actions{
-     position: absolute;
+     position: relative;
      width: 80%;
-     bottom: 12%;
-     margin-left: 5%;
+     margin-bottom: 10%;
+     margin-left: 10%;
   
    }
 

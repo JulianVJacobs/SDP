@@ -1,5 +1,5 @@
 ion-text{
-    position: absolute;
+    position: relative;
     top: 3%;
  
     h1{
@@ -22,8 +22,8 @@ ion-text{
 }
 
 .actions{
-
-  margin-top: 40%;
+  position: relative;
+  margin-top: 15%;
   ion-button{
     --border-radius: 9px;
     --box-shadow: none;

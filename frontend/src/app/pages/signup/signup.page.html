@@ -1,30 +1,23 @@
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-text>
-    <h1>Sign Up</h1>
-  </ion-text>
   <div class="input">
     <form>
       <ion-list>
 
         <ion-item>
-          <ion-label position="stacked">Person Number</ion-label>
-          <ion-input type="tel" name="personNumber" [(ngModel)]="data.user['Student Number']"></ion-input>
+          <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.auth.PersonNumber"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="stacked">First Name</ion-label>
-          <ion-input name="name" [(ngModel)]="data.user.Name"></ion-input>
+          <ion-input placeholder="Name" name="name" [(ngModel)]="data.user.Name"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="stacked">Last Name</ion-label>
-          <ion-input name="surname" [(ngModel)]="data.user.Surname"></ion-input>
+          <ion-input placeholder="Last Name" name="surname" [(ngModel)]="data.user.Surname"></ion-input>
         </ion-item>
 
         <!-- not sure about that "PhoneNumber" so possible bugs -->
         <ion-item>
-          <ion-label position="stacked">Phone Number</ion-label>
-          <ion-input type="tel" name="surname" [(ngModel)]="data.user.PhoneNumber"></ion-input>
+          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user.PhoneNumber"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -59,14 +52,12 @@
         </ion-item>
 
         <ion-item>
-          <ion-label>Room Number</ion-label>
-          <ion-input name="roomNumber" type="password" [(ngModel)]="data.user.ResNumber"></ion-input>
+          <ion-input placeholder="Room Number" name="roomNumber" type="password" [(ngModel)]="data.user.ResNumber"></ion-input>
         </ion-item>
 
   
         <ion-item>
-          <ion-label position="stacked">Password</ion-label>
-          <ion-input name="password" type="password" [(ngModel)]="data.auth.Password"></ion-input>
+          <ion-input placeholder="Password" name="password" type="password" [(ngModel)]="data.auth.Password"></ion-input>
         </ion-item>
 
       </ion-list>
