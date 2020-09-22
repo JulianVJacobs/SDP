@@ -60,9 +60,7 @@ export class MessagePage implements OnInit {
         .catch((err) => {
           console.dir(err);
         });
-    })
-
-    
+    })    
   }
 
   sendMessage(){

@@ -4,7 +4,7 @@
       <ion-list>
 
         <ion-item>
-          <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.auth.PersonNumber"></ion-input>
+          <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.user['Student Number']"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -17,7 +17,7 @@
 
         <!-- not sure about that "PhoneNumber" so possible bugs -->
         <ion-item>
-          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user.PhoneNumber"></ion-input>
+          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user['Phone number']"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -52,7 +52,7 @@
         </ion-item>
 
         <ion-item>
-          <ion-input placeholder="Room Number" name="roomNumber" type="password" [(ngModel)]="data.user.ResNumber"></ion-input>
+          <ion-input placeholder="Room Number" name="roomNumber" type="password" [(ngModel)]="data.user['Res Number']"></ion-input>
         </ion-item>
 
   

@@ -36,11 +36,9 @@ export class BuyBooksPage implements OnInit {
     ) { }
 
   message(item: any){
-    // this.router.navigate(['message']);
     this.router.navigateByUrl('message', { state : {
       'item' : item
     }});
-    this.router.navigate(['message']);
   }
 
   buy(item: any){
