@@ -87,6 +87,10 @@ export class MessagePage implements OnInit {
                   var m = res.data().Messages;
                   this.reply.metadata.type = "received";
                   m.push(this.reply);
+                  this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid)
+                    .update({ 
+                      Messages: m
+                    })
                 }
                 catch {
                   this.reply.metadata.type = "received";
