@@ -38,6 +38,8 @@ For our sdp project
 - [ ] Housekeepers are assigned rooms to clean
 - [ ] Housekeepers mark rooms they have cleaned
 
+## Links
+
 [See our daily scrum here.](https://github.com/greenpeace-wits/SDP/wiki/Daily-Scrum)
 
 [See our architecture diagrams here.](https://github.com/greenpeace-wits/SDP/wiki/Diagrams)
