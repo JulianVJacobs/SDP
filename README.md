@@ -54,3 +54,5 @@ For our sdp project
 [See our sprint planning here.](https://github.com/greenpeace-wits/SDP/wiki/Sprint-Planner-&-Review-Meeting-Minutes) We are currently on Sprint 4.
 
 [Track our progress on our Taiga.](https://tree.taiga.io/project/__senate-greenpeace10/timeline)
+
+Have you found a bug? [Check our issues. We may already know about it. If not, please bring it to our attention by submitting an issue.](https://github.com/greenpeace-wits/SDP/issues)
