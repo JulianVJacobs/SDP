@@ -27,6 +27,11 @@ export const routes: Routes = [
         loadChildren: () => import('../pages/dining-hall/dh-staff-main/dh-staff-main.module').then(
           m => m.DhStaffMainPageModule
         )
+      },
+      {
+        path: 'message',
+        loadChildren: () => import('../pages/message/message.module').then( 
+          m => m.MessagePageModule)
       }
     ]
   }

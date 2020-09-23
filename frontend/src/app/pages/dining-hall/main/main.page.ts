@@ -7,56 +7,88 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-  // postData = {
-  //   personNumber: null,
-  //   order: null,
-  //   diningHall: null
-  // }
-
+  
   constructor(
     private router: Router,
     ) {}
 
   message(num: string){
-    //do something with num to get which dining hall it is
-    this.router.navigate(['message']);
-  }
+    switch (num){
+      case "1": 
+        this.router.navigateByUrl('message', { state : {
+          recipient : 'MFMzKGBkrDS8RrKydf4oAb4gkA33' 
+        }});
+        break;
+
+      case "2": 
+        this.router.navigateByUrl('message', { state : {
+          recipient : 'P2raL4k9TeUySA1Sy089ukyK7VW2'
+        }});
+        break;
+
+      case "3": 
+        this.router.navigateByUrl('message', { state : {
+          recipient : 'iwzq0nMDESZ9E7u1xcmS6NvXDod2'
+        }});
+        break;
+      
+      case "4": 
+        this.router.navigateByUrl('message', { state : {
+          recipient : '5JBulkwZnhY0mKJrGOoKZPsznfz1'
+        }});
+        break;
+
+      case "5": 
+        this.router.navigateByUrl('message', { state : {
+          recipient : 'yYa2UK7zmlVAi0NihYzdB45Ftsj1'
+        }});
+        break;
+
+      case "6": 
+        this.router.navigateByUrl('message', { state : {
+          recipient : 'k2BciQhG4cNZsJdcjDhLqndtAjE2'
+        }});
+        break;
+    }
+  };
 
   goto(num: string){
-    console.log(num)
-    if(num == "1"){//convo
-      this.router.navigateByUrl('/home/meals', { state : {
-        'Dining Hall' : 'Convocation'
-      }});
-    }
-    if(num == "2"){//eoh
-      this.router.navigateByUrl('/home/meals', { state : {
-        'Dining Hall' : 'Ernest Oppenheimer'
-      }});
-    }
+    switch (num){
+      case "1": 
+        this.router.navigateByUrl('home/meals', { state : {
+          'Dining Hall' : 'Convocation'
+        }});
+        break;
 
-    if(num == "3"){//highfeild
-      this.router.navigateByUrl('/home/meals', { state : {
-        'Dining Hall' : 'Highfield'
-      }});
-    }
+      case "2": 
+        this.router.navigateByUrl('home/meals', { state : {
+          'Dining Hall' : 'Ernest Oppenheimer'
+        }});
+        break;
 
-    if(num == "4"){//jubs
-      this.router.navigateByUrl('/home/meals', { state : {
-        'Dining Hall' : 'Jubilee'
-      }});
-    }
+      case "3": 
+        this.router.navigateByUrl('home/meals', { state : {
+          'Dining Hall' : 'Highfield'
+        }});
+        break;
+      
+      case "4": 
+        this.router.navigateByUrl('home/meals', { state : {
+          'Dining Hall' : 'Jubilee'
+        }});
+        break;
 
-    if(num == "5"){//knocks
-      this.router.navigateByUrl('/home/meals', { state : {
-        'Dining Hall' : 'Knockando'
-      }});
-    }
+      case "5": 
+        this.router.navigateByUrl('home/meals', { state : {
+          'Dining Hall' : 'Knockando'
+        }});
+        break;
 
-    if(num == "6"){//main
-      this.router.navigateByUrl('/home/meals', { state : {
-        'Dining Hall' : 'Main'
-      }});
+      case "6": 
+        this.router.navigateByUrl('home/meals', { state : {
+          'Dining Hall' : 'Main'
+        }});
+        break;
     }
   }
 

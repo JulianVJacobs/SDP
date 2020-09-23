@@ -10,7 +10,7 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./message.page.scss'],
 })
 export class MessagePage implements OnInit {
-  public user: {}; public item: any;
+  public user: {}; public recipient: any;
   public messages: any; 
   public reply = {
     content: '',
@@ -44,15 +44,15 @@ export class MessagePage implements OnInit {
   */  
 
   ngOnInit() {
-    this.item = history.state.item;
+    this.recipient = history.state.recipient;
     this.auth.currentUser.then((res) => {
-      this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.item.Owner)
+      this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.recipient)
         .onSnapshot((snap) => {
           try {
             this.messages = snap.data().Messages;
           }
           catch {
-            this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.item.Owner).set({ Messages: [] })
+            this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.recipient).set({ Messages: [] })
             this.ngOnInit();
           }
         },(err) => {
@@ -76,25 +76,25 @@ export class MessagePage implements OnInit {
     this.auth.currentUser.then((res) => {
       var uid = res.uid;
       this.messages.push(this.reply);
-      this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.item.Owner)
+      this.firestore.firestore.collection('users/' + res.uid + '/Chats').doc(this.recipient)
         .update({ 
             Messages: this.messages
         })
         .then(() => {
-            this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid).get()
+            this.firestore.firestore.collection('users/' + this.recipient + '/Chats').doc(uid).get()
               .then((res) => {
                 try {
                   var m = res.data().Messages;
                   this.reply.metadata.type = "received";
                   m.push(this.reply);
-                  this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid)
+                  this.firestore.firestore.collection('users/' + this.recipient + '/Chats').doc(uid)
                     .update({ 
                       Messages: m
                     })
                 }
                 catch {
                   this.reply.metadata.type = "received";
-                  this.firestore.firestore.collection('users/' + this.item.Owner + '/Chats').doc(uid)
+                  this.firestore.firestore.collection('users/' + this.recipient + '/Chats').doc(uid)
                     .set({ 
                       Messages: this.reply
                      })

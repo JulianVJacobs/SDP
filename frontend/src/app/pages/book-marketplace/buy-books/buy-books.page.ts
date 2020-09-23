@@ -37,7 +37,7 @@ export class BuyBooksPage implements OnInit {
 
   message(item: any){
     this.router.navigateByUrl('message', { state : {
-      'item' : item
+      recipient : item.Owner
     }});
   }
 

@@ -17,7 +17,13 @@ const routes: Routes = [
       path: 'make-review',
       loadChildren: () => import('../make-review/make-review.module').then( 
         m => m.MakeReviewPageModule)
-    }]
+    },
+    {
+      path: 'message',
+      loadChildren: () => import('../../message/message.module').then( 
+        m => m.MessagePageModule)
+    }
+  ]
   },
   
 ];
