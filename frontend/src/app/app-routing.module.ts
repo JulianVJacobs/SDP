@@ -45,6 +45,14 @@ export const routes: Routes = [
   {
     path: 'message',
     loadChildren: () => import('./pages/message/message.module').then( m => m.MessagePageModule)
+  },
+  {
+    path: 'edit-details',
+    loadChildren: () => import('./pages/edit-details/edit-details.module').then( m => m.EditDetailsPageModule)
+  },
+  {
+    path: 'message-list',
+    loadChildren: () => import('./pages/message-list/message-list.module').then( m => m.MessageListPageModule)
   }
   
 

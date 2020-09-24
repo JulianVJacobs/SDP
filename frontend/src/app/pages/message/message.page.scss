@@ -1,3 +1,23 @@
+ion-header{
+ 
+    position: absolute;
+    height: 30px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+   
+    h1{
+      font-size: 20px;
+      color: #416;
+      font-style: italic;
+      font-family: cursive;
+    }
+}
+
+.main-body{
+    position: absolute;
+    margin-top: 30%;
+}
+
 .innerMessage {
     display: inline-block;
     padding: 5px 10px;
@@ -57,30 +77,3 @@ ion-toolbar {
     float: right;
 }
 
-.message.special .innerMessage .messageContent{
-    background: white;
-    display: inline-block;
-    padding: 0 10px;
-}
-
-.message.special .innerMessage:before{
-    content: '';
-    height: 2px;
-    background: #eee;
-    display: block;
-    top: 50%;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-}
-
-.message.special .innerMessage{
-    background: transparent;
-    color: black;
-    font-size: 80%;
-    width: 100%;
-    float: none;
-    text-align: center;
-    position: relative;
-}

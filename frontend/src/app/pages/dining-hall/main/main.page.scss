@@ -1,23 +1,32 @@
 *{
     font-weight: 300;
-    top: 7%
+}
+ion-content{
+    //margin-top: auto;
+    ion-grid{
+        margin-bottom: 3%;
+        margin-top: 15%;
+        
+    }
+    
 }
 
-ion-grid{
-    bottom: 10%;
+.item{
+    ion-botton{
+        position: absolute;
+        width: 80%;
+        margin-left: 0%;
+        --background: #D4AF37;
+    }
 }
 
-ion-text{
+ion-toolbar{
     position: absolute;
-    top: 3%;
     
     h1{
-    font-size: 20px;
+    font-size: 15px;
     color: #D4AF37;
     font-style: italic;
     font-family: cursive;
     }
-}
-ion-fab{
-    bottom: 10%;
 }

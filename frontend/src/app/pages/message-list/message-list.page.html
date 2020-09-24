@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>Messages</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="actions">
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <!-- <img [(src)]="item['Image-URL']" alt=""> -->
+      </ion-thumbnail>
+
+      <ion-label>
+        <h1>Reciever Name DB</h1>
+      </ion-label>
+      
+      <!-- <ion-list>
+        <h1>{{ item.Title }}</h1>
+        <ion-label>C {{ item.Price }} <br></ion-label>
+        <ion-button expand="block" (click)="buy(item)">Buy</ion-button>
+        <ion-button expand="block" (click)="message(item)">Contact Seller</ion-button>
+      </ion-list> -->
+
+    </ion-item>
+  </div>
+
+</ion-content>

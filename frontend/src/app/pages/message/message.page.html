@@ -1,7 +1,9 @@
 <ion-header>
 
   <ion-toolbar>
-    <ion-title>Chat</ion-title>
+    <ion-title>
+      <h1>Chat</h1>
+    </ion-title>
   </ion-toolbar>
 
 </ion-header>
@@ -9,7 +11,7 @@
 
 <ion-content padding>
 
-  <div id="chatMessages">
+  <div id="chatMessages" class="main-body">
     <div *ngFor="let message of messages">
       <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
         <div class="messageContent">{{ message.content }}</div>

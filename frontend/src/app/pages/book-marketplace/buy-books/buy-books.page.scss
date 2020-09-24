@@ -1,23 +1,23 @@
+ion-toolbar{
+  position: absolute;
+  
+  h1{
+  font-size: 20px;
+  color: #D4AF37;
+  font-style: italic;
+  font-family: cursive;
+  }
+}
+
 ion-text{
     position: relative;
-    top: 3%;
- 
-    h1{
-      font-size: 30px;
-      color: #416;
-      font-style: italic;
-      font-family: cursive;
-    }
 
     h2{
       font-size: 20px;
-      color: #D4AF37;
+      color: #416;
       font-style: italic;
       font-family: cursive;
-    }
-
-    p{
-      color: #D4AF37;
+      margin-top: 30%;
     }
 }
 

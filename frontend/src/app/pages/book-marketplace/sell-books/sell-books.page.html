@@ -10,12 +10,13 @@
           <ion-list>
           <ion-input name="bookName" [(ngModel)]="data.Title" placeholder="Book Name"></ion-input>
           <ion-input name="bookPrice" [(ngModel)]="data.Price" placeholder="Book Price"></ion-input>
+          <ion-input name="bookDescription" [(ngModel)]="data.Description" placeholder="Book Description"></ion-input>
           </ion-list> 
         </ion-item>
 
         <ion-item lines="none">
           <ion-list>
-          <ion-label>Upload images</ion-label>
+          <ion-label>Upload image(s)</ion-label>
           <input type="file" name="inputFile" (change)="images = $event.target.files" multiple required>
           </ion-list>
         </ion-item>
