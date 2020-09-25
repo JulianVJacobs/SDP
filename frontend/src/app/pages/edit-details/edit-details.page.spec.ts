@@ -66,16 +66,16 @@ describe('EditDetailsPage', () => {
     });
 
     it('should have the text "Done"', () => {
-      expect(fixture.nativeElement.getElementsByTagName('ion-button')[1].textContent).toBe("Done");
+      expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].textContent).toBe("Done");
     });
 
     it('should have a click event', () => {
-      expect(fixture.nativeElement.getElementsByTagName('ion-button')[1].click).toBeTruthy();
+      expect(fixture.nativeElement.getElementsByTagName('ion-button')[0].click).toBeTruthy();
     });
 
     it('should call doneAction() when clicked', () => {
       let spy = spyOn(component,'doneAction');
-      fixture.nativeElement.getElementsByTagName('ion-button')[1].click();
+      fixture.nativeElement.getElementsByTagName('ion-button')[0].click();
       expect(component.doneAction).toHaveBeenCalled();
     });
   });
