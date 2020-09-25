@@ -21,4 +21,26 @@ describe('DhMessagePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should have a ngOnInit() function', () => {
+    expect(component.ngOnInit).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-header>', () => {
+    expect(fixture.nativeElement.querySelector('ion-header')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-toolbar>', () => {
+    expect(fixture.nativeElement.querySelector('ion-toolbar')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-title>', () => {
+    expect(fixture.nativeElement.querySelector('ion-title')).toBeTruthy();
+  });
+  
+  describe('<ion-title>', () => {
+    it('should have the text "dh-message" before ngOnInit() is called', () => {
+      expect(fixture.nativeElement.querySelector('ion-title').textContent).toBe("dh-message");
+    });
+  });
 });
