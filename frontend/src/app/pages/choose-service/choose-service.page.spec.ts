@@ -70,16 +70,16 @@ describe('ChooseServicePage', () => {
   describe('Text Books <ion-card>', () => {
 
     it('should have the text "Text Books"', () => {
-      expect(fixture.nativeElement.getElementsByTagName('ion-card')[1].textContent).toBe("Text Books");
+      expect(fixture.nativeElement.getElementsByTagName('ion-card')[0].textContent).toBe("Text Books");
     });
 
     it('should have a click event', () => {
-      expect(fixture.nativeElement.getElementsByTagName('ion-card')[1].click).toBeTruthy();
+      expect(fixture.nativeElement.getElementsByTagName('ion-card')[0].click).toBeTruthy();
     });
 
     it('should call bookAction() when clicked', () => {
       let spy = spyOn(component,'bookAction');
-      fixture.nativeElement.getElementsByTagName('ion-card')[1].click();
+      fixture.nativeElement.getElementsByTagName('ion-card')[0].click();
       expect(component.bookAction).toHaveBeenCalled();
     });
   });
