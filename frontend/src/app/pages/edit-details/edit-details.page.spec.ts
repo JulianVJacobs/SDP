@@ -51,7 +51,7 @@ describe('EditDetailsPage', () => {
   });
   
   describe('<h1>', () => {
-    it('should have the text "EOH" before ngOnInit() is called', () => {
+    it('should have the text "Edit Your Details" before ngOnInit() is called', () => {
       expect(fixture.nativeElement.querySelector('h1').textContent).toBe("Edit Your Details");
     });
   });
@@ -66,7 +66,7 @@ describe('EditDetailsPage', () => {
     });
 
     it('should have the text "Done"', () => {
-      expect(fixture.nativeElement.getElementsByTagName('ion-button')[1].textContent).toBe("Make Review");
+      expect(fixture.nativeElement.getElementsByTagName('ion-button')[1].textContent).toBe("Done");
     });
 
     it('should have a click event', () => {
