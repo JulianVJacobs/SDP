@@ -25,4 +25,20 @@ describe('MainTabsPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should have a ngOnInit() function', () => {
+    expect(component.ngOnInit).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-content>', () => {
+    expect(fixture.nativeElement.querySelector('ion-content')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-tab-button>', () => {
+    expect(fixture.nativeElement.querySelector('ion-tab-button')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-tabs>', () => {
+    expect(fixture.nativeElement.querySelector('ion-tabs')).toBeTruthy();
+  });
 });

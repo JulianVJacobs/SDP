@@ -36,4 +36,30 @@ describe('DhStaffMainPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should have a ngOnInit() function', () => {
+    expect(component.ngOnInit).toBeTruthy();
+  });
+  
+  it('should have at least one <h1> tag', () => {
+    expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-content>', () => {
+    expect(fixture.nativeElement.querySelector('ion-content')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-text>', () => {
+    expect(fixture.nativeElement.querySelector('ion-text')).toBeTruthy();
+  });
+  
+  it('should have at least one <ion-item>', () => {
+    expect(fixture.nativeElement.querySelector('ion-item')).toBeTruthy();
+  });
+  
+  describe('<h1>', () => {
+    it('should have the text "App Name" before ngOnInit() is called', () => {
+      expect(fixture.nativeElement.querySelector('h1').textContent).toBe("App Name");
+    });
+  });
 });
