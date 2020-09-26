@@ -7,7 +7,6 @@ For our sdp project
 [Our task](https://github.com/greenpeace-wits/SDP/wiki) is to create a 3 in 1 app. The plan is to implement:
 - A section where students that use the Wits dining hall can view and order their meals online.
 - A section where students can buy and sell books.
-- A section where residents can track their rooms' housekeeping.
 
 ## Implemented features
 ### 🗸 Dining Hall Ordering
@@ -29,14 +28,7 @@ For our sdp project
 - [x] Books that are for sale are displayed to the user
 - [x] If the user buys a book, they lose credits and the seller gains the amount of the book
 - [x] The user can contact the seller of a book directly about any concerns if they so choose
-- [ ] User gets notified when they have a new message
 - [x] User can upload multiple images of the book they intend to sell
-
-### 🗴 Housekeeping Tracker
-- [ ] User can say whether or not their room was cleaned or not
-- [ ] User has a schedule telling them when their room should be cleaned
-- [ ] Housekeepers are assigned rooms to clean
-- [ ] Housekeepers mark rooms they have cleaned
 
 ## Links
 
