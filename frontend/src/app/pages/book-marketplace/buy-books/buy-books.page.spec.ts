@@ -12,7 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import * as firebase from '@firebase/rules-unit-testing';
 
-fdescribe('BuyBooksPage', () => {
+describe('BuyBooksPage', () => {
   let component: BuyBooksPage;
   let fixture: ComponentFixture<BuyBooksPage>;
 
