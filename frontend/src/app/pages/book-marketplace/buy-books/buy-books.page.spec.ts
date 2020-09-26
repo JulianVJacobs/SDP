@@ -67,6 +67,10 @@ describe('BuyBooksPage', () => {
     expect(component.message).toBeTruthy();
   });
   
+  it('should have a constructor() function', () => {
+    expect(component.constructor).toBeTruthy();
+  });
+  
   it('should have a buy() function', () => {
     expect(component.buy).toBeTruthy();
   });
