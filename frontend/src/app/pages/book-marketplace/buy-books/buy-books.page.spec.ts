@@ -11,7 +11,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-describe('BuyBooksPage', () => {
+fdescribe('BuyBooksPage', () => {
   let component: BuyBooksPage;
   let fixture: ComponentFixture<BuyBooksPage>;
 
