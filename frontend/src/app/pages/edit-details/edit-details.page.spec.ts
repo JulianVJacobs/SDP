@@ -10,7 +10,7 @@ describe('EditDetailsPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditDetailsPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), RouterTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(EditDetailsPage);
@@ -78,5 +78,12 @@ describe('EditDetailsPage', () => {
       fixture.nativeElement.getElementsByTagName('ion-button')[0].click();
       expect(component.doneAction).toHaveBeenCalled();
     });
+  });
+  
+  it('should navigate to /main-tabs on Done button click', () => {
+    const router = TestBed.get(Router);
+    spyOn(router, 'doneAction');
+    fixture.nativeElement.getElementsByTagName('ion-button')[0].click();
+    expect(router.navigateByUrl).toHaveBeenCalledWith(router.createUrlTree(['/main-tabs']), { skipLocationChange:false, replaceUrl:false});
   });
 });
