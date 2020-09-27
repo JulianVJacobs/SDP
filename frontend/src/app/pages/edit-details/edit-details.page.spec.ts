@@ -86,7 +86,7 @@ describe('EditDetailsPage', () => {
   it('should navigate to /main-tabs on Done button click', () => {
     const router = TestBed.get(Router);
     spyOn(router, 'doneAction');
-    fixture.nativeElement.getElementsByTagName('ion-button')[0].click();
+    fixture.nativeElement.getElementsByTagName('ion-button').click();
     expect(router.navigateByUrl).toHaveBeenCalledWith(router.createUrlTree(['/main-tabs']), { skipLocationChange:false, replaceUrl:false});
   });
 });
