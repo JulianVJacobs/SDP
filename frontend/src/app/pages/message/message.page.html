@@ -11,13 +11,14 @@
 
 <ion-content padding>
 
-  <div id="chatMessages" class="main-body">
+  <div id="chatMessages">
     <div *ngFor="let message of messages">
-      <div [class]="message.username == username ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+      <div [class]="message.metadata.type == 'sent' ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+        
         <div class="messageContent">{{ message.content }}</div>
       </div>
     </div>
-  </div>
+  </div>s
 
 </ion-content>
 

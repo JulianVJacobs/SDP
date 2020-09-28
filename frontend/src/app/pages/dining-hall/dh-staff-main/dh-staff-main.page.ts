@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastService } from 'src/app/services/toast.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dh-staff-main',
@@ -16,7 +17,8 @@ export class DhStaffMainPage implements OnInit {
   constructor(
     private auth: AngularFireAuth,
     public storageService: StorageService,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -49,6 +51,10 @@ export class DhStaffMainPage implements OnInit {
       .catch((err) => {
         console.dir(err);
       });
+  }
+
+  mainAction(){
+    this.router.navigate(['message-list']);
   }
 
 }

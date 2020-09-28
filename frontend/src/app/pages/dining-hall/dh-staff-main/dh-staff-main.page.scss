@@ -1,9 +1,8 @@
 *{
     font-weight: 300;
 }
-  
 ion-content{
-    // --background: url(../../assets/images/gh7.jpg) no-repeat center center fixed;
+    --background: url(../../../../assets/images/gh61.jpg);
 }
 
 ion-text{
@@ -33,4 +32,26 @@ ion-text{
     p{
         font-size: 12px;
     }
+}
+
+.actions{
+
+    position: absolute;
+    
+      bottom: 5%;
+      right: 2%;
+      color: #ffffff;
+      font-style: bold;
+      font-size: 20px;
+
+    ion-button{
+        --border-radius: 9px;
+        --box-shadow: none;
+        --background: linear-gradient(60deg, #D4AF37 0%, #416 100%);
+        text-transform: initial;
+        font-size: 12px;
+        display: block;
+        margin-left: 8%;
+        
+      }
 }

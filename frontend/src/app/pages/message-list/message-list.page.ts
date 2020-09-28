@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { snapshotChanges } from '@angular/fire/database';
 import { AngularFirestore, DocumentData, DocumentSnapshot } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-message-list',
@@ -14,6 +15,7 @@ export class MessageListPage implements OnInit {
   constructor(
     private firestore: AngularFirestore, 
     private auth: AngularFireAuth,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -49,6 +51,12 @@ export class MessageListPage implements OnInit {
       .catch((err) => {
         console.dir(err);
       })
+  }
+s
+  mainAction(item: any){
+    this.router.navigateByUrl('message', { state : {
+      recipient : item.Owner
+    }});
   }
 
 }
