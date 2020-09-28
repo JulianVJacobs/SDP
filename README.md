@@ -10,7 +10,6 @@ For our sdp project
 
 
 ## Installation Guide
-### To Develop
 1. Download and install [NodeJS](https://nodejs.org/en/download/)
 2. Install [Ionic](https://ionicframework.com/getting-started)
 3. Clone or download our repository (Click the green button saying 'Code')
@@ -18,9 +17,6 @@ For our sdp project
 5. Run the command ```npm install``` to install all the dependencies
 6. Run the command ```ionic serve```
 7. If everything was done correctly, the app should be hosted in your default browser.
-
-### To Enjoy
-If you just want to use the app with no hassle
 
 [Download the apk](https://github.com/greenpeace-wits/SDP/tree/test/frontend/platforms/android/app/build/outputs/apk) with your Android Device.
 
