@@ -26,9 +26,11 @@ export class MessageListPage implements OnInit {
             snap.forEach((doc) => {
               doc.ref.onSnapshot((snap) => {
                 var user = {
+                  uid: '',
                   name: '',
                   'Most Recent Message': ''
                 };
+                user.uid = doc.id;
                 user["Most Recent Message"] = snap.data().Messages[snap.data().Messages.length - 1]
                 this.firestore.firestore.doc('users/'+doc.id).get()
                   .then((res) => {

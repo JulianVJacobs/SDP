@@ -14,7 +14,9 @@
     <ion-list>
 
       <ion-text>
-        <h2 *ngIf="user">Balance:   C {{user['Amount Left']}}</h2>
+        <div *ngIf="user">
+          <h2>Balance:   C {{user['Amount Left']}}</h2>
+        </div>
       </ion-text>
 
       <div class="actions">

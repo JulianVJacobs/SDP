@@ -5,13 +5,25 @@ import { IonicModule } from '@ionic/angular';
 
 import { BuyBooksPage } from './buy-books.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-describe('BuyBooksPage', () => {
+class mockAuth extends AngularFireAuth{
+  public currentUser: any = {
+    then: () => {
+      return new Promise((res) => {
+        res({
+          uid: 'user'
+        });
+      });
+    }
+  };
+}
+
+fdescribe('BuyBooksPage', () => {
   let component: BuyBooksPage;
   let fixture: ComponentFixture<BuyBooksPage>;
 
@@ -27,6 +39,9 @@ describe('BuyBooksPage', () => {
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireStorageModule,
         AngularFirestoreModule
+      ],
+      providers: [
+       { provide: AngularFireAuth, useClass: mockAuth }
       ]
     }).compileComponents();
 
@@ -35,7 +50,7 @@ describe('BuyBooksPage', () => {
     fixture.detectChanges();
   }));
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
   
@@ -47,10 +62,25 @@ describe('BuyBooksPage', () => {
     expect(fixture.nativeElement.querySelector('h1')).toBeTruthy();
   });
   
-  it('should have at least one <h2> tag', () => {
-    expect(fixture.nativeElement.querySelector('h2')).toBeTruthy();
+  it('should have no <h2> tag if there is no user', () => {
+    expect(fixture.nativeElement.querySelector('h2')).toBe(null);
   });
   
+  it('should have an <h2> tag if there is a user', () => {
+    component.user = {
+      'Student Number' : '',
+      Name: '',
+      Surname: '',
+      Role: 0,
+      Campus: '',
+      Res: '',
+      'Res Number': '',
+      'Phone number': '',
+      'Amount Left': 0
+   }; 
+    expect(fixture.nativeElement.querySelector('h2')).toBeTruthy();
+  });
+
   it('should have at least one <ion-content>', () => {
     expect(fixture.nativeElement.querySelector('ion-content')).toBeTruthy();
   });
@@ -125,7 +155,7 @@ describe('BuyBooksPage', () => {
     it('should call message() when clicked', () => {
       let spy = spyOn(component,'message');
       fixture.nativeElement.getElementsByTagName('ion-button')[1].click();
-      expect(component.message).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalled();
     });
   });
 });

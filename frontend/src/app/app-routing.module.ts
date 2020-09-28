@@ -31,10 +31,6 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/dining-hall/main/main.module').then( m => m.MainPageModule)
   },
   {
-    path: 'make-review',
-    loadChildren: () => import('./pages/dining-hall/make-review/make-review.module').then( m => m.MakeReviewPageModule)
-  },
-  {
     path: 'choose-service',
     loadChildren: () => import('./pages/choose-service/choose-service.module').then( m => m.ChooseServicePageModule)
   },
