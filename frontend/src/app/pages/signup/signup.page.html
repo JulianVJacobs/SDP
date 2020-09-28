@@ -22,32 +22,32 @@
 
         <ion-item>
           <ion-label>Residence</ion-label>
-          <ion-select placeholder="Select One">
-            <ion-select-option value="bar">Barnato</ion-select-option>
-            <ion-select-option value="braam">Braamfontein Centre</ion-select-option>
-            <ion-select-option value="dw">David Webster</ion-select-option>
-            <ion-select-option value="eoh">EOH</ion-select-option>
-            <ion-select-option value="gir">Girton</ion-select-option>
-            <ion-select-option value="ih">International House</ion-select-option>
-            <ion-select-option value="jub">Jubilee</ion-select-option>
-            <ion-select-option value="jct">Junction</ion-select-option>
-            <ion-select-option value="kno">Knockando</ion-select-option>
-            <ion-select-option value="med">Medhurst</ion-select-option>
-            <ion-select-option value="men">Men’s Res</ion-select-option>
-            <ion-select-option value="nos">Noswal</ion-select-option>
-            <ion-select-option value="rei">Reith</ion-select-option>
-            <ion-select-option value="ren">Rennie House</ion-select-option>
-            <ion-select-option value="sun">Sunnyside</ion-select-option>
-            <ion-select-option value="wcv">West Campus Village</ion-select-option>
-            <ion-select-option value="yv">Yale Village</ion-select-option>
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Res">
+            <ion-select-option value="Barnato">Barnato</ion-select-option>
+            <ion-select-option value="Braamfontein Centre">Braamfontein Centre</ion-select-option>
+            <ion-select-option value="David Webste">David Webster</ion-select-option>
+            <ion-select-option value="Ernest Oppenheimer">Ernest Oppenheimer</ion-select-option>
+            <ion-select-option value="Girton">Girton</ion-select-option>
+            <ion-select-option value="International House">International House</ion-select-option>
+            <ion-select-option value="Jubilee">Jubilee</ion-select-option>
+            <ion-select-option value="Junction">Junction</ion-select-option>
+            <ion-select-option value="Knockando">Knockando</ion-select-option>
+            <ion-select-option value="Medhurst">Medhurst</ion-select-option>
+            <ion-select-option value="Men’s Res">Men’s Res</ion-select-option>
+            <ion-select-option value="Noswal">Noswal</ion-select-option>
+            <ion-select-option value="Reith">Reith</ion-select-option>
+            <ion-select-option value="Rennie House">Rennie House</ion-select-option>
+            <ion-select-option value="Sunnyside">Sunnyside</ion-select-option>
+            <ion-select-option value="West Campus Village">West Campus Village</ion-select-option>
+            <ion-select-option value="Yale Village">Yale Village</ion-select-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
           <ion-label>Campus</ion-label>
-          <ion-select placeholder="Select One">
-            <ion-select-option value="main">Braamfontein Cluster</ion-select-option>
-            <ion-select-option value="parktown">Parktown Cluster</ion-select-option>
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Campus">
+            <ion-select-option value="Main">Braamfontein Cluster</ion-select-option>
+            <ion-select-option value="Parktown">Parktown Cluster</ion-select-option>
           </ion-select>
         </ion-item>
 
