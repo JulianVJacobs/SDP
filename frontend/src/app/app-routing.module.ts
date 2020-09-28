@@ -49,6 +49,10 @@ export const routes: Routes = [
   {
     path: 'message-list',
     loadChildren: () => import('./pages/message-list/message-list.module').then( m => m.MessageListPageModule)
+  },
+  {
+    path: 'order-history',
+    loadChildren: () => import('./pages/order-history/order-history.module').then( m => m.OrderHistoryPageModule)
   }
   
 

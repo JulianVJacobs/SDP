@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>Order History</h1>
+    </ion-title>
+   <ion-buttons slot="start">
+     <ion-menu-button menu ="main-menu"></ion-menu-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <ion-list>
+
+      <div class="actions">
+        <ion-card *ngFor="let item of items">
+
+          <img [(src)]="item['Image-URL']" alt="">
+          
+          <ion-list>
+            <h1>{{ item.Title }}</h1>
+            <ion-label>C {{ item.Price }} <br></ion-label>
+            <ion-label>C {{ item.DeliveryPlace }} <br></ion-label>
+            <div *ngIf="item.delivered == 'false'; else deliveryDateText">
+              <ion-label> {{ item.ETA }} <br></ion-label>
+            </div>
+            <div *ngIf="item.owner != 'user'; else deliverSeller">
+              <ion-button expand="block" (click)="message(item)">Contact Seller</ion-button>
+            </div>
+
+            <ng-template #deliveredSeller>
+                  <IonItemDivider>Delivered</IonItemDivider>
+                  <IonItem>
+                    <IonToggle disabled [(ngModel)]="myValue" [checked]="myValue" (ionChange)="myChange($event)"/>
+                  </IonItem>
+            </ng-template>
+
+            <ng-template #deliveryDateText>
+              <ion-label> ETA: {{ item.DeliveryDate }} <br></ion-label>
+            </ng-template>
+            
+          </ion-list>
+
+        </ion-card>
+      </div>
+      
+    </ion-list>
+
+</ion-content>

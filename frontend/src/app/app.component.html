@@ -29,9 +29,14 @@
         </ion-menu-toggle>
 
         <ion-menu-toggle>
+          <ion-item routerLink="order-history">
+            <ion-icon name="file-tray-stacked-outline"></ion-icon>
+            <ion-label>Delivery History</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
           <ion-item (click)="logout()">
-            <!-- TODO: -->
-            <!-- do firebase logout stuff -->
             <ion-icon name="power-outline" slot="start"></ion-icon>
             <ion-label>Logout</ion-label>
           </ion-item>
