@@ -4,25 +4,25 @@
       <ion-list>
 
         <ion-item>
-          <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.user['Student Number']"></ion-input>
+          <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.user['Student Number']" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input placeholder="Name" name="name" [(ngModel)]="data.user.Name"></ion-input>
+          <ion-input placeholder="Name" name="name" [(ngModel)]="data.user.Name" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input placeholder="Last Name" name="surname" [(ngModel)]="data.user.Surname"></ion-input>
+          <ion-input placeholder="Last Name" name="surname" [(ngModel)]="data.user.Surname" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
         <!-- not sure about that "PhoneNumber" so possible bugs -->
         <ion-item>
-          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user['Phone number']"></ion-input>
+          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user['Phone number']" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label>Residence</ion-label>
-          <ion-select placeholder="Select One" [(ngModel)]="data.user.Res">
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Res" [ngModelOptions]="{standalone: true}">
             <ion-select-option value="Barnato">Barnato</ion-select-option>
             <ion-select-option value="Braamfontein Centre">Braamfontein Centre</ion-select-option>
             <ion-select-option value="David Webste">David Webster</ion-select-option>
@@ -45,19 +45,19 @@
 
         <ion-item>
           <ion-label>Campus</ion-label>
-          <ion-select placeholder="Select One" [(ngModel)]="data.user.Campus">
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Campus" [ngModelOptions]="{standalone: true}">
             <ion-select-option value="Main">Braamfontein Cluster</ion-select-option>
             <ion-select-option value="Parktown">Parktown Cluster</ion-select-option>
           </ion-select>
         </ion-item>
 
         <ion-item>
-          <ion-input placeholder="Room Number" name="roomNumber" type="password" [(ngModel)]="data.user['Res Number']"></ion-input>
+          <ion-input placeholder="Room Number" name="roomNumber" type="password" [(ngModel)]="data.user['Res Number']" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
   
         <ion-item>
-          <ion-input placeholder="Password" name="password" type="password" [(ngModel)]="data.auth.Password"></ion-input>
+          <ion-input placeholder="Password" name="password" type="password" [(ngModel)]="data.auth.Password" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
       </ion-list>
