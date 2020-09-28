@@ -21,6 +21,7 @@ For our sdp project
 
 ### To Enjoy
 If you just want to use the app with no hassle
+
 [Download the apk](https://github.com/greenpeace-wits/SDP/tree/test/frontend/platforms/android/app/build/outputs/apk) with your Android Device.
 
 ## Implemented features
