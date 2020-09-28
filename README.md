@@ -4,7 +4,7 @@ For our sdp project
 [![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/SDP/badge.svg)](https://coveralls.io/github/greenpeace-wits/SDP)
 [![Build Status](https://travis-ci.com/greenpeace-wits/SDP.svg?branch=test)](https://travis-ci.com/greenpeace-wits/SDP)
 
-[Our task](https://github.com/greenpeace-wits/SDP/wiki) is to create a 3 in 1 app. The plan is to implement:
+[Our task](https://github.com/greenpeace-wits/SDP/wiki) is to create a 2 in 1 app. The plan is to implement:
 - A section where students that use the Wits dining hall can view and order their meals online.
 - A section where students can buy and sell books.
 
