@@ -1,12 +1,15 @@
 # SDP
 For our sdp project
 
-[![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/SDP/badge.svg)](https://coveralls.io/github/greenpeace-wits/SDP)
-[![Build Status](https://travis-ci.com/greenpeace-wits/SDP.svg?branch=test)](https://travis-ci.com/greenpeace-wits/SDP)
+[![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/Student-Success-Hub/badge.svg?branch=master)](https://coveralls.io/github/greenpeace-wits/Student-Success-Hub?branch=master)
+[![Build Status](https://travis-ci.com/greenpeace-wits/SDP.svg?branch=Julian)](https://travis-ci.com/greenpeace-wits/SDP)
 
 [Our task](https://github.com/greenpeace-wits/SDP/wiki) is to create a 2 in 1 app. The plan is to implement:
 - A section where students that use the Wits dining hall can view and order their meals online.
 - A section where students can buy and sell books.
+
+
+## Installation Guide
 
 ## Implemented features
 ### 🗸 Dining Hall Ordering
