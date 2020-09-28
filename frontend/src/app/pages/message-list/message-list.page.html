@@ -9,13 +9,14 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
   <div class="actions">
-    <ion-item *ngFor="let item of items">
+    <ion-item *ngFor="let conversation of conversations">
       <ion-thumbnail slot="start">
         <!-- <img [(src)]="item['Image-URL']" alt=""> -->
       </ion-thumbnail>
 
       <ion-label>
-        <h1>Reciever Name DB</h1>
+        <h1>{{conversation.name}}</h1>
+        {{conversation["Most Recent Message"].content}}
       </ion-label>
       
       <!-- <ion-list>
