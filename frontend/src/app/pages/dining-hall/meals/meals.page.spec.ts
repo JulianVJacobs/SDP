@@ -10,7 +10,7 @@ import { MealsPage } from './meals.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-xdescribe('MealsPage', () => {
+describe('MealsPage', () => {
   let component: MealsPage;
   let fixture: ComponentFixture<MealsPage>;
 

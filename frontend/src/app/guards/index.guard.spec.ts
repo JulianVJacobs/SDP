@@ -33,7 +33,7 @@ describe('IndexGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  xdescribe('canActivate():', () => {
+  describe('canActivate():', () => {
     let guard: IndexGuard;
     let storageService: StorageService;
     let auth: AngularFireAuth;

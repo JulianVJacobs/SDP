@@ -35,7 +35,7 @@ describe('HomeGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  xdescribe('canActivate():', () => {
+  describe('canActivate():', () => {
     let guard: HomeGuard;
     let storageService: StorageService;
     let storageServiceSpy: any;
