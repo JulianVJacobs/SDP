@@ -1,0 +1,567 @@
+[2020/09/18, 12:50:36] Senate⚡️: Rylan in 10 minutes
+[2020/09/18, 12:50:55] Senate⚡️: https://meet.google.com/gsu-ucqw-vdd
+[2020/09/18, 13:52:54] Demi: We didn't finish discussions on the jobs for the week
+
+So I'll just upload stuff on taiga and then we'll talk on the group 
+
+We have less time so can everyone complete their task in time
+
+We'll essentially be in the same positions as usual 
+
+Don't forget to check in
+[2020/09/18, 13:53:22] Senate⚡️: Check in
+[2020/09/18, 13:53:35] Demi: Check in
+[2020/09/18, 14:42:33] Duduzile Coms: Check in
+[2020/09/18, 14:54:39] ‪+27 78 725 6911‬: Check in
+[2020/09/18, 16:06:11] Demi: @27727232970 can you check in?
+[2020/09/18, 16:07:03] Kabelo AKA Kabi: check in
+[2020/09/19, 09:12:56] Kabelo AKA Kabi: check in
+[2020/09/19, 09:14:45] Senate⚡️: Check in
+[2020/09/19, 09:14:50] Demi: Check in
+[2020/09/19, 09:21:22] ‪+27 78 725 6911‬: Check in
+[2020/09/19, 11:42:33] Duduzile Coms: Check in
+[2020/09/19, 13:34:23] Demi: I don't know guys, it seems as though emails in firebase are a paid feature. 
+[2020/09/19, 13:47:29] +27 78 725 6911: Yeah, I thoguht that might be a possibly
+[2020/09/20, 15:30:42] Senate⚡️: Check in
+[2020/09/20, 15:40:09] Duduzile Coms: Check in
+[2020/09/20, 15:40:54] ‪+27 78 725 6911‬: Check in
+[2020/09/20, 15:41:18] Demi: I don't think we need to check in on weekends
+[2020/09/20, 16:03:15] Senate⚡️: Why’d you think that? 😅
+[2020/09/20, 16:08:01] Demi: It's the weekend
+[2020/09/20, 16:20:20] Senate⚡️: Oh okay 🤷🏽‍♀️
+[2020/09/20, 16:20:44] Senate⚡️: Anyway, is anyone working on the database rn?
+[2020/09/20, 16:23:28] Demi: What do you mean?
+[2020/09/20, 16:23:56] Demi: I'm gonna create the stuff so that each students chat can be kept there if that's what you mean
+[2020/09/20, 16:25:37] Senate⚡️: It’s just that part of the app stopped working very suddenly and the error isn’t shown in the terminal nor console so I think it could be a database error 🤷🏽‍♀️
+[2020/09/20, 16:25:44] Senate⚡️: But that’s probably not it then
+[2020/09/20, 16:26:32] Demi: What part?
+[2020/09/20, 16:26:52] Demi: If it was the database wouldn't it say so in the console?
+[2020/09/20, 16:32:43] Demi: Also I saw you added sprint 3 breakdown 
+Did you mean to add sprint 4 breakdown? cause there's already a sprint 3 breakdown
+[2020/09/20, 16:39:05] Senate⚡️: It’s a new part I added
+[2020/09/20, 16:39:36] Senate⚡️: I would’ve thought so. Anyway 🤷🏽‍♀️ it started working as suddenly as it stopped working
+[2020/09/20, 16:39:58] Senate⚡️: Yeah, that’s was just an error. I’ll add sprint 4 breakdown maybe tomorrow
+[2020/09/20, 16:41:29] ‪+27 78 725 6911‬: It worked for me
+[2020/09/20, 16:43:04] Senate⚡️: It routed to book-delivery???
+[2020/09/20, 16:46:17] Demi: Did you update your ionic?
+[2020/09/20, 16:48:47] Senate⚡️: Yes 😂😂🤦🏽‍♀️ and that wasn’t even the problem with the lab. Idk why but I had to manually delete the ionic lab folder and redownload it 🤷🏽‍♀️
+[2020/09/20, 16:48:59] Senate⚡️: But the app is working now
+[2020/09/20, 16:53:48] Demi: Cool
+
+@27813501310 the build is failing and coverage is 0%
+[2020/09/20, 16:54:51] Duduzile Coms: I think it’s generally better to work on the build when everyone is done committing and merging. But I’ll look into it
+[2020/09/20, 16:55:12] Demi: Senate is there a pop up page for students to fill their details for delivery?
+[2020/09/20, 17:03:55] Senate⚡️: Have to written tests for all of what already exists? Cause I don’t think there’re things to change there
+[2020/09/20, 17:04:26] Senate⚡️: Not yet, that’s what I was trying to work on but this shit keeps crashing 🤦🏽‍♀️
+[2020/09/20, 17:04:51] Senate⚡️: Also, I made a page since Rylan specifically said page 🤷🏽‍♀️
+[2020/09/20, 17:08:36] Demi: Cool
+[2020/09/20, 17:12:45] Senate⚡️: *you
+[2020/09/20, 17:11:31] Demi: @27787256911 
+There's 3 new field for each student 
+Campus: stores the campus main/education/any other campus 
+Res: stores their res's name
+Res Number: stores the number to their specific room
+
+The chats will be stored in a Chats subcollection of the users collection
+It stores the message, Time, Date and Sent To
+[2020/09/20, 17:11:40] Demi: *Message
+‎[2020/09/20, 17:21:34] Senate⚡️: ‎video omitted
+[2020/09/20, 17:31:00] Demi: Try making the book order only after the Res has been inputted
+[2020/09/20, 17:31:54] Senate⚡️: Huh?
+[2020/09/20, 17:33:33] Demi: When you click on buy
+It should take you to that next page
+Then you input your Campus (Default value is Main campus), Your Res Name and Res Number 
+Then underneath all that when you click buy it sends it to the database
+[2020/09/20, 17:34:21] Senate⚡️: Okay, do you think that that would solve the issue?
+[2020/09/20, 17:34:34] Senate⚡️: Also, what do you think is wrong with sell books?
+[2020/09/20, 17:35:13] Senate⚡️: Cause I think it was working for whoever posted a couple of new books not so long ago (which I’m so sorry I bought when trying to fix this)
+[2020/09/20, 17:35:20] Demi: I'm not sure
+But I think it should
+[2020/09/20, 17:35:29] Demi: No idea yet
+[2020/09/20, 17:36:40] Senate⚡️: Idk 🤔 I don’t see why that would change anything
+[2020/09/20, 17:37:07] Senate⚡️: Okay, could you please try it on your machine to see if it works? 🥺
+[2020/09/20, 17:37:49] Demi: It's worth a shot
+And it makes sense for your details to be filled first
+But it's your call
+[2020/09/20, 17:38:06] Demi: Gimme a few minutes
+[2020/09/20, 17:41:24] Senate⚡️: It definitely does make sense. It’s just rn I wanna focus on getting the build so that Julian can start working
+[2020/09/20, 17:41:33] Senate⚡️: Okay, thank you!
+[2020/09/20, 17:55:25] Demi: I get a blank white page when I log in
+[2020/09/20, 17:55:52] Demi: And I got the latest version a couple of minutes ago
+[2020/09/20, 17:57:18] ‪+27 78 725 6911‬: No, but there was no error when buying
+[2020/09/20, 17:57:32] ‪+27 78 725 6911‬: I hadn’t changed it to route to book-delivery
+[2020/09/20, 17:58:30] Senate⚡️: 👀👀that doesn’t happen for me. So you see a white page instead of choose?
+[2020/09/20, 17:58:44] Senate⚡️: Oh yeah yeah, that’s the problem I was getting as well
+[2020/09/20, 17:59:01] Senate⚡️: I had but that didn’t change anything
+[2020/09/20, 18:00:50] Demi: Yup
+It's probably just my computer, I'll try and find out what's wrong later
+[2020/09/20, 18:06:35] ‪+27 78 725 6911‬: I must say the app looks better on your ionic lab
+[2020/09/20, 18:06:43] ‪+27 78 725 6911‬: I think you should do the presentations
+[2020/09/20, 18:07:48] Senate⚡️: Ayt
+[2020/09/20, 18:09:06] Senate⚡️: For real? Are you comparing the current version or previous ones? Cause with this one I edited the actual code
+[2020/09/20, 18:09:33] Senate⚡️: Okay, no problem. Hopefully my ionic lab doesn’t become problematic again
+[2020/09/20, 18:11:01] ‪+27 78 725 6911‬: I tried it and it worked for me
+[2020/09/20, 18:11:38] ‪+27 78 725 6911‬: I do think Ionic Lab is a little problematic overall because I get odd errors when I use it
+[2020/09/20, 18:13:16] ‪+27 78 725 6911‬: I sometimes get a blank white screen (but not always)
+[2020/09/20, 18:13:58] Demi: Does it go away on it's own? Or is there something specific you do?
+[2020/09/20, 18:14:21] ‪+27 78 725 6911‬: I just use the non-lab and it works
+[2020/09/20, 18:14:48] Demi: Oh cool
+I'll try that
+[2020/09/20, 18:22:05] ‪+27 78 725 6911‬: I created a new user to be a seller
+[2020/09/20, 18:22:38] ‪+27 78 725 6911‬: Person Number: 54321
+Password: 654321
+[2020/09/20, 18:24:11] ‪+27 78 725 6911‬: When I try to buy a book not uploaded by the same user I get a permissions error
+[2020/09/20, 18:24:16] ‪+27 78 725 6911‬: From Firebase
+[2020/09/20, 18:25:09] Demi: Aiit
+But aren't all students technically buyers and sellers?
+[2020/09/20, 18:25:24] Demi: I'll fix that
+[2020/09/20, 18:26:12] ‪+27 78 725 6911‬: Yeah I just meant that when I implement that a user can only buy books they aren’t selling, there’s a secondary account the different roles
+[2020/09/20, 18:26:22] ‪+27 78 725 6911‬: To mimic the*
+[2020/09/20, 18:28:42] Demi: Oh cool
+Do you know exactly what gives the permission error? Cause you should be allowed to delete from books and allowed to write to users just by being logged in
+[2020/09/20, 18:30:33] ‪+27 78 725 6911‬: I’ll see
+[2020/09/20, 18:34:35] ‪+27 78 725 6911‬: I think it’s when I update the item.id to delete it
+[2020/09/20, 18:34:47] ‪+27 78 725 6911‬: Only the buyer has permission to write
+[2020/09/20, 18:34:57] ‪+27 78 725 6911‬: Is it necessary to do that?
+[2020/09/20, 18:35:56] Demi: In the books collection? 
+I gave specific permission permissions that as far as anyone is logged in they can delete from the books collection
+[2020/09/20, 18:36:14] Demi: So anyone should be allowed to delete
+[2020/09/20, 18:36:23] ‪+27 78 725 6911‬: I removed this and it’s fixed
+[2020/09/20, 18:37:22] Demi: Oh aiit 
+I'll look into the permission for deleting
+[2020/09/20, 18:39:34] Demi: I edited it to be more specific 
+So it should work now
+[2020/09/21, 09:07:30] Senate⚡️: Check in
+[2020/09/21, 09:34:19] ‪+27 78 725 6911‬: Check in
+[2020/09/21, 09:34:36] Duduzile Coms: Check in
+[2020/09/21, 09:46:00] Demi: Check in
+
+Tasks are up on tiaga
+[2020/09/21, 10:16:45] Senate⚡️: @27727232970 please check in
+[2020/09/21, 10:17:15] Senate⚡️: Julian, did you you upload a the new book? And is so, I’m guessing you had no problem doing it?
+[2020/09/21, 10:18:34] ‪+27 78 725 6911‬: Which new book? I had no problem uploading books yesterday
+[2020/09/21, 10:19:44] Kabelo AKA Kabi: lmao check in
+[2020/09/21, 10:25:03] Senate⚡️: There’s a new about how to succeed without a penis
+
+Yeah, I saw that you were uploading yesterday. Were you using 123456?
+[2020/09/21, 10:25:25] Senate⚡️: Also, Demi, does sign up work?
+[2020/09/21, 10:25:26] ‪+27 78 725 6911‬: Yes then I switched to 54321
+[2020/09/21, 10:25:56] ‪+27 78 725 6911‬: Sign up from the front does work but there are fields missing from the field
+[2020/09/21, 10:26:02] ‪+27 78 725 6911‬: Form*
+[2020/09/21, 10:26:15] Senate⚡️: Oh, so I’m not the only one with problems using 123456?
+[2020/09/21, 10:26:42] Senate⚡️: Missing in the back end I’m guessing?
+[2020/09/21, 10:27:06] ‪+27 78 725 6911‬: Sorry I misread I’ve never used 123456, I’ve only ever used 12345 and 54321
+[2020/09/21, 10:28:09] ‪+27 78 725 6911‬: Phone number 
+Campus
+Res
+Res number (which I guess is room number)
+[2020/09/21, 10:28:30] ‪+27 78 725 6911‬: No from the front end form
+‎[2020/09/21, 10:29:25] ‪+27 78 725 6911‬: ‎image omitted
+[2020/09/21, 10:29:50] ‪+27 78 725 6911‬: (And except role)
+[2020/09/21, 10:34:27] Senate⚡️: Oh okay
+[2020/09/21, 10:34:42] Senate⚡️: I though that was for the delivery?
+[2020/09/21, 10:35:24] Senate⚡️: So I should have it for sign in? In that case, then should we not do it books and DH?
+[2020/09/21, 10:36:01] ‪+27 78 725 6911‬: Actually tbh I don’t know what the res info should go
+[2020/09/21, 10:36:12] Senate⚡️: Oh okay then
+[2020/09/21, 10:36:17] ‪+27 78 725 6911‬: But the phone number at least should be at sign up
+[2020/09/21, 10:37:36] Senate⚡️: It would be convenient to add it in the beginning and not have to do it every single time you order something 🤔
+[2020/09/21, 10:37:49] Senate⚡️: Okay
+[2020/09/21, 10:38:42] ‪+27 78 725 6911‬: But also what if you want to change it?
+[2020/09/21, 10:39:12] ‪+27 78 725 6911‬: Like a default is a good idea that I like, but we don’t really have an implementation for changing defaults
+[2020/09/21, 10:39:24] Senate⚡️: We can have an edit page 🤷🏽‍♀️
+[2020/09/21, 10:39:51] Senate⚡️: Wouldn’t that be a minor thing to add?
+[2020/09/21, 10:39:59] ‪+27 78 725 6911‬: I think so
+[2020/09/21, 10:40:34] ‪+27 78 725 6911‬: It could just be a user info page that displays all the info about them that we have
+[2020/09/21, 10:43:19] Senate⚡️: Okay yeah, I’ll do it
+[2020/09/21, 10:54:49] Senate⚡️: Julian, are you adding books through the front or back end?
+[2020/09/21, 10:55:06] ‪+27 78 725 6911‬: Front
+[2020/09/21, 10:55:27] ‪+27 78 725 6911‬: It’s easier because it uploads the picture and everything all at once
+[2020/09/21, 10:56:58] Senate⚡️: Yeah I would’ve thought so. But idk man 😪 I’m just having some Android studio vibes errors
+[2020/09/21, 10:58:11] ‪+27 78 725 6911‬: What’s happening
+[2020/09/21, 10:58:59] Demi: No idea
+It should
+[2020/09/21, 10:59:14] Demi: Whe fields?
+[2020/09/21, 11:00:24] Senate⚡️: Still the “this web page was reloaded because a problem occurred”
+[2020/09/21, 11:00:39] Senate⚡️: I don’t think it does
+[2020/09/21, 11:00:48] Demi: Ya that's all supposed to come from front end 
+I asked you'll to add a space for phone number in the fist sprint 
+And for Campu Res and Res Number they hold delivery details which you will fill when you order
+[2020/09/21, 11:01:14] Demi: Ya
+[2020/09/21, 11:02:19] ‪+27 78 725 6911‬: Are you using lab
+[2020/09/21, 11:02:28] Demi: It can also be done first time you order
+Then whenever you order it asks if you address is the same
+[2020/09/21, 11:02:57] Senate⚡️: Yes. Thanks for the idea. I’ll just run normal serve
+[2020/09/21, 11:03:13] Senate⚡️: Then you may as well do it an sign in 😅
+[2020/09/21, 11:03:21] Senate⚡️: *sing up
+[2020/09/21, 11:03:42] Demi: Ya I was thinking this
+[2020/09/21, 11:04:28] Demi: Should it also hold the book they've unloaded? Or should that he separate?
+[2020/09/21, 11:04:56] Demi: Be
+[2020/09/21, 11:05:20] Demi: Aiit
+Add the fields to sign up page
+[2020/09/21, 11:06:15] Senate⚡️: Nvm 😓 that doesn’t work either
+[2020/09/21, 11:06:32] Senate⚡️: Okay
+[2020/09/21, 11:08:12] ‪+27 78 725 6911‬: Can you send me a video or picture
+[2020/09/21, 11:09:01] ‪+27 78 725 6911‬: For the chats document, instead of a document for each message, could we make a document for every partipant with an array of messages
+[2020/09/21, 11:09:39] ‪+27 78 725 6911‬: Because going through all the document to populate one conversation may be inefficient
+[2020/09/21, 11:10:34] Demi: Aiit
+The field holds a limited amount of data but I guess we aren't gonna hit that limit since it's just 6 if us using the app
+
+But this means we need a new Chats collection right?
+[2020/09/21, 11:11:04] ‪+27 78 725 6911‬: How much data can it hold?
+[2020/09/21, 11:12:11] Senate⚡️: It’s the same from yesterday
+‎[2020/09/21, 11:12:23] Senate⚡️: ‎video omitted
+[2020/09/21, 11:12:29] Demi: Can't remember 
+But I doubt we'll hit the limit 
+
+I'll create the collection 
+The document name would be the uid 
+But this means 2 documents need to be updated every time a message is sent
+The sender and the reciever
+[2020/09/21, 11:12:52] ‪+27 78 725 6911‬: On my end it’s a drop down list and works perfectly
+[2020/09/21, 11:13:36] ‪+27 78 725 6911‬: If it becomes a problem, we could encrypt the chats and put them in storage and then make the message field a link to the chat info
+[2020/09/21, 11:13:48] ‪+27 78 725 6911‬: Like we do with the images
+[2020/09/21, 11:15:19] Senate⚡️: Yeah, that’s how it was for sprint 3. Now all of a sudden it doesn’t work for me 🤷🏽‍♀️😓
+
+Could I please have the 54321 password? Maybe it’s the user, I really don’t know at this point
+[2020/09/21, 11:15:42] ‪+27 78 725 6911‬: 654321
+[2020/09/21, 11:17:06] Senate⚡️: Thank you 🤞🏽
+[2020/09/21, 11:17:57] ‪+27 78 725 6911‬: This could also reduce the calls to the server since we could use one instance of storage to store a chat with 2 participants and then I can make the front end format it as sender/receiver on my end
+[2020/09/21, 11:21:54] ‪+27 78 725 6911‬: The books collection just disappeared
+‎[2020/09/21, 11:26:54] ‪+27 78 725 6911‬: ‎video omitted
+[2020/09/21, 11:27:03] ‪+27 78 725 6911‬: Are you working on your branch or the test branch? Maybe something broke during pulling?
+[2020/09/21, 11:27:54] ‪+27 78 725 6911‬: False alarm, all the books were just bought
+[2020/09/21, 11:41:14] Senate⚡️: Arg yeah 😅 it was such a stupid problem 🤦🏽‍♀️ that part of the app doesn’t work in safari for some odd reason 
+
+It works in chrome but now I’m getting that white screen that you guys where talking about
+[2020/09/21, 11:42:26] Demi: Oh cool
+[2020/09/21, 11:44:05] Demi: Aiit
+So what do you need from the backend?
+[2020/09/21, 11:48:43] ‪+27 78 725 6911‬: I think what you have now will work fine for the instant part of the messaging that doesn’t involve storing older messages because I’m not sure how else to send messages
+[2020/09/21, 11:49:51] ‪+27 78 725 6911‬: So I think keeping it how you have it will work. And then I’ll just add a part where I send the encrypted history of the chats to the back
+[2020/09/21, 11:50:02] ‪+27 78 725 6911‬: I don’t think you need to change anything for that
+[2020/09/21, 11:50:23] ‪+27 78 725 6911‬: But I’ll let you know if there are problems
+[2020/09/21, 11:54:39] Demi: Cool
+[2020/09/21, 12:11:51] ‪+27 78 725 6911‬: What is supposed to happen from book-delivery when they click Done?
+[2020/09/21, 12:17:40] ‪+27 78 725 6911‬: What I’m getting is the buyer sets the location and then when they click done the delivery details are sent to the seller? Is it emailed to them or is it sent via the message service?
+[2020/09/21, 12:22:15] Demi: Maybe through the message service
+It might be more efficient
+[2020/09/21, 12:26:50] ‪+27 78 725 6911‬: Yeah so I’m thinking that if we store a “Default” campus that the user chooses when they sign up, when they click buy, maybe it can open up the Message Service with a pre-composed message to the seller stating the details of the delivery
+[2020/09/21, 12:27:59] ‪+27 78 725 6911‬: If they want to change the delivery location temporarily they can just edit the message, and if they want to alter the default, they can do so in the section with the user’s details
+[2020/09/21, 12:30:08] ‪+27 78 725 6911‬: So we can move the drop down menu to the sign up instead
+[2020/09/21, 12:31:27] Demi: This could work 
+And then they can add extra message if necessary maybe like specifying a gate code or something
+[2020/09/21, 12:52:38] Senate⚡️: I was going to add all the other fields but wanted to see if the page we even working in the first place
+
+But now I’ve moved it all to signup so I’ll delete that page
+[2020/09/21, 12:52:54] Senate⚡️: Yup
+[2020/09/21, 12:52:59] Senate⚡️: I’ve done that
+[2020/09/21, 12:53:08] ‪+27 78 725 6911‬: Do you think we could use the Firebase cloud message service feature
+[2020/09/21, 12:53:29] ‪+27 78 725 6911‬: Nvm I don’t want to have to figure it out.
+[2020/09/21, 12:56:24] ‪+27 78 725 6911‬: But idk it might be easier
+[2020/09/21, 12:56:40] ‪+27 78 725 6911‬: I’ll look into how difficult it seems
+[2020/09/21, 12:59:13] Demi: I looked into it 
+It seems I'll have to do some work on the server side and you'll also have to do some work on the frontend side with the SDK and stuff
+
+Lemme know if you still wanna use it, but lemme know quite early so I can start watching videos to understand cause it seems like a process
+[2020/09/21, 13:05:22] ‪+27 78 725 6911‬: It seems to be messages from us to the users, though. It doesn’t seem to be messaging between users?
+[2020/09/21, 13:06:54] ‪+27 78 725 6911‬: I don’t think its necessary
+[2020/09/21, 13:10:02] Demi: Ya
+Aiit
+[2020/09/21, 17:42:53] Demi: I'm still getting a blank white screen after logging in 
+And I used but lab and the normal one
+[2020/09/21, 18:18:43] ‪+27 78 725 6911‬: Oh yeah there’s so issue happening with the pictures
+[2020/09/21, 18:19:19] ‪+27 78 725 6911‬: If I click near the top of the screen it takes me to the book market page but I figured Senate would fix it when she saw it
+[2020/09/21, 18:25:05] Senate⚡️: Yeah, I’m working on it. Do y’all need it now or can I push when I’m done with what I’m doing?
+[2020/09/21, 18:26:46] Demi: I don't need it now
+[2020/09/21, 18:27:39] Demi: I've created the collection Julian
+It's called Chats
+And I added the students uid as Documents and created a Messages array field
+[2020/09/21, 19:09:49] Senate⚡️: Aren’t we meant to be using the real time database?
+[2020/09/21, 19:19:08] Demi: Nah
+We can use either
+[2020/09/21, 20:17:14] Senate⚡️: Okay cool
+[2020/09/22, 18:10:15] Senate⚡️: Check in 
+
+@27813501310 imma have the code styled properly by tomorrow night. Julian had finished his part
+[2020/09/22, 18:55:48] Demi: Check in
+[2020/09/22, 18:58:26] ‪+27 78 725 6911‬: Check in
+[2020/09/22, 19:12:21] ‪+27 78 725 6911‬: I don’t know what I’m supposed to do about the delivery details?
+‎[2020/09/22, 19:13:41] ‪+27 78 725 6911‬: ‎image omitted
+[2020/09/22, 19:34:12] Duduzile Coms: Check in
+[2020/09/22, 19:36:19] Kabelo AKA Kabi: check in
+[2020/09/22, 19:38:09] ‪+27 78 725 6911‬: Also apparently you can’t send emails with Angular, that’s backend
+[2020/09/22, 19:40:49] Demi: Ya they can be asked when they order if they want to update their delivery details or keep it
+We can have a separate page for the editing of deliveries and maybe like a settings icon?
+[2020/09/22, 19:41:13] Demi: Aiit
+We'll tell Rylan at the sprint proof
+[2020/09/22, 19:41:47] ‪+27 78 725 6911‬: Ok I can’t do that yet until we have that page.
+[2020/09/22, 19:42:38] Demi: Send it to the DH owner
+Like the list should display who ordered what and their delivery details
+
+And if it's textbook 
+We need a page to show a textbook seller who bought a textbook and their delivery details and the name of the textbook they bought
+[2020/09/22, 19:42:57] Demi: @27732121491 can you create that page
+[2020/09/22, 22:14:32] Senate⚡️: Okay yeah, that and the interface with the list of sold books and delivery details
+[2020/09/23, 01:45:26] Demi: The contact page on the dining hall takes me to the chat page for like less than a second then it moves to the order page.
+
+It works on the textbook side but the message is only seen on the senders side and on the senders database 
+
+So the receiver gets no message and we don't have a page for people to view the messages sent to them
+
+Also is it possible to get our messages stacked on each other kinda like the usual messaging app?
+[2020/09/23, 11:53:40] ‪+27 78 725 6911‬: Check in
+
+I didn’t know there was a contact button on the dining hall section I’m doing that now 
+
+I commented code out but I fixed it the messages should work on both sides now
+
+The problem with the button on the dining hall section is that it registers a click on the button as a click on the picture as well, I’ll make an issue about it for Senate
+[2020/09/23, 11:55:01] ‪+27 78 725 6911‬: Also Senate said yesterday that’s she’s working on the styling today and I believe that includes the message alignment
+[2020/09/23, 12:42:38] Senate⚡️: Okay, I’ll look into it
+[2020/09/23, 12:42:40] Senate⚡️: Yup
+[2020/09/23, 12:50:23] Demi: Check in
+
+Aiit
+[2020/09/23, 12:50:44] Senate⚡️: Check in
+[2020/09/23, 13:05:20] Kabelo AKA Kabi: check in
+[2020/09/23, 14:50:01] Senate⚡️: Hey guys, Londani sent me an email saying that he accidentally sent that email invite and that it was meant for a COMS2 group that he tutors
+[2020/09/23, 14:50:12] Senate⚡️: So we should ignore it
+[2020/09/23, 14:50:30] Senate⚡️: We should however book Rylan, is Monday fine?
+[2020/09/23, 15:00:25] ‪+27 78 725 6911‬: I’m good with Monday
+[2020/09/23, 15:04:57] Demi: Ya
+[2020/09/23, 15:05:17] Demi: @27813501310 can you check in
+[2020/09/23, 15:41:56] Duduzile Coms: Check in
+[2020/09/23, 23:06:47] Demi: Dudu and Kabelo the build is failing 
+And the coverage is quite low
+[2020/09/24, 14:54:07] Demi: Check in
+[2020/09/24, 14:57:01] Senate⚡️: Check in
+[2020/09/24, 15:26:05] ‪+27 78 725 6911‬: Check in
+[2020/09/24, 15:34:31] Kabelo AKA Kabi: check in
+[2020/09/24, 15:42:49] Duduzile Coms: Check in
+[2020/09/24, 19:15:06] Senate⚡️: Hi @27813501310 and @27727232970, I believe that you guys can move on your components. I’ve pushed to GitHub
+[2020/09/24, 19:16:00] Duduzile Coms: 👍🏾
+[2020/09/24, 19:18:44] Senate⚡️: @27787256911, can you please check out the following?
+
+Logout (app.component.html)
+Do firebase stuff in “edit-details” to capture those changes. I tried ngModel but got errors
+
+For the Messaging, I think you, me and @27742777535 need to discuss exactly what we wanna do cause I think there’s a breakdown in communication
+[2020/09/24, 19:22:29] ‪+27 78 725 6911‬: To which branch did you push
+[2020/09/24, 19:22:58] ‪+27 78 725 6911‬: There’s no update that I can see on test
+[2020/09/24, 19:27:57] Demi: Aiit
+Should we have a meeting tomorrow? Cause it might be easier than typing
+[2020/09/24, 19:30:27] Senate⚡️: Fr? Let me check. It ought to have been test. I haven’t switched branches in forever
+[2020/09/24, 19:32:37] Senate⚡️: Okay? It should be up now
+[2020/09/24, 19:32:40] Senate⚡️: *,
+[2020/09/25, 13:35:17] Demi: Check in
+
+We need to have a meeting asap. Can everyone make it at 5pm today?
+
+
+I know what we need to do to get the most of our Mark's and there are some things that need clarification 
+
+This is hella important and everyone needs to be there(@27727232970 )
+[2020/09/25, 13:35:26] Demi: *marks
+[2020/09/25, 13:37:22] Duduzile Coms: I can’t make it today
+[2020/09/25, 13:41:15] Senate⚡️: Maybe that’s a blessing in disguise 🤔 if we have it tomorrow then you will have have time to make new test to show us
+[2020/09/25, 13:38:04] Demi: At all?
+What about tomorrow at 3pm?
+[2020/09/25, 13:38:13] Duduzile Coms: Yes that works
+[2020/09/25, 13:38:35] Demi: Ok can everyone check in and say if they can make it tomorrow at 3pm
+[2020/09/25, 13:40:47] Duduzile Coms: Check in
+[2020/09/25, 13:42:39] Senate⚡️: Check in
+[2020/09/25, 13:54:34] Kabelo AKA Kabi: check in
+
+my internet is acting up today so maybe i won't be able to actually join the meeting. but i'll be there to try at least
+[2020/09/25, 13:55:06] Kabelo AKA Kabi: oh wait it's tomorrow at 3. maybe it'll be better then but ya
+[2020/09/25, 09:12:18] ‪+27 78 725 6911‬: Check in. Tomorrow is good for me
+[2020/09/26, 09:23:54] Duduzile Coms: Check in
+[2020/09/25, 09:24:42] ‪Demi‬: Check in.
+[2020/09/26, 09:31:22] Senate⚡️: Check in
+[2020/09/26, 10:04:26] Kabelo AKA Kabi: check in
+[2020/09/26, 15:07:14] Demi: @27727232970 @27732121491 
+We're waiting for you on teams
+[2020/09/26, 15:10:46] ‪+27 78 725 6911‬: Are you guys having connectivity issues?
+[2020/09/26, 15:20:19] Senate⚡️: Never mind me. My WiFi is the fuckin pits 🙄
+[2020/09/26, 15:33:46] Senate⚡️: https://firebase.google.com/docs/rules/unit-tests
+[2020/09/26, 15:51:56] Kabelo AKA Kabi: please everyone when you send me your diagrams for this sprint please also just write 2/3 sentences about what your diagram is supposed to show
+[2020/09/26, 15:52:08] ‪+27 78 725 6911‬: Oh what I meant about the third part of our app was actually that it shows that our app is unfinished and that we have things to add
+[2020/09/26, 15:52:39] ‪+27 78 725 6911‬: I don’t want to give the impression that we’re done
+[2020/09/26, 15:52:45] ‪+27 78 725 6911‬: Or rather didn’t
+[2020/09/26, 15:52:51] Kabelo AKA Kabi: please email them to me 676400@students.wits.ac.za
+[2020/09/26, 15:53:25] Kabelo AKA Kabi: also if you have an editable .png copy of your diagrams please send that version
+[2020/09/26, 15:55:29] ‪+27 78 725 6911‬: My diagrams have a draw.io format and that’s on GitHub so changing the colours shouldn’t be difficult
+[2020/09/26, 15:57:41] Kabelo AKA Kabi: yea that's exactly what i need. thing is i think you can save it as either a .png or an editable .png so yes everyone editable .png if you can please
+[2020/09/26, 15:58:31] ‪+27 78 725 6911‬: Mine is .drawio. But I also saved the most recent one as .png
+[2020/09/26, 15:58:50] Kabelo AKA Kabi: don't forget to write line or two about what your diagrams are supposed to show. so it's easier for me to make sure they're doing the right thing
+[2020/09/26, 15:59:01] Kabelo AKA Kabi: thanks man i'll check it out
+[2020/09/26, 16:16:09] Demi: Aiit
+I since we've reached sprint 4 I think it's safe to say we are done
+All that's left should be polishing cause I doubt we're gonna add anything major before the final marking
+‎[2020/09/26, 16:36:09] ‪+27 78 725 6911‬: ‎image omitted
+‎[2020/09/26, 16:36:38] ‪+27 78 725 6911‬: ‎image omitted
+‎[2020/09/26, 16:37:45] ‪+27 78 725 6911‬: ‎image omitted
+[2020/09/26, 16:38:03] ‪+27 78 725 6911‬: But there’s no user logged
+[2020/09/26, 16:38:42] ‪+27 78 725 6911‬: So _I think_ the task is finding a way to log in a user before you create the component
+[2020/09/26, 16:38:55] Demi: Can we not hardcode a signin user before the test reaches that line?
+[2020/09/26, 16:51:14] ‪+27 78 725 6911‬: 🤷🏽‍♂️
+[2020/09/27, 16:12:35] Senate⚡️: Arg guys 😓 I just realised that I forgot to add the messaging functionality for DH owners. Dudu is it fine if I work on it or have you made some edits?
+[2020/09/27, 18:34:08] Senate⚡️: ??
+[2020/09/27, 18:45:14] ‪+27 78 725 6911‬: idk where Dudu is🤷🏽‍♂️
+[2020/09/27, 19:23:36] Senate⚡️: Okay 😓 I either fork or use edit locally so I can copy and paste whenver she's ready. 
+[2020/09/27, 19:30:38] Demi: Shot
+[2020/09/28, 02:32:43] Demi: Why is the coverage 0%😓
+We have a meeting with Rylan tomorrow at 2pm
+[2020/09/28, 02:36:55] Demi: Also does anyone know how to create a taiga folder? 
+I'm not finding anything online
+[2020/09/28, 09:43:15] ‪+27 78 725 6911‬: Were you planning on showing Rylan our coverage for some reason?
+[2020/09/28, 09:43:22] ‪+27 78 725 6911‬: Check in
+[2020/09/28, 09:52:34] Kabelo AKA Kabi: @27813501310 @27742777535 where are your most recent diagrams??
+[2020/09/28, 10:16:17] ‪+27 78 725 6911‬: Was there an invitation for the meeting with Rylan because it’s not in my calendar so I didn’t accept the invitation
+[2020/09/28, 10:33:38] Senate⚡️: Demi doesn’t have diagrams and Dudu’s are on GitHub
+[2020/09/28, 10:34:54] Senate⚡️: Oh shit 😓 I’m so sorry. I forgot to invite you. Let me invite you
+[2020/09/28, 10:51:08] Demi: Nah
+Those topics are unrelated I just happened to realize them at the same time
+[2020/09/28, 10:51:11] Demi: Check in
+[2020/09/28, 10:51:43] Demi: @27727232970 where are the latest diagrams?
+[2020/09/28, 10:56:46] Senate⚡️: Check in
+[2020/09/28, 10:57:03] Senate⚡️: @27813501310 ??
+[2020/09/28, 11:05:04] Kabelo AKA Kabi: how doesn't he have diagrams?
+[2020/09/28, 11:05:13] Kabelo AKA Kabi: almost done
+[2020/09/28, 11:05:55] Senate⚡️: He does acceptance criteria
+‎[2020/09/28, 11:22:32] ‪+27 78 725 6911‬: ‎image omitted
+[2020/09/28, 11:22:47] ‪+27 78 725 6911‬: I assume that’s a mistake and I’m gonna fix it?
+[2020/09/28, 11:24:09] Senate⚡️: Oh, yeah, that’s definitely a mistake. Thank you for spotting and fixing it
+[2020/09/28, 11:57:13] Kabelo AKA Kabi: they're up on github
+[2020/09/28, 11:59:46] Demi: Aiit
+Can you upload it to taiga?
+It's easier to put it on the wiki if it's on taiga 
+
+Also did you redo the old ones?
+[2020/09/28, 12:01:18] Senate⚡️: Actually, I changed what starting from the last batch. The taiga links time out so I started using GitHub links. I upload them in the admin folder and use those links
+[2020/09/28, 12:02:46] Kabelo AKA Kabi: no you said i had to do the ones for this sprint
+[2020/09/28, 12:03:37] Demi: Cool
+[2020/09/28, 12:03:50] Demi: Nah dude
+I said you'll also have to redo the ones from the previous sprints
+[2020/09/28, 12:04:17] Kabelo AKA Kabi: yeah but for the next sprint review
+[2020/09/28, 12:06:06] Demi: It should be for this sprint cause this is the last sprint and he's gonna check to make sure everything we've done in previous sprints is right, that's why I redid sprint 1 and 2 on taiga to make sure it was proper 
+
+But if you can't do it, it's fine
+[2020/09/28, 12:08:19] Kabelo AKA Kabi: nah dude i remember you telling me to fix the diagrams for this sprint for today, and all the other diagrams for the other sprints for the final review. that's literally what you told me. that's why i asked for people's most recent sprints
+[2020/09/28, 12:08:56] Demi: Nah dude you remember wrong
+
+Also where's the deployment diagram?
+[2020/09/28, 12:09:05] Demi: *remembered
+[2020/09/28, 12:09:41] Kabelo AKA Kabi: you explained wrong. 
+
+deployment diagram is there
+[2020/09/28, 12:10:17] Demi: You understood wrong, I was very clear
+
+What's it called?
+[2020/09/28, 12:11:58] Kabelo AKA Kabi: nope. i remember very clearly.
+
+component diagram. deployment is the "view" and the type of diagram is a component diagram
+[2020/09/28, 12:14:24] Demi: Clearly you don't. 
+
+Nah that's not it, there's a physical view with deployment diagram (Dudu's diagram with the TCP and HTTPS diagrams)
+The development view is what has the component diagram
+[2020/09/28, 12:14:58] Demi: Can you do it now, also try and do the previous ones cause dude said he's gonna go through it
+[2020/09/28, 12:18:30] Senate⚡️: Wait, @27727232970 did you only edit the sprint 3 diagrams? Cause all of them need to be updates
+[2020/09/28, 12:18:35] Senate⚡️: *updated
+[2020/09/28, 12:18:44] Kabelo AKA Kabi: demi i did what you told me to do. i stand by that. i can't go through months of diagrams in a day, carefully scrutinizing every little detail, let a lone in one hour. you didn't put your view across well
+[2020/09/28, 12:19:53] Kabelo AKA Kabi: yes, i have to update all of them but i clearly remember being told to update the sprint 3 diagrams, for sprint 3. update every single diagram for the final review
+[2020/09/28, 12:20:15] Demi: 1)according to you these diagrams take 5 minutes top
+2)I did specify don't blame me for not misunderstanding when I asked if everyone understood their task, you didn't even update the physical view diagram
+[2020/09/28, 12:20:25] Demi: You haven't done the deployment diagram
+[2020/09/28, 12:21:19] Kabelo AKA Kabi: i did every diagram there was on github. or the latest version of that
+[2020/09/28, 12:22:05] Demi: I literally just saw Dudu's diagram and there's no update on it
+[2020/09/28, 12:23:58] Senate⚡️: I genuinely don’t know how you got that. I for one know that I heard Demi asking you to do all the new diagrams and fix all the old ones by last night. It’s not even in a day. We had the meeting on Saturday. Please just do it. It’s honestly the least you can do. Julian, Demi and I have been working hard under tight time constraints for the benefits of your grades as well and doing this well is the least you can do
+[2020/09/28, 12:25:26] Kabelo AKA Kabi: it took me a few hours reading up on what each diagram does. i still dont understand clearly
+
+it took me an hour to edit them for today but that is because i thought i had to update every single one in detail for the final sprint
+[2020/09/28, 12:25:49] Demi: 👆🏾
+[2020/09/28, 12:27:06] Demi: That's not my fault
+I always said everyone should know what's happening at everytime with the app and that includes the diagrams
+[2020/09/28, 12:27:42] Kabelo AKA Kabi: the least i can do? wow okay. fine i'll do them now but i wholeheartedly remember being told what to do for today
+[2020/09/28, 12:28:11] Demi: *sunday night
+[2020/09/28, 12:28:27] Kabelo AKA Kabi: okay fine demi
+[2020/09/28, 12:28:35] Kabelo AKA Kabi: it's cool man
+‎[2020/09/28, 12:37:12] Senate⚡️: ‎image omitted
+[2020/09/28, 12:41:44] Demi: I think so
+[2020/09/28, 12:42:10] Demi: @27813501310 can you check in?
+[2020/09/28, 12:51:09] Senate⚡️: Hm 🤔 okay. If that’s the case then we might be able to figure it out
+[2020/09/28, 12:51:40] Senate⚡️: @27813501310 can you please also tell me whether or not I can do the DH stuff page
+[2020/09/28, 12:51:56] ‪+27 78 725 6911‬: That was 8 days, notice that you added code and it broke so the build was probably passing because of workarounds like skipping failing tests
+[2020/09/28, 12:52:26] ‪+27 78 725 6911‬: Which is why the build has been passing in every review, I was skipping tests that would fail it because we were lying about coverage
+[2020/09/28, 13:07:10] Senate⚡️: Oh damn, I see 😪 back to square one then
+[2020/09/28, 13:45:31] Demi: @27787256911 does the app send a confirmation email?
+[2020/09/28, 13:45:36] Demi: When you order something?
+[2020/09/28, 13:45:58] ‪+27 78 725 6911‬: No I told you that was backend things
+[2020/09/28, 13:46:20] Demi: Not necessarily 
+I found a way it could be done on ionic.
+[2020/09/28, 13:46:44] Demi: Cause we said how the backend will send to everyone.
+But using ionic you can send to an individual
+[2020/09/28, 13:47:01] ‪+27 78 725 6911‬: How?
+[2020/09/28, 13:47:22] ‪+27 78 725 6911‬: That was about messages not emails
+[2020/09/28, 13:47:36] Demi: https://ionicframework.com/docs/native/email-composer
+[2020/09/28, 13:47:39] Demi: Oh aiit
+[2020/09/28, 13:47:40] ‪+27 78 725 6911‬: There’s a Firebase thing for sending emails to users but it costs money
+[2020/09/28, 13:47:55] Demi: Aiit
+We can use the ionic version
+[2020/09/28, 13:48:02] ‪+27 78 725 6911‬: This isn’t sending an email, it’s composing it
+[2020/09/28, 13:48:17] Demi: It doesn't send?
+[2020/09/28, 13:48:18] ‪+27 78 725 6911‬: It basically just open their native email app
+[2020/09/28, 13:48:47] Demi: Cool
+Should we not use that thou?
+[2020/09/28, 13:49:49] ‪+27 78 725 6911‬: My understanding is that Rylan wanted us to send an email as part of processing the email
+[2020/09/28, 13:50:17] ‪+27 78 725 6911‬: So we send it to the user. We don’t open their email app so they can send it to themselves
+[2020/09/28, 13:51:11] Demi: I mean yes but we can't do it that way
+So shouldn't we do it the other way
+[2020/09/28, 13:51:23] ‪+27 78 725 6911‬: The other way doesn’t make sense
+[2020/09/28, 13:51:33] ‪+27 78 725 6911‬: Who are they writing the email to?
+[2020/09/28, 13:51:40] ‪+27 78 725 6911‬: Themselves?
+[2020/09/28, 13:51:46] ‪+27 78 725 6911‬: What’s the point
+[2020/09/28, 13:53:31] ‪+27 78 725 6911‬: @27732121491 are you still presenting?
+[2020/09/28, 13:56:34] Senate⚡️: Yeah, I think we should explain to him that we can do it
+[2020/09/28, 13:56:52] Demi: @27813501310 fork the test branch into a new branch and use that
+That way Senate can upload the latest version of the code without disturbing you and you can always update that branch whenever
+[2020/09/28, 13:57:17] Senate⚡️: I’m ready to but by WiFi likes having it’s moments
+[2020/09/28, 13:57:31] ‪+27 78 725 6911‬: I’ll be back up
+[2020/09/28, 13:58:41] ‪+27 78 725 6911‬: https://blog.mailtrap.io/angular-send-email/?amp=1
+[2020/09/28, 14:01:53] Senate⚡️: Please come to the meeting guys
+[2020/09/28, 14:02:32] Senate⚡️: https://meet.google.com/gno-kfjf-jzj
+[2020/09/28, 14:21:48] Duduzile Coms: Okay will do
+[2020/09/28, 14:21:57] Duduzile Coms: Check in
+‎[2020/09/28, 14:44:15] Senate⚡️: ‎image omitted
+[2020/09/28, 14:58:57] Senate⚡️: https://courses.cs.northwestern.edu/394/travis-setup.php
+[2020/09/28, 14:59:24] Senate⚡️: I’m not entirely sure but I think this could work. Has anyone tried it?
+[2020/09/28, 15:34:29] Demi: I'll check it out
+[2020/09/28, 15:55:29] ‪+27 78 725 6911‬: That’s about deployment our problem is that we don’t know how to test Firebase’s functionality
+[2020/09/28, 15:57:52] ‪+27 78 725 6911‬: For example, on this page the messages are generated by calling Firebase to retrieve the messages. This is done initially when the page is created. We aren’t sure how to create the page and have Firebase or a mock of Firebase respond with something that will be useful
+[2020/09/28, 17:06:21] Senate⚡️: @27742777535 and @27787256911 could you guys please check out the latest version on GitHub. I get firebase errors when I try to activate the clickabilty of the message list items
+[2020/09/28, 17:23:16] Demi: What exactly does the probelm say?
+‎[2020/09/28, 17:31:15] Senate⚡️: ‎image omitted
+‎[2020/09/28, 17:31:15] Senate⚡️: ‎image omitted
+‎[2020/09/28, 17:31:16] Senate⚡️: ‎image omitted
+[2020/09/28, 17:31:40] Senate⚡️: Okay, bit that I think of it 🤔 that could be where the problem is coming from
+[2020/09/28, 17:32:24] Senate⚡️: *but now that
+[2020/09/28, 17:33:01] Senate⚡️: So I think it’s Julian’s area of expertise. Julian could you advise? You don’t have to do it yourself. You can just tell me what to type
+[2020/09/28, 18:40:27] ‪+27 78 725 6911‬: It worked for me
+[2020/09/28, 18:40:34] ‪+27 78 725 6911‬: So idk the problem
+[2020/09/28, 18:40:42] ‪+27 78 725 6911‬: I can check if it still works for me
+[2020/09/28, 18:42:07] ‪+27 78 725 6911‬: Oh yeah I see now
+[2020/09/28, 18:42:54] ‪+27 78 725 6911‬: The problem is you’re passing in the conversation but conversation doesn’t have an Owner property
+[2020/09/28, 19:04:13] Senate⚡️: Yeah I thought so. I was maybe just asking how best to tackle that
+[2020/09/28, 19:06:19] ‪+27 78 725 6911‬: It’s a little involved.
+
+So, in the ngOnInit(), there’s a user object, you need to add a uid field to it and then set that to the doc.id
+[2020/09/28, 19:07:34] ‪+27 78 725 6911‬: Then you need to pass the uid as the recipient field the same way you would the Owner
+[2020/09/28, 19:08:00] ‪+27 78 725 6911‬: Maybe it’s not that involved
+[2020/09/28, 23:44:41] Demi: Close your tasks on taiga
+[2020/09/28, 23:45:04] Demi: Also the latest version of the code should be up by 12 tomorrow so I can make the release
+[2020/09/28, 23:48:45] Demi: @27732121491 did you create sprint 4 breakdown? Or should I?
+[2020/09/28, 23:49:07] Demi: Nevermind 
+I just saw it
+[2020/09/28, 23:56:01] Senate⚡️: Yeah it seems doable. Thank you!
+[2020/09/29, 00:30:07] Senate⚡️: Or not 😬 I tried but I don’t really see where I’d do that
+[2020/09/29, 00:31:26] Senate⚡️: Anyway, I think I’ve implemented all the stuff that Rylan wanted. @27787256911, do you mind connecting it to the back end? Including adding the conversation stuff cause I don’t think I can do that
