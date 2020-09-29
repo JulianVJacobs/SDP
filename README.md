@@ -8,7 +8,7 @@ For our sdp project
 - A section where students that use the Wits dining hall can view and order their meals online.
 - A section where students can buy and sell books.
 
-The app solves the problem of students having to buy secnond hand textbooks and obtain dinning hall meals in person. Throught this app, students are able to recieve both meals and books in the comfort of thier Wits residences. This is not only convenient but also safe during this pandemic where it is best to stay away from crowded places such as dinning halls. The app also promotes student enterprenuership in that it facilitates the selling of textbooks by students. 
+The app solves the problem of students having to buy secnond hand textbooks and obtain dinning hall meals in person. Through this app, students are able to recieve both meals and books from the comfort of thier Wits residences. This is not only convenient but also safe during this pandemic where it is best to stay away from crowded places such as dinning halls. The app also promotes student enterprenuership in that it facilitates the selling of textbooks by students. 
 
 
 ## Installation Guide
