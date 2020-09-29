@@ -28,8 +28,7 @@ export class SellBooksPage implements OnInit {
     private firestore: AngularFirestore, 
     private storage: AngularFireStorage, 
     private toast: ToastService,
-    private auth: AngularFireAuth,
-    private router: Router
+    private auth: AngularFireAuth
     ) { }
 
   addBook(){
@@ -52,7 +51,6 @@ export class SellBooksPage implements OnInit {
                     Title: '',
                     id: ''
                   }
-                  this.router.navigate(['sell-books']);
                 })
                 .catch((err) => {
                   console.dir(err);

@@ -21,24 +21,24 @@
           <ion-list>
             <h1>{{ item.Title }}</h1>
             <ion-label>C {{ item.Price }} <br></ion-label>
-            <ion-label>C {{ item.DeliveryPlace }} <br></ion-label>
-            <div *ngIf="item.delivered == 'false'; else deliveryDateText">
+            <ion-label>C {{ item['Delivery Location'] }} <br></ion-label>
+            <div *ngIf="item.Status == 'Pending Delivery'; else deliveryDateText">
               <ion-label> {{ item.ETA }} <br></ion-label>
             </div>
-            <div *ngIf="item.owner != 'user'; else deliverSeller">
+            <div *ngIf="item.Owner != uid; else deliveredSeller">
               <ion-button expand="block" (click)="message(item)">Contact Seller</ion-button>
             </div>
 
             <ng-template #deliveredSeller>
                   <ion-item>
                     
-                    <ion-toggle [(ngModel)]="myValue" [checked]="myValue" (ionChange)="myChange($event)"></ion-toggle>
+                    <ion-toggle [(ngModel)]="delivered" [checked]="delivered" (ionChange)="myChange($event)"></ion-toggle>
                     <ion-label>Delivered</ion-label>
                   </ion-item>
             </ng-template>
 
             <ng-template #deliveryDateText>
-              <ion-label> ETA: {{ item.DeliveryDate }} <br></ion-label>
+                <ion-label > ETA: {{ item.ETA }} <br></ion-label>
             </ng-template>
             
           </ion-list>

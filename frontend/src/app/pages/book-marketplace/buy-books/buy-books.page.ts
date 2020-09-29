@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./buy-books.page.scss'],
 })
 export class BuyBooksPage implements OnInit {
- public items = [];
+ public items = []; public uid: string;
  public user: {
     'Student Number' : '',
     Name: '',
@@ -21,6 +21,8 @@ export class BuyBooksPage implements OnInit {
     Role: 0,
     Campus: '',
     Res: '',
+    'Pending Orders': any[],
+    'Resolved Orders': any[],
     'Res Number': '',
     'Phone number': '',
     'Amount Left': number
@@ -42,29 +44,39 @@ export class BuyBooksPage implements OnInit {
   }
 
   buy(item: any){
+    item.Status = "Pending Delivery";
     if (this.user['Amount Left'] >= item.Price){
         this.auth.currentUser
           .then((res) => {
-            this.user['Amount Left'] = this.user['Amount Left'] - parseFloat(item.Price);
-            this.firestore.firestore.collection('users').doc(res.uid).update({'Amount Left': this.user['Amount Left'] })
-              .then(() => {
-                this.firestore.firestore.collection('Books').doc(item.id).get()
-                  .then((res) =>{
-                    this.firestore.firestore.collection('Books').doc(item.id).delete()
-                      .then(() => {
-                      })
-                      .catch((err) => {
-                        console.dir(err);
-                      });          
-                  })
-                  .catch((err) => {
-                    console.dir(err);
-                  });
+            this.uid = res.uid;
             this.firestore.firestore.collection('users').doc(item.Owner).get()
               .then((res) => {
                 var v = res.data();
+                item['Delivery Location'] = v.Campus;
                 v['Amount Left'] += parseFloat(item.Price);
-                this.firestore.firestore.collection('users').doc(item.Owner).update({ 'Amount Left': v['Amount Left'] })
+                v['Pending Orders'].push(item);
+                this.user['Amount Left'] = this.user['Amount Left'] - parseFloat(item.Price);
+                this.user['Pending Orders'].push(item);
+                this.firestore.firestore.collection('users').doc(this.uid).update({
+                  'Amount Left': this.user['Amount Left'],
+                  'Pending Orders': this.user['Pending Orders']
+                })
+                  .then(() => {
+                    this.storageService.store(this.uid,this.user);
+                    this.firestore.firestore.collection('Books').doc(item.id).get()
+                      .then((res) =>{
+                        this.firestore.firestore.collection('Books').doc(item.id).delete()
+                          .catch((err) => {
+                            console.dir(err);
+                          });          
+                      })
+                      .catch((err) => {
+                        console.dir(err);
+                      });
+                this.firestore.firestore.collection('users').doc(item.Owner).update({ 
+                  'Amount Left': v['Amount Left'],
+                  'Pending Orders': v['Pending Orders']
+                })
                     .then(() => {
                       this.toast.presentToast("Successful purchase");
                       this.ngOnInit();
