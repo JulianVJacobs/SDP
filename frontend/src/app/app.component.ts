@@ -38,9 +38,6 @@ export class AppComponent {
         this.storage.removeItem(res.uid)
           .then(() => {
           this.auth.signOut()
-            .then(() => {
-              console.log("log out");
-            })
             .catch((err) => {
               console.dir(err)
             })
