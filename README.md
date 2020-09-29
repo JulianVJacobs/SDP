@@ -10,6 +10,10 @@ For our sdp project
 
 The app solves the problem of students having to buy secnond hand textbooks and obtain dinning hall meals in person. Through this app, students are able to recieve both meals and books from the comfort of thier Wits residences. This is not only convenient but also safe during this pandemic where it is best to stay away from crowded places such as dinning halls. The app also promotes student enterprenuership in that it facilitates the selling of textbooks by students. 
 
+## App preview
+
+![alt text](https://github.com/greenpeace-wits/SDP/blob/test/admin/canvaPreview.png)
+
 
 ## Installation Guide
 1. Download and install [NodeJS](https://nodejs.org/en/download/)
