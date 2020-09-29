@@ -59,7 +59,7 @@ The app solves the problem of students having to buy secnond hand textbooks and 
 | Physical | [🗸](https://github.com/greenpeace-wits/SDP/wiki/Diagrams#physical-view) | [🗸](https://github.com/greenpeace-wits/SDP/wiki/Diagrams#physical-view-1) | [🗸](https://github.com/greenpeace-wits/SDP/wiki/Diagrams#physical-view-2) | 🗴 |
 | Activity | [🗸](https://github.com/greenpeace-wits/SDP/wiki/Diagrams#activity-diagram) | [🗸](https://github.com/greenpeace-wits/SDP/wiki/Diagrams#activity-diagram-1) | [🗸](https://github.com/greenpeace-wits/SDP/wiki/Diagrams#activity-diagram-2) | 🗴 |
 
-[See our sprint planning here.](https://github.com/greenpeace-wits/SDP/wiki/Sprint-Planner-&-Review-Meeting-Minutes) We are currently on Sprint 4.
+[See our sprint planning & review here.](https://github.com/greenpeace-wits/SDP/wiki/Sprint-Planner-&-Review-Meeting-Minutes) We are currently on Sprint 4.
 
 [Track our progress on our Taiga.](https://tree.taiga.io/project/__senate-greenpeace10/timeline)
 
