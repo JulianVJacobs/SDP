@@ -55,9 +55,9 @@ export class MessageListPage implements OnInit {
       })
   }
 s
-  mainAction(item: any){
+  mainAction(user: any){
     this.router.navigateByUrl('message', { state : {
-      recipient : item.Owner
+      recipient : user
     }});
   }
 

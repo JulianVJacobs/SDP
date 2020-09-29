@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
   <div class="actions">
-    <ion-item *ngFor="let conversation of conversations"  (click)="mainAction(conversation)">
+    <ion-item *ngFor="let conversation of conversations"  (click)="mainAction(conversation.uid)">
       <ion-thumbnail slot="start">
         <ion-img src="../../assets/images/person.png"></ion-img>
       </ion-thumbnail>
