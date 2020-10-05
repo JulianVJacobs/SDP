@@ -26,6 +26,7 @@ export class BuyBooksPage implements OnInit {
     'Phone number': '',
     'Amount Left': number
  }; 
+  toastService: any;
 
   constructor(
     private firestore: AngularFirestore,
