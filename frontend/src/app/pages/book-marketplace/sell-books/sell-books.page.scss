@@ -1,18 +1,27 @@
-ion-text{
+ion-toolbar{
     position: absolute;
-    top: 10%;
- 
+    
     h1{
-      font-size: 30px;
-      color: #416;
-      font-style: italic;
-      font-family: cursive;
+    font-size: 20px;
+    color: #416;
+    font-style: italic;
+    font-family: cursive;
     }
-}
+  }
 
 .ion-padding{
     top: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
+
+    ion-input{
+        border-radius: 14px;
+        background-color: #ebe7f3;
+        border: #ebe7f3;
+        margin-bottom: 6%;
+    }
+    input{
+        font-size: 13px;
+    }
     
 }
 

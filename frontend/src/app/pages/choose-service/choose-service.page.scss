@@ -22,8 +22,15 @@ ion-content{
      position: relative;
      margin-top: 30%;
 
+     ion-card{
+       border: #ffffff;
+       border-radius: 20px;
+       border-color: #ffffff;
+       border-style: solid;
+     }
+
      ion-card-title{
-       margin-left: 16%;
+        margin-left: 18%;
         color: #416;
      }
   
