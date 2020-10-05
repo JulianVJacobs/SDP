@@ -19,8 +19,7 @@ export class OrderHistoryPage implements OnInit {
     Role: 0,
     Campus: '',
     Res: '',
-    'Pending Orders': any[],
-    'Resolved Orders': any[],
+    Orders: any[],
     'Res Number': '',
     'Phone number': '',
     'Amount Left': number
@@ -40,8 +39,7 @@ export class OrderHistoryPage implements OnInit {
       this.storageService.get(res.uid)
         .then((res) => {
           this.user = res;
-          this.items = this.user["Pending Orders"];
-          console.log(this.items)
+          this.items = this.user.Orders;
         });
     })
     
@@ -51,6 +49,14 @@ export class OrderHistoryPage implements OnInit {
     this.router.navigateByUrl('message', { state : {
       recipient : item.Owner
     }});
+  }
+
+  delivery(item: any){
+    item.Status = "Delivered"
+    this.user.Orders[this.user.Orders.indexOf(item)] = item;
+    this.firestore.firestore.collection('users').doc(this.uid).update({Orders: this.user.Orders})
+    this.firestore.firestore.collection('users').doc(item.Owner).update({Orders: this.user.Orders})
+    this.storageService.store(this.uid,this.user)
   }
 
   // setDate(item: any){

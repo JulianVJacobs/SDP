@@ -84,7 +84,7 @@ export class MessagePage implements OnInit {
             this.firestore.firestore.collection('users/' + this.recipient + '/Chats').doc(uid).get()
               .then((res) => {
                 try {
-                  var m = res.data().Messages;
+                  var m: any[] = res.data().Messages;
                   this.reply.metadata.type = "received";
                   m.push(this.reply);
                   this.firestore.firestore.collection('users/' + this.recipient + '/Chats').doc(uid)
@@ -94,9 +94,11 @@ export class MessagePage implements OnInit {
                 }
                 catch {
                   this.reply.metadata.type = "received";
+                  var m: any[] = [];
+                  m.push(this.reply)
                   this.firestore.firestore.collection('users/' + this.recipient + '/Chats').doc(uid)
                     .set({ 
-                      Messages: this.reply
+                      Messages: m
                      })
                   }
                 this.reply.content = '';

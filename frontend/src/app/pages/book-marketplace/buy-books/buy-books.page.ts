@@ -21,8 +21,7 @@ export class BuyBooksPage implements OnInit {
     Role: 0,
     Campus: '',
     Res: '',
-    'Pending Orders': any[],
-    'Resolved Orders': any[],
+    Orders: any[],
     'Res Number': '',
     'Phone number': '',
     'Amount Left': number
@@ -54,12 +53,12 @@ export class BuyBooksPage implements OnInit {
                 var v = res.data();
                 item['Delivery Location'] = v.Campus;
                 v['Amount Left'] += parseFloat(item.Price);
-                v['Pending Orders'].push(item);
+                v.Orders.push(item);
                 this.user['Amount Left'] = this.user['Amount Left'] - parseFloat(item.Price);
-                this.user['Pending Orders'].push(item);
+                this.user.Orders.push(item);
                 this.firestore.firestore.collection('users').doc(this.uid).update({
                   'Amount Left': this.user['Amount Left'],
-                  'Pending Orders': this.user['Pending Orders']
+                  Orders: this.user.Orders
                 })
                   .then(() => {
                     this.storageService.store(this.uid,this.user);
@@ -75,7 +74,7 @@ export class BuyBooksPage implements OnInit {
                       });
                 this.firestore.firestore.collection('users').doc(item.Owner).update({ 
                   'Amount Left': v['Amount Left'],
-                  'Pending Orders': v['Pending Orders']
+                  Orders: v.Orders
                 })
                     .then(() => {
                       this.toast.presentToast("Successful purchase");
