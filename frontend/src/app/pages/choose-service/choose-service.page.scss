@@ -1,14 +1,18 @@
 *{
     font-weight: 300;
 }
+
+ion-content{
+  --background: url(../../../assets/images/gh9.jpg) no-repeat;
+}
   
    ion-text{
      position: relative;
-     top: 10%;
+     top: 30%;
   
      h1{
        font-size: 30px;
-       color: #416;
+       color: #ffffff;
        font-style: italic;
        font-family: cursive;
      }
@@ -16,9 +20,12 @@
   
    .actions{
      position: relative;
-     width: 80%;
      margin-top: 30%;
-     margin-left: 10%;
+
+     ion-card-title{
+       margin-left: 16%;
+        color: #416;
+     }
   
    }
 

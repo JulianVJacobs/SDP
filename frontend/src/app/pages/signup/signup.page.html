@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="input">
     <form>
-      <ion-list>
+      <ion-card>
 
         <ion-item>
           <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.user['Student Number']" [ngModelOptions]="{standalone: true}"></ion-input>
@@ -60,7 +60,7 @@
           <ion-input placeholder="Password" name="password" type="password" [(ngModel)]="data.auth.Password" [ngModelOptions]="{standalone: true}"></ion-input>
         </ion-item>
 
-      </ion-list>
+      </ion-card>
     </form>
   </div>
   <div class = "actions">
