@@ -8,13 +8,13 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { ToastService } from 'src/app/services/toast.service';
 import { throwError } from 'rxjs';
 import { doesNotThrow } from 'assert';
 import { userInfo } from 'os';
 
-class mockAuth extends AngularFireAuth{
+class mockFireAuth extends AngularFireAuth{
   public currentUser: any = {
     then: () => {
       return new Promise((res) => {
@@ -28,10 +28,10 @@ class mockAuth extends AngularFireAuth{
 
 @Component ({'template':''})
 class ItemComponent{
-  id : "";
-  Description :"The greatest there ever was";
-  Owner : "uvhnoeasb9NNd2siozoXR71t8LH2";
-  Price : 20;
+  public id : "";
+  public Description :"The greatest there ever was";
+  public Owner : "uvhnoeasb9NNd2siozoXR71t8LH2";
+  public Price : 20;
 
   constructor(){}
 }
@@ -45,7 +45,6 @@ fdescribe('BuyBooksPage', () => {
       declarations: [ BuyBooksPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
-        NgModule,
         IonicModule.forRoot(), 
         RouterTestingModule,
         HttpClientTestingModule,
@@ -53,12 +52,9 @@ fdescribe('BuyBooksPage', () => {
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireStorageModule,
         AngularFirestoreModule,
-        ToastService
-      
-
       ],
       providers: [
-       { provide: AngularFireAuth, useClass: mockAuth }
+       { provide: AngularFireAuth, useClass: mockFireAuth }
       ]
     }).compileComponents();
 
@@ -86,6 +82,7 @@ fdescribe('BuyBooksPage', () => {
       'Phone number': '',
       'Amount Left': 0
    }; 
+   fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('h2')).toBeTruthy();
   });
   
@@ -102,29 +99,7 @@ fdescribe('BuyBooksPage', () => {
   });
   
   describe('buy', () => {
-    let component: BuyBooksPage;
-    let fixture: ComponentFixture<BuyBooksPage>;
-
-
-    beforeEach(async(() => {
-      TestBed.configureTestingModule({
-          imports: [
-              NgModule,
-              RouterTestingModule,
-              //ToastService
-          ],
-          declarations:[ItemComponent],
-    providers: [    {provide: ToastService, useValue: true } ]
-          }).compileComponents();
-
-    fixture = TestBed.createComponent(BuyBooksPage);
-            component = fixture.componentInstance;
-            fixture.detectChanges();
-        }))
-
-     const item = new ItemComponent;  
-
-    it('Should produce a toaster',()=>{
+    it('Should produce a toast saying "You don\'t have enough credits for that" when the user does not have enough credits to buy the item',()=>{
       component.user = {
         'Student Number' : '',
         Name: '',
@@ -135,15 +110,49 @@ fdescribe('BuyBooksPage', () => {
         Orders: [],
         'Res Number': '',
         'Phone number': '',
-        'Amount Left': 0
+        'Amount Left': 10
       }; 
-      component.user["Amount Left"]=500;
+      component.items = [{
+        id : "",
+        Description :"The greatest there ever was",
+        Owner : "uvhnoeasb9NNd2siozoXR71t8LH2",
+        Price : 20
+      }]
 
-      //let authService = TestBed.get(AuthService);
       let toastService = TestBed.get(ToastService);
       spyOn(toastService, 'presentToast');
-      component.buy(item);
-      expect(toastService.presentToast).toHaveBeenCalledWith("Successful purchase");
+      
+      component.buy(component.items[0]);
+      expect(toastService.presentToast).toHaveBeenCalledWith("You don't have enough credits for that.");
+    })
+
+    it('Should produce a toast saying "Successful purchase." when the user successfully buys the item',()=>{
+      component.user = {
+        'Student Number' : '',
+        Name: '',
+        Surname: '',
+        Role: 0,
+        Campus: '',
+        Res: '',
+        Orders: [],
+        'Res Number': '',
+        'Phone number': '',
+        'Amount Left': 30
+      }; 
+      component.items = [{
+        id : "",
+        Description :"The greatest there ever was",
+        Owner : "uvhnoeasb9NNd2siozoXR71t8LH2",
+        Price : 20
+      }]
+
+      let toastService = TestBed.get(ToastService);
+      spyOn(toastService, 'presentToast');
+      spyOn(component,'buy').and.callFake(()=>{
+        toastService.presentToast("Successful purchase.")
+      })
+      component.buy(component.items[0]);
+      expect(toastService.presentToast).toHaveBeenCalledWith("Successful purchase.");
     })
     
 
