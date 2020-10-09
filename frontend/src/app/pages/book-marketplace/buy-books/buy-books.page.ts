@@ -45,8 +45,60 @@ export class BuyBooksPage implements OnInit {
 
   buy(item: any){
     item.Status = "Pending Delivery";
+    item.Status = "Pending Delivery";
     if (this.user['Amount Left'] >= item.Price){
-        this.toast.presentToast("Successful purchase");
+        this.auth.currentUser
+          .then((res) => {
+            this.uid = res.uid;
+            this.firestore.firestore.collection('users').doc(item.Owner).get()
+              .then((res) => {
+                var v = res.data();
+                item['Delivery Location'] = v.Campus;
+                v['Amount Left'] += parseFloat(item.Price);
+                v.Orders.push(item);
+                this.user['Amount Left'] = this.user['Amount Left'] - parseFloat(item.Price);
+                this.user.Orders.push(item);
+                this.firestore.firestore.collection('users').doc(this.uid).update({
+                  'Amount Left': this.user['Amount Left'],
+                  Orders: this.user.Orders
+                })
+                  .then(() => {
+                    this.storageService.store(this.uid,this.user);
+                    this.firestore.firestore.collection('Books').doc(item.id).get()
+                      .then((res) =>{
+                        this.firestore.firestore.collection('Books').doc(item.id).delete()
+                          .catch((err) => {
+                            console.dir(err);
+                          });          
+                      })
+                      .catch((err) => {
+                        console.dir(err);
+                      });
+                this.firestore.firestore.collection('users').doc(item.Owner).update({ 
+                  'Amount Left': v['Amount Left'],
+                  Orders: v.Orders
+                })
+                    .then(() => {
+                      this.toast.presentToast("Successful purchase");
+                      this.ngOnInit();
+                    })
+                    .catch((err) => {
+                      console.dir(err);
+                    })
+                  })              
+                  .catch((err) => {
+                    console.dir(err);
+                  });
+              })
+              .catch((err) => {
+                console.dir(err);
+              });
+            
+          })
+          .catch((err) => {
+            console.dir(err);
+          });
+
     }
     else{
       this.toast.presentToast("You don't have enough credits for that.");
