@@ -29,21 +29,12 @@ export class BuyBooksPage implements OnInit {
   toastService: any;
 
   constructor(
-<<<<<<< HEAD
-    public firestore: AngularFirestore,
-    public storage: AngularFireStorage, 
-    public auth: AngularFireAuth,
-    public toast: ToastService,
-    public storageService: StorageService,
-    public router: Router
-=======
     private firestore: AngularFirestore,
     private storage: AngularFireStorage, 
     private auth: AngularFireAuth,
     private toast: ToastService,
     private storageService: StorageService,
     private router: Router
->>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
     ) { }
 
   message(item: any){
@@ -55,9 +46,6 @@ export class BuyBooksPage implements OnInit {
   buy(item: any){
     item.Status = "Pending Delivery";
     if (this.user['Amount Left'] >= item.Price){
-<<<<<<< HEAD
-      this.toast.presentToast("Successful purchase.");
-=======
         this.auth.currentUser
           .then((res) => {
             this.uid = res.uid;
@@ -110,7 +98,6 @@ export class BuyBooksPage implements OnInit {
             console.dir(err);
           });
 
->>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
     }
     else{
       this.toast.presentToast("You don't have enough credits for that.");
@@ -118,8 +105,6 @@ export class BuyBooksPage implements OnInit {
   }
 
   ngOnInit() {
-<<<<<<< HEAD
-=======
     this.auth.currentUser.then((res) => {
       this.storageService.get(res.uid)
         .then((res) => {
@@ -149,7 +134,6 @@ export class BuyBooksPage implements OnInit {
       })
     })
     
->>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
   }
 
 }
