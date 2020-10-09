@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+<ion-list>
+
+<div class="actions" *ngFor="let item of menu" >
+  <ion-card>
+    <img src={{item.image}}/>
+    <ion-card-header>
+      <ion-card-title>{{item.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.description}} <br>
+      Allergens:
+      {{item.allergens}}
+    </ion-card-content>
+    <ion-button expand="block"(click)="orderAction(item.name)">Order</ion-button>
+    <div *ngIf="review == false; else reviewBlock">
+      <ion-button expand="block" (click)="review = !review">Make Review</ion-button>
+    </div>
+    <ng-template #reviewBlock>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Write a short comment <br>(fewer than 50 charecters)</ion-label>
+          <ion-input type="text" [(ngModel)]="data.Comment" maxlength="50"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Rate the meal <br></ion-label>
+          <ion-range min="1" max="5" step="1" value="3" snaps color="warning" pin="true" [(ngModel)]="data.Rating">
+            <ion-icon slot="start" color="warning" name="thumbs-down"></ion-icon>
+            <ion-icon slot="end" color="warning" name="thumbs-up"></ion-icon>
+          </ion-range>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="block" (click)="review = !review; submit(item.name)">Submit</ion-button>
+    </ng-template>
+  </ion-card>
+</div>
+
+</ion-list>
+</ion-content>

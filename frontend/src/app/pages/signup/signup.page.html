@@ -1,0 +1,74 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="input">
+    <form>
+      <ion-card>
+
+        <ion-item>
+          <ion-input placeholder="Person Number" type="tel" name="personNumber" [(ngModel)]="data.user['Student Number']" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input placeholder="Name" name="name" [(ngModel)]="data.user.Name" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input placeholder="Last Name" name="surname" [(ngModel)]="data.user.Surname" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+        <!-- not sure about that "PhoneNumber" so possible bugs -->
+        <ion-item>
+          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user['Phone number']" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Residence</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Res" [ngModelOptions]="{standalone: true}">
+            <ion-select-option value="Barnato">Barnato</ion-select-option>
+            <ion-select-option value="Braamfontein Centre">Braamfontein Centre</ion-select-option>
+            <ion-select-option value="David Webste">David Webster</ion-select-option>
+            <ion-select-option value="Ernest Oppenheimer">Ernest Oppenheimer</ion-select-option>
+            <ion-select-option value="Girton">Girton</ion-select-option>
+            <ion-select-option value="International House">International House</ion-select-option>
+            <ion-select-option value="Jubilee">Jubilee</ion-select-option>
+            <ion-select-option value="Junction">Junction</ion-select-option>
+            <ion-select-option value="Knockando">Knockando</ion-select-option>
+            <ion-select-option value="Medhurst">Medhurst</ion-select-option>
+            <ion-select-option value="Men’s Res">Men’s Res</ion-select-option>
+            <ion-select-option value="Noswal">Noswal</ion-select-option>
+            <ion-select-option value="Reith">Reith</ion-select-option>
+            <ion-select-option value="Rennie House">Rennie House</ion-select-option>
+            <ion-select-option value="Sunnyside">Sunnyside</ion-select-option>
+            <ion-select-option value="West Campus Village">West Campus Village</ion-select-option>
+            <ion-select-option value="Yale Village">Yale Village</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Campus</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Campus" [ngModelOptions]="{standalone: true}">
+            <ion-select-option value="Main">Braamfontein Cluster</ion-select-option>
+            <ion-select-option value="Parktown">Parktown Cluster</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-input placeholder="Room Number" name="roomNumber" type="password" [(ngModel)]="data.user['Res Number']" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+  
+        <ion-item>
+          <ion-input placeholder="Password" name="password" type="password" [(ngModel)]="data.auth.Password" [ngModelOptions]="{standalone: true}"></ion-input>
+        </ion-item>
+
+      </ion-card>
+    </form>
+  </div>
+  <div class = "actions">
+    <ion-button expand="block" (click)="mainAction()">Sign Up</ion-button>
+    <p (click)="loginAction()">
+      Already have an account? 
+      <a> Login</a>
+    </p>
+  </div>
+
+</ion-content>

@@ -1,0 +1,42 @@
+*{
+    font-weight: 300;
+}
+
+ion-content{
+  --background: url(../../../assets/images/gh9.jpg) no-repeat;
+}
+  
+   ion-text{
+     position: relative;
+     top: 30%;
+  
+     h1{
+       font-size: 30px;
+       color: #ffffff;
+       font-style: italic;
+       font-family: cursive;
+     }
+   }
+  
+   .actions{
+     position: relative;
+     margin-top: 30%;
+
+     ion-card{
+       border: #ffffff;
+       border-radius: 20px;
+       border-color: #ffffff;
+       border-style: solid;
+     }
+
+     ion-card-title{
+        margin-left: 18%;
+        color: #416;
+     }
+  
+   }
+
+   ion-card-title{
+     align-items: center;
+     font-size: 25px;
+   }
