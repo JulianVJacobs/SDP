@@ -45,7 +45,6 @@ export class BuyBooksPage implements OnInit {
 
   buy(item: any){
     item.Status = "Pending Delivery";
-    item.Status = "Pending Delivery";
     if (this.user['Amount Left'] >= item.Price){
         this.auth.currentUser
           .then((res) => {
