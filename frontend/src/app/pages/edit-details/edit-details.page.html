@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <ion-text>
+      <h1>Edit Your Details</h1>
+    </ion-text>
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          <!-- TODO:
+            Do Ng model stuff -->
+          <ion-input placeholder="Phone Number" type="tel" name="surname" [(ngModel)]="data.user['Phone number']"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Residence</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Res">
+            <ion-select-option value="Barnato">Barnato</ion-select-option>
+            <ion-select-option value="Braamfontein Centre">Braamfontein Centre</ion-select-option>
+            <ion-select-option value="David Webste">David Webster</ion-select-option>
+            <ion-select-option value="Ernest Oppenheimer">Ernest Oppenheimer</ion-select-option>
+            <ion-select-option value="Girton">Girton</ion-select-option>
+            <ion-select-option value="International House">International House</ion-select-option>
+            <ion-select-option value="Jubilee">Jubilee</ion-select-option>
+            <ion-select-option value="Junction">Junction</ion-select-option>
+            <ion-select-option value="Knockando">Knockando</ion-select-option>
+            <ion-select-option value="Medhurst">Medhurst</ion-select-option>
+            <ion-select-option value="Men’s Res">Men’s Res</ion-select-option>
+            <ion-select-option value="Noswal">Noswal</ion-select-option>
+            <ion-select-option value="Reith">Reith</ion-select-option>
+            <ion-select-option value="Rennie House">Rennie House</ion-select-option>
+            <ion-select-option value="Sunnyside">Sunnyside</ion-select-option>
+            <ion-select-option value="West Campus Village">West Campus Village</ion-select-option>
+            <ion-select-option value="Yale Village">Yale Village</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Campus</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="data.user.Campus">
+            <ion-select-option value="Main">Braamfontein Cluster</ion-select-option>
+            <ion-select-option value="Parktown">Parktown Cluster</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item lines = "none">
+          <ion-input placeholder="Room Number" name="roomNumber" [(ngModel)]="data.user['Res Number']"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </ion-card>
+
+    <ion-button expand="block" (click)="doneAction()">Done</ion-button>
+       
+</ion-content>

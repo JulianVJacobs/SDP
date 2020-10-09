@@ -8,12 +8,19 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
+<<<<<<< HEAD
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreCollectionGroup, AngularFirestoreDocument, AngularFirestoreModule } from '@angular/fire/firestore';
+=======
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+>>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
 import { ToastService } from 'src/app/services/toast.service';
 import { throwError } from 'rxjs';
 import { doesNotThrow } from 'assert';
 import { userInfo } from 'os';
+<<<<<<< HEAD
 import { analytics } from 'firebase';
+=======
+>>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
 
 class mockFireAuth extends AngularFireAuth{
   public currentUser: any = {
@@ -37,7 +44,11 @@ class ItemComponent{
   constructor(){}
 }
 
+<<<<<<< HEAD
 fdescribe('BuyBooksPage', () => {
+=======
+describe('BuyBooksPage', () => {
+>>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
   let component: BuyBooksPage;
   let fixture: ComponentFixture<BuyBooksPage>;
 
@@ -149,9 +160,15 @@ fdescribe('BuyBooksPage', () => {
 
       let toastService = TestBed.get(ToastService);
       spyOn(toastService, 'presentToast');
+<<<<<<< HEAD
       // spyOn(component,'buy').and.callFake(()=>{
       //   toastService.presentToast("Successful purchase.")
       // })
+=======
+      spyOn(component,'buy').and.callFake(()=>{
+        toastService.presentToast("Successful purchase.")
+      })
+>>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
       component.buy(component.items[0]);
       expect(toastService.presentToast).toHaveBeenCalledWith("Successful purchase.");
     })

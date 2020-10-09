@@ -1,0 +1,8 @@
+{
+  "name": "sdp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

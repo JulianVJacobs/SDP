@@ -1,0 +1,89 @@
+ion-header{
+ 
+    position: absolute;
+    margin-bottom: 10%;
+   
+    h1{
+      font-size: 20px;
+      color: #416;
+      font-style: italic;
+      font-family: cursive;
+    }
+}
+
+.body{
+    position: absolute;
+    margin-top: 20%;
+    margin-bottom: 7%;
+}
+
+.innerMessage {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    background: #416;
+    margin: 5px;
+    color: white;
+    border-radius: 3px;
+    display: block;
+}
+
+.innerMessage.messageRight {
+    background: #D4AF37;
+    margin-left: 25%;
+    flex-wrap: wrap;
+}
+
+.innerMessage.messageLeft {
+    margin-right: 25%;
+}
+
+
+
+.message {
+    font-size: 120%;
+}
+
+.elem button {
+    border-radius: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.elem {
+    position: relative;
+    min-width: 50px;
+}
+div#footer div.elem:first-child {
+    flex-grow: 1;
+}
+div#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+ion-input{
+    padding-left: 15px;
+    font-size: 125%;
+}
+ion-toolbar {
+    margin: 0;
+    padding: 0!important;
+}
+.innerMessage:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.messageLeft {
+    float: left;
+}
+.messageRight {
+    float: right;
+}
+

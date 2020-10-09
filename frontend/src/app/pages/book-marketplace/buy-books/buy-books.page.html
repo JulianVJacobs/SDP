@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>Buy Books</h1>
+    </ion-title>
+   <ion-buttons slot="start">
+     <ion-menu-button menu ="main-menu"></ion-menu-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <ion-list>
+
+      <ion-text>
+        <div *ngIf="user">
+          <h2>Balance:   C {{user['Amount Left']}}</h2>
+        </div>
+      </ion-text>
+
+      <div class="actions">
+        <ion-card *ngFor="let item of items">
+
+          <img [(src)]="item['Image-URL']" alt="">
+          
+          <ion-list>
+            <h1>{{ item.Title }}</h1>
+            <ion-label>C {{ item.Price }} <br></ion-label>
+            <ion-button expand="block" (click)="buy(item)">Buy</ion-button>
+            <ion-button expand="block" (click)="message(item)">Contact Seller</ion-button>
+          </ion-list>
+
+        </ion-card>
+      </div>
+      
+    </ion-list>
+
+</ion-content>

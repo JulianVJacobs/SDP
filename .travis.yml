@@ -1,0 +1,17 @@
+dist: trusty
+
+dependencies:
+  - firebase_core : ^0.5.0
+
+language: node_js
+node_js:
+  - "12"
+  
+before_install:
+  - cd frontend
+
+script:
+  - npm run test -- --no-watch --code-coverage --reporters=coverage,coveralls --no-progress --browsers=FirefoxHeadless
+
+after_script:
+  - cat ../coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
