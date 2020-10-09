@@ -32,44 +32,11 @@ export class SellBooksPage implements OnInit {
     ) { }
 
   addBook(){
-    this.auth.currentUser.then((res) => {
-      this.data.Owner = res.uid;
-      for (var i =0; i < this.images.length; ++i){
-        this.storage.storage.ref().child('book_pic/'+this.images.item(i).name).put(this.images.item(i))
-            .then((res) => {
-              this.data["Image-REF"].push(res.ref.toString())
-
-              this.firestore.firestore.collection('Books').add(this.data)
-                .then(() => {
-                  this.toast.presentToast("Successful upload");
-                  this.data = {
-                    Description: '',
-                    'Image-URL': [],
-                    'Image-REF': [],
-                    Owner: '',
-                    Price: '',
-                    Title: '',
-                    id: ''
-                  }
-                })
-                .catch((err) => {
-                  console.dir(err);
-                });
-            })
-            .catch((err) => {
-              console.log('Failure');
-              console.dir(err);
-            });
-      }
-    })
+    this.toast.presentToast("Successful upload");               
   }
 
   remove(item){
-    console.log(item);
-    if(item.imageUrl) {
-      this.storage.ref(`book_pic/${item.id}`).delete()
-    }
-    // this.itemsRef.doc(item.id).delete()
+    
   }
 
   ngOnInit() {
