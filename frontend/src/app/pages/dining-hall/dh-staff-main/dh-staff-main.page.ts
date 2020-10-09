@@ -22,39 +22,11 @@ export class DhStaffMainPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    var today = new Date;
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    var dh= 'Convocation';
-    this.auth.currentUser
-      .then((res) => {
-        this.storageService.get(res.uid)
-          .then((res) => {
-            dh = res['DH ID'];
-            this.firestore.firestore.collection('Dining Halls').doc(dh).get()
-              .then((res) => {
-                for(var meal in res.data()){
-                  this.firestore.firestore.collection("Dining Halls/"+dh+"/Meals/"+res.data()[meal]+'/Order').where('Date','==',date).get()
-                    .then((snap) => {
-                      this.bookings.push(snap.size);
-                      this.total += snap.size;
-                    });
-                  }
-              })
-              .catch((error) => {
-                console.dir(error);
-              })
-          })
-          .catch((err) => {
-            console.dir(err);
-          });
-        })
-      .catch((err) => {
-        console.dir(err);
-      });
+    
   }
 
   mainAction(){
-    this.router.navigate(['message-list']);
+    
   }
 
 }

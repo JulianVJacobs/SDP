@@ -10,7 +10,7 @@ import { DhStaffMainPage } from './dh-staff-main.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-describe('DhStaffMainPage', () => {
+fdescribe('DhStaffMainPage', () => {
   let component: DhStaffMainPage;
   let fixture: ComponentFixture<DhStaffMainPage>;
 
@@ -41,5 +41,7 @@ describe('DhStaffMainPage', () => {
     expect(component.ngOnInit).toBeTruthy();
   });
   
-  
+  it('should have a mainAction() function', () => {
+    expect(component.mainAction).toBeTruthy();
+  });
 });
