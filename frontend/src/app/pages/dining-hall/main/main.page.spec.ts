@@ -32,5 +32,12 @@ describe('MainPage', () => {
     expect(component.ngOnInit).toBeTruthy();
   });
   
+  it('should have a message() function', () => {
+    expect(component.message).toBeTruthy();
+  });
+
+  it('should have a goto() function', () => {
+    expect(component.goto).toBeTruthy();
+  });
   
 });

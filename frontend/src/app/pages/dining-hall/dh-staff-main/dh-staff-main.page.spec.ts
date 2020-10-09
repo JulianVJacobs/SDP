@@ -10,7 +10,7 @@ import { DhStaffMainPage } from './dh-staff-main.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-fdescribe('DhStaffMainPage', () => {
+describe('DhStaffMainPage', () => {
   let component: DhStaffMainPage;
   let fixture: ComponentFixture<DhStaffMainPage>;
 
