@@ -16,11 +16,11 @@ export class ChooseServicePage implements OnInit {
   }
 
   foodAction(){
-    this.router.navigate(['main']);
+    
   }
 
   bookAction(){
-    this.router.navigate(['main-tabs']);
+    
   }
 
 }

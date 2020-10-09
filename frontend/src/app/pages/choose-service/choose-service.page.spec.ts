@@ -29,6 +29,13 @@ describe('ChooseServicePage', () => {
   it('should have a ngOnInit() function', () => {
     expect(component.ngOnInit).toBeTruthy();
   });
+
+  it('should have a foodAction() function', () => {
+    expect(component.foodAction).toBeTruthy();
+  });
   
+  it('should have a bookAction() function', () => {
+    expect(component.bookAction).toBeTruthy();
+  });
   
 });
