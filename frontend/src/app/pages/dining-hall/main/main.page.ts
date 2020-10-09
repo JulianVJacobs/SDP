@@ -31,7 +31,7 @@ export class MainPage implements OnInit {
           recipient : 'iwzq0nMDESZ9E7u1xcmS6NvXDod2'
         }});
         break;
-      
+        
       case "4": 
         this.router.navigateByUrl('message', { state : {
           recipient : '5JBulkwZnhY0mKJrGOoKZPsznfz1'

@@ -58,7 +58,7 @@ describe('AppRoutingModule', () => {
   }));
 
   it('should have 9 routes', () => {
-    expect(router.config.length).toBe(9);
+    expect(router.config.length).toBe(12);
   });
 
   it('should have a / route', () => {

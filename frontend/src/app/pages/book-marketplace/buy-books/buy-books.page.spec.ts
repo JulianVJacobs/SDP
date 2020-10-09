@@ -36,7 +36,7 @@ class ItemComponent{
   constructor(){}
 }
 
-fdescribe('BuyBooksPage', () => {
+describe('BuyBooksPage', () => {
   let component: BuyBooksPage;
   let fixture: ComponentFixture<BuyBooksPage>;
 

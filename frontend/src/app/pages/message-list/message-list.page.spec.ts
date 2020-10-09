@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
+import { Router, RouterModule } from '@angular/router';
 
 import { MessageListPage } from './message-list.page';
 
@@ -10,7 +13,12 @@ describe('MessageListPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MessageListPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        IonicModule.forRoot(),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        RouterModule
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(MessageListPage);
