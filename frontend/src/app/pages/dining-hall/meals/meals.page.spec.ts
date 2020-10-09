@@ -5,12 +5,12 @@ import { IonicModule } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+import { ToastService } from 'src/app/services/toast.service';
 import { MealsPage } from './meals.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-xdescribe('MealsPage', () => {
+describe('MealsPage', () => {
   let component: MealsPage;
   let fixture: ComponentFixture<MealsPage>;
 
@@ -36,4 +36,33 @@ xdescribe('MealsPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a ngOnInit() function', () => {
+    expect(component.ngOnInit).toBeTruthy();
+  });
+
+  it('should have a orderAction() function', () => {
+    expect(component.orderAction).toBeTruthy();
+  });
+
+  it('should have a submit() function', () => {
+    expect(component.submit).toBeTruthy();
+  });
+
+  it('it should present a "Order placed" toast when orderAction is clicked', () => {
+    let toastService = TestBed.get(ToastService);
+      spyOn(toastService, 'presentToast');
+      
+      component.orderAction("");
+      expect(toastService.presentToast).toHaveBeenCalledWith("Order Placed");
+  })
+
+  it('it should present a "Review submitted." toast when submit is clicked', () => {
+    let toastService = TestBed.get(ToastService);
+      spyOn(toastService, 'presentToast');
+      
+      component.submit("");
+      expect(toastService.presentToast).toHaveBeenCalledWith("Review submitted.");
+  })
+
 });
