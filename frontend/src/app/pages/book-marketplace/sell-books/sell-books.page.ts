@@ -25,10 +25,7 @@ export class SellBooksPage implements OnInit {
   
 
   constructor(
-    private firestore: AngularFirestore, 
-    private storage: AngularFireStorage, 
     private toast: ToastService,
-    private auth: AngularFireAuth
     ) { }
 
   addBook(){

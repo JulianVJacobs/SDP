@@ -29,4 +29,9 @@ describe('MessageListPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call mainAction()', () => {
+    component.mainAction();
+    expect(component).toBeTruthy();
+  });
 });

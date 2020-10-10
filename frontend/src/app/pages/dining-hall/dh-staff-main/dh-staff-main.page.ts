@@ -15,10 +15,7 @@ export class DhStaffMainPage implements OnInit {
   public total = 0;
     
   constructor(
-    private auth: AngularFireAuth,
     public storageService: StorageService,
-    private firestore: AngularFirestore,
-    private router: Router
     ) { }
 
   ngOnInit() {

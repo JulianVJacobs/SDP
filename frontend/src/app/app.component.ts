@@ -18,7 +18,6 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private auth: AngularFireAuth,
     private storage: StorageService
   ) {
     this.initializeApp();
@@ -32,22 +31,8 @@ export class AppComponent {
   }
 
   logout(){
-    this.router.navigate(['landing']);
-    this.auth.currentUser
-      .then((res) => {
-        this.storage.removeItem(res.uid)
-          .then(() => {
-          this.auth.signOut()
-            .catch((err) => {
-              console.dir(err)
-            })
-          })
-      })
-      .catch((err) => {
-        console.dir(err)
-      })
   }
-
+  
   public appPages = [
     {
     title: 'MainTabs',

@@ -29,12 +29,8 @@ export class BuyBooksPage implements OnInit {
   toastService: any;
 
   constructor(
-    private firestore: AngularFirestore,
-    private storage: AngularFireStorage, 
     private auth: AngularFireAuth,
     private toast: ToastService,
-    private storageService: StorageService,
-    private router: Router
     ) { }
 
   message(item: any){

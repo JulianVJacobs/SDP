@@ -38,11 +38,11 @@ export class MealsPage implements OnInit {
   ngOnInit() {
   }
 
-  orderAction(item: string){
+  orderAction(){
     this.toastService.presentToast('Order Placed');
   }
 
-  submit(meal: string){
+  submit(){
     this.toastService.presentToast('Review submitted.');
   }
 

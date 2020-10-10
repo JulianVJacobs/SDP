@@ -13,52 +13,13 @@ export class MessageListPage implements OnInit {
   public conversations = []; public users = {}; public messages: any;
 
   constructor(
-    private firestore: AngularFirestore, 
-    private auth: AngularFireAuth,
-    private router: Router
   ) { }
 
   ngOnInit() {
-    this.auth.currentUser
-      .then((res) => {
-        this.firestore.firestore.collection('users/'+res.uid+'/Chats').get()
-          .then((snap) => {
-            snap.forEach((doc) => {
-              doc.ref.onSnapshot((snap) => {
-                var user = {
-                  uid: '',
-                  name: '',
-                  'Most Recent Message': ''
-                };
-                user.uid = doc.id;
-                user["Most Recent Message"] = snap.data().Messages[snap.data().Messages.length - 1]
-                this.firestore.firestore.doc('users/'+doc.id).get()
-                  .then((res) => {
-                    user.name = res.data().Name + ' ' + res.data().Surname;
-                    if(user["Most Recent Message"] != undefined){
-                      this.users[doc.id] = user
-                      this.conversations = Object.values(this.users);
-                    }
-                  })
-                  .catch((err) => {
-                    console.dir(err);
-                  })
-              })
-            })
-          })
-          .catch((err) => {
-            console.dir(err);
-          })
-      })
-      .catch((err) => {
-        console.dir(err);
-      })
   }
-s
-  mainAction(user: any){
-    this.router.navigateByUrl('message', { state : {
-      recipient : user
-    }});
+
+  mainAction(){
+    
   }
 
 }

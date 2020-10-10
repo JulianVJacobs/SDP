@@ -33,70 +33,10 @@ describe('IndexGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  xdescribe('canActivate():', () => {
-    let guard: IndexGuard;
-    let storageService: StorageService;
-    let auth: AngularFireAuth;
-    let authSpy: any;
-    let storageServiceSpy: any;
-    let router: Router;
-    let routerSpy: any;
-
-    it('should return true and not redirect to \\signin if storage service returns false', (done) =>  {
-      storageService = new StorageService;
-      storageServiceSpy = spyOn(storageService,'get');
-      router = TestBed.get(Router);
-      routerSpy = spyOn(router,'navigate');
-      auth = TestBed.get(AngularFireAuth);
-      authSpy = spyOn(auth,'signInWithEmailAndPassword').and.stub();
-      authSpy
-      
-      storageServiceSpy.and.returnValue(Promise.resolve(false));
-      router.initialNavigation();
-      guard = new IndexGuard(storageService,auth,router); 
-      
-      guard.canActivate()
-        .then((resolve) => {
-          authSpy.currentUser
-            .then((res) => {
-              expect(resolve).toBeTruthy();
-              expect(routerSpy).not.toHaveBeenCalled();
-              done();
-            })
-      });
-    });
-
-    it('should return false and redirect to \\home if storage service returns true', (done) =>  {
-      storageService = new StorageService;
-      storageServiceSpy = spyOn(storageService,'get');
-      router = TestBed.get(Router);
-      routerSpy = spyOn(router,'navigate');
-      
-      storageServiceSpy.and.returnValue(Promise.resolve(true));
-      router.initialNavigation();
-      guard = new IndexGuard(storageService,auth,router); 
-      
-      guard.canActivate()
-        .then((resolve) => {
-          expect(resolve).toBeFalsy();
-          expect(routerSpy).toHaveBeenCalledWith(['home']);
-          done();
-      });
-    });
-
-    it('should return true and not redirect to \\signin if storage service is unresolved', (done) =>  {
-      storageService = new StorageService;
-      storageServiceSpy = spyOn(storageService,'get');
-      router = TestBed.get(Router);
-      routerSpy = spyOn(router,'navigate');
-      
-      storageServiceSpy.and.returnValue(Promise.resolve(throwError({})));
-      router.initialNavigation();
-      guard = new IndexGuard(storageService,auth,router); 
-      
+  describe('canActivate():', () => {
+    it('can call canActivate() function', inject([IndexGuard], (guard: IndexGuard) => {
       guard.canActivate();
-      done();
-      expect(routerSpy).not.toHaveBeenCalled();
-    });
+      expect(guard.canActivate).toBeDefined();
+    }));
   });
 });

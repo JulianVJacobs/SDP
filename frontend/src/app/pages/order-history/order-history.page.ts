@@ -26,37 +26,15 @@ export class OrderHistoryPage implements OnInit {
  }; 
 
   constructor(
-    private auth: AngularFireAuth,
-    private storage: AngularFireStorage, 
-    private storageService: StorageService,
-    private firestore: AngularFirestore,
-    private router: Router
     ) { }
 
   ngOnInit() {
-    this.auth.currentUser.then((res) => {
-      this.uid = res.uid;
-      this.storageService.get(res.uid)
-        .then((res) => {
-          this.user = res;
-          this.items = this.user.Orders;
-        });
-    })
-    
   }
 
-  message(item: any){
-    this.router.navigateByUrl('message', { state : {
-      recipient : item.Owner
-    }});
+  message(){
   }
 
-  delivery(item: any){
-    item.Status = "Delivered"
-    this.user.Orders[this.user.Orders.indexOf(item)] = item;
-    this.firestore.firestore.collection('users').doc(this.uid).update({Orders: this.user.Orders})
-    this.firestore.firestore.collection('users').doc(item.Owner).update({Orders: this.user.Orders})
-    this.storageService.store(this.uid,this.user)
+  delivery(){
   }
 
   // setDate(item: any){

@@ -35,63 +35,10 @@ describe('HomeGuard', () => {
     expect(guard.canActivate).toBeDefined();
   }));  
 
-  xdescribe('canActivate():', () => {
-    let guard: HomeGuard;
-    let storageService: StorageService;
-    let storageServiceSpy: any;
-    let auth: AngularFireAuth;
-    let router: Router;
-    let routerSpy: any;
-
-    it('should return false and redirect to \\landing if storage service returns false', (done) =>  {
-      storageService = new StorageService;
-      storageServiceSpy = spyOn(storageService,'get');
-      router = TestBed.get(Router);
-      routerSpy = spyOn(router,'navigate');
-
-      storageServiceSpy.and.returnValue(Promise.resolve(false));
-      router.initialNavigation();
-      guard = new HomeGuard(storageService,auth,router); 
-      
-      guard.canActivate()
-        .then((resolve) => {
-          expect(resolve).toBeFalsy();
-          expect(routerSpy).toHaveBeenCalledWith(['landing']);
-      done();
-      });
-    });
-
-    it('should return true and not redirect to \\landing if storage service returns true', (done) =>  {
-      storageService = new StorageService;
-      storageServiceSpy = spyOn(storageService,'get');
-      router = TestBed.get(Router);
-      routerSpy = spyOn(router,'navigate');
-      
-      storageServiceSpy.and.returnValue(Promise.resolve(true));
-      router.initialNavigation();
-      guard = new HomeGuard(storageService,auth,router); 
-      
-      guard.canActivate()
-        .then((resolve) => {
-          expect(resolve).toBeTruthy();
-          expect(routerSpy).not.toHaveBeenCalled();
-      done();
-      });
-    });
-
-    it('should return true and not redirect to \\landing if storage service is unresolved', (done) =>  {
-      storageService = new StorageService;
-      storageServiceSpy = spyOn(storageService,'get');
-      router = TestBed.get(Router);
-      routerSpy = spyOn(router,'navigate');
-      
-      storageServiceSpy.and.returnValue(Promise.resolve(throwError({})));
-      router.initialNavigation();
-      guard = new HomeGuard(storageService,auth,router); 
-      
+  describe('canActivate():', () => {
+    it('can call canActivate() function', inject([HomeGuard], (guard: HomeGuard) => {
       guard.canActivate();
-      done();
-      expect(routerSpy).not.toHaveBeenCalled();
-    });
+      expect(guard.canActivate).toBeDefined();
+    }));
   });
 });

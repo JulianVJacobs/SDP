@@ -28,9 +28,6 @@ export class EditDetailsPage implements OnInit {
   };
 
   constructor(
-      private auth: AngularFireAuth,
-      private firestore: AngularFirestore,
-      private router: Router
     ) { }
 
   ngOnInit() {

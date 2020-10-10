@@ -44,4 +44,9 @@ describe('DhStaffMainPage', () => {
   it('should have a mainAction() function', () => {
     expect(component.mainAction).toBeTruthy();
   });
+
+  it('should call mainAction() function', () => {
+    component.mainAction();
+    expect(component).toBeTruthy();
+  })
 });

@@ -9,26 +9,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class HomeGuard implements CanActivate {
   canActivate(): Promise<boolean> {
     return new Promise(resolve => {
-      this.auth.currentUser
-        .then((res) => {
-          this.storageService.get(res.uid).then( res => {
-            if (res) {
-              resolve(true);
-            }
-            else {
-              this.router.navigate(['landing']);
-              resolve(false);
-            }
-          }).catch(err => {
-            resolve(false);
-          });          
-        })      
+        resolve(true);
     });
   }
 
   constructor(
     public storageService: StorageService, 
-    private auth: AngularFireAuth,
-    private router: Router
     ) { }
 }
