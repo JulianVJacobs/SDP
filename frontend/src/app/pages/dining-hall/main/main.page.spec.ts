@@ -71,12 +71,14 @@ describe('MainRoutingModule', () => {
 
   describe('/meals route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[0].children[0].loadChildren()
       expect(router.config[0].children[0].loadChildren()).toBeDefined();
     });
   });
 
   describe('/message route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[0].children[1].loadChildren()
       expect(router.config[0].children[1].loadChildren()).toBeDefined();
     });
   });
