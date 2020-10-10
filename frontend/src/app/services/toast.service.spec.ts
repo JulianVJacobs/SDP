@@ -9,4 +9,10 @@ describe('ToastService', () => {
     const service: ToastService = TestBed.get(ToastService);
     expect(service).toBeTruthy();
   });
+
+  it('should have a presentToast()', () => {
+    const service: ToastService = TestBed.get(ToastService);
+    service.presentToast("");
+    expect(service).toBeTruthy();
+  });
 });
