@@ -37,4 +37,14 @@ describe('SignupPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have mainAction()', () => {
+    component.mainAction();
+    expect(component).toBeTruthy();
+  });
+
+  it('should have loginAction()', () => {
+    component.loginAction();
+    expect(component).toBeTruthy();
+  });
 });
