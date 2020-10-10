@@ -58,7 +58,6 @@ describe('AppRoutingModule', () => {
       imports: [RouterTestingModule.withRoutes(routes)],
     }).compileComponents();
     router = TestBed.get(Router);
-    debugger;
   }));
 
   it('should have 12 routes', () => {
@@ -85,7 +84,9 @@ describe('AppRoutingModule', () => {
 
   describe('/landing route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[1].loadChildren();
       expect(router.config[1].loadChildren()).toBeDefined();
+      debugger;
     });
   });
 
@@ -95,6 +96,7 @@ describe('AppRoutingModule', () => {
 
   describe('/home route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[2].loadChildren();
       expect(router.config[2].loadChildren()).toBeDefined();
     });
   });
@@ -105,6 +107,7 @@ describe('AppRoutingModule', () => {
 
   describe('/login route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[3].loadChildren()
       expect(router.config[3].loadChildren()).toBeDefined();
     });
   });
@@ -115,6 +118,7 @@ describe('AppRoutingModule', () => {
 
   describe('/signup route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[4].loadChildren()
       expect(router.config[4].loadChildren()).toBeDefined();
     });
   });
@@ -125,6 +129,7 @@ describe('AppRoutingModule', () => {
 
   describe('/main route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[5].loadChildren()
       expect(router.config[5].loadChildren()).toBeDefined();
     });
   });
@@ -135,6 +140,7 @@ describe('AppRoutingModule', () => {
 
   describe('/choose-service route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[6].loadChildren()
       expect(router.config[6].loadChildren()).toBeDefined();
     });
   });
@@ -145,6 +151,7 @@ describe('AppRoutingModule', () => {
 
   describe('/main-tabs route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[7].loadChildren()
       expect(router.config[7].loadChildren()).toBeDefined();
     });
   });
@@ -155,6 +162,7 @@ describe('AppRoutingModule', () => {
 
   describe('/message route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[8].loadChildren()
       expect(router.config[8].loadChildren()).toBeDefined();
     });
   });
@@ -165,6 +173,7 @@ describe('AppRoutingModule', () => {
 
   describe('/edit-details route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[9].loadChildren()
       expect(router.config[9].loadChildren()).toBeDefined();
     });
   });
@@ -175,6 +184,7 @@ describe('AppRoutingModule', () => {
 
   describe('/message-list route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[10].loadChildren()
       expect(router.config[10].loadChildren()).toBeDefined();
     });
   });
@@ -185,6 +195,7 @@ describe('AppRoutingModule', () => {
 
   describe('/order-history route', () => {
     it('should have a loadChildren() function', () => {
+      router.config[11].loadChildren()
       expect(router.config[11].loadChildren()).toBeDefined();
     });
   });
