@@ -1,7 +1,7 @@
 # SDP
 For our sdp project
 
-[![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/SDP/badge.svg?branch=master)](https://coveralls.io/github/greenpeace-wits/SDP?branch=test)
+[![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/SDP/badge.svg?branch=master)](https://coveralls.io/github/greenpeace-wits/SDP?branch=master)
 [![Build Status](https://travis-ci.com/greenpeace-wits/SDP.svg?branch=master)](https://travis-ci.com/greenpeace-wits/SDP)
 
 [Our task](https://github.com/greenpeace-wits/SDP/wiki) is to create a 2 in 1 app. The plan is to implement:
@@ -64,4 +64,3 @@ The app solves the problem of students having to buy secnond hand textbooks and 
 [Track our progress on our Taiga.](https://tree.taiga.io/project/__senate-greenpeace10/timeline)
 
 Have you found a bug? [Check our issues. We may already know about it. If not, please bring it to our attention by submitting an issue.](https://github.com/greenpeace-wits/SDP/issues)
->>>>>>> 1536b6e64dcd8af934e859893b9c65ee721ea078
