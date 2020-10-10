@@ -9,7 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
-describe('IndexGuard', () => {
+fdescribe('IndexGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
