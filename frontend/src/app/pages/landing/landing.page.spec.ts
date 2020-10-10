@@ -6,7 +6,7 @@ import { LandingPage } from './landing.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
-describe('LandingPage', () => {
+fdescribe('LandingPage', () => {
   let component: LandingPage;
   let fixture: ComponentFixture<LandingPage>;
 

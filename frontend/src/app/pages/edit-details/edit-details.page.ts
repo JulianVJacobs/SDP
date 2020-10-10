@@ -37,52 +37,7 @@ export class EditDetailsPage implements OnInit {
   }
 
   doneAction(){
-    this.auth.currentUser
-      .then((res) => {
-        this.data.auth.uid = res.uid;
-        if (this.data.user.Res != ''){
-          this.firestore.firestore.collection('users').doc(res.uid)
-            .update({
-              Res: this.data.user.Res
-            })
-            .catch((err) => {
-              console.dir(err);
-            })
-        }
-        if (this.data.user['Res Number'] != ''){
-          this.firestore.firestore.collection('users').doc(res.uid)
-            .update({
-              'Res Number': this.data.user['Res Number']
-            })
-            .catch((err) => {
-              console.dir(err);
-            })
-        }
-        if (this.data.user['Phone number'] != ''){
-          this.firestore.firestore.collection('users').doc(res.uid)
-            .update({
-              'Phone number': this.data.user['Phone number']
-            })
-            .catch((err) => {
-              console.dir(err);
-            })
-        }  
-        if (this.data.user.Campus != ''){
-          this.firestore.firestore.collection('users').doc(res.uid)
-            .update({
-              Campus: this.data.user.Campus
-            })
-            .catch((err) => {
-              console.dir(err);
-            })
-        }    
-      })
-      .then(() => {
-        this.router.navigate(['main-tabs'])
-      })
-      .catch((err) => {
-        console.dir(err);
-      })
+    
   }
 
 }

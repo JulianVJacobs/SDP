@@ -119,7 +119,7 @@ describe('BuyBooksPage', () => {
         Price : 20
       }]
 
-      let toastService = TestBed.get(ToastService);
+      let toastService = TestBed.get(ToastService); 
       spyOn(toastService, 'presentToast');
       
       component.buy(component.items[0]);
