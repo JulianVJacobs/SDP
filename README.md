@@ -1,7 +1,7 @@
 # SDP
 For our sdp project
 
-[![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/SDP/badge.svg?branch=master)](https://coveralls.io/github/greenpeace-wits/SDP?branch=test)
+[![Coverage Status](https://coveralls.io/repos/github/greenpeace-wits/SDP/badge.svg?branch=master)](https://coveralls.io/github/greenpeace-wits/SDP?branch=master)
 [![Build Status](https://travis-ci.com/greenpeace-wits/SDP.svg?branch=master)](https://travis-ci.com/greenpeace-wits/SDP)
 
 [Our task](https://github.com/greenpeace-wits/SDP/wiki) is to create a 2 in 1 app. The plan is to implement:
