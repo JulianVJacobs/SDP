@@ -10,7 +10,7 @@ import { LoginPage } from './login.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-describe('LoginPage', () => {
+fdescribe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
 
@@ -36,5 +36,17 @@ describe('LoginPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have a ngOnInit() function', () => {
+    expect(component.ngOnInit).toBeTruthy();
+  });
+
+  it('should have a mainAction() function', () => {
+    expect(component.mainAction).toBeTruthy();
+  });
+
+  it('should have a signupAction() function', () => {
+    expect(component.signupAction).toBeTruthy();
   });
 });
