@@ -58,9 +58,10 @@ describe('AppRoutingModule', () => {
       imports: [RouterTestingModule.withRoutes(routes)],
     }).compileComponents();
     router = TestBed.get(Router);
+    debugger;
   }));
 
-  it('should have 9 routes', () => {
+  it('should have 12 routes', () => {
     expect(router.config.length).toBe(12);
   });
 
@@ -68,7 +69,17 @@ describe('AppRoutingModule', () => {
     expect(router.config[0].path).toBe('');
   });
 
-  it('should have a /landing path', () => {
+  describe('/ route', () => {
+    it('should have a redirectTo property', () => {
+      expect(router.config[0].redirectTo).toBeTruthy();
+    });
+
+    it('should have a pathMatch property', () => {
+      expect(router.config[0].pathMatch).toBeTruthy();
+    });
+  });
+
+  it('should have a /landing route', () => {
     expect(router.config[1].path).toBe('landing');
   });
 
@@ -78,5 +89,103 @@ describe('AppRoutingModule', () => {
     });
   });
 
-  //TODO: loadChildren should load their specific modules
+  it('should have a /home path', () => {
+    expect(router.config[2].path).toBe('home');
+  });
+
+  describe('/home route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[2].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /login route', () => {
+    expect(router.config[3].path).toBe('login');
+  });
+
+  describe('/login route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[3].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /signup path', () => {
+    expect(router.config[4].path).toBe('signup');
+  });
+
+  describe('/signup route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[4].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /main route', () => {
+    expect(router.config[5].path).toBe('main');
+  });
+
+  describe('/main route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[5].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /choose-service path', () => {
+    expect(router.config[6].path).toBe('choose-service');
+  });
+
+  describe('/choose-service route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[6].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /main-tabs route', () => {
+    expect(router.config[7].path).toBe('main-tabs');
+  });
+
+  describe('/main-tabs route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[7].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /message path', () => {
+    expect(router.config[8].path).toBe('message');
+  });
+
+  describe('/message route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[8].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /edit-details path', () => {
+    expect(router.config[9].path).toBe('edit-details');
+  });
+
+  describe('/edit-details route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[9].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /message-list path', () => {
+    expect(router.config[10].path).toBe('message-list');
+  });
+
+  describe('/message-list route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[10].loadChildren()).toBeDefined();
+    });
+  });
+
+  it('should have a /order-history path', () => {
+    expect(router.config[11].path).toBe('order-history');
+  });
+
+  describe('/order-history route', () => {
+    it('should have a loadChildren() function', () => {
+      expect(router.config[11].loadChildren()).toBeDefined();
+    });
+  });
 });
