@@ -8,6 +8,7 @@ ion-header{
     }
 }
 
+
 .ion-padding{
 
 
@@ -18,10 +19,18 @@ ion-header{
     
 }
 
+ion-input{
+    &.custom-input {
+        ::placeholder {
+            font-size: 10px; //sets placeholder font size
+          }
+    }
+}
+
 ion-button{
-    position: absolute;
+    position: relative;
     width: 80%;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-bottom: 3%;
     --background: #D4AF37;
  
