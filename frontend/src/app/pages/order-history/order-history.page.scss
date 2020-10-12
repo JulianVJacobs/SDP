@@ -20,11 +20,9 @@ ion-header{
 }
 
 ion-input{
-    &.custom-input {
         ::placeholder {
             font-size: 10px; //sets placeholder font size
           }
-    }
 }
 
 ion-button{
