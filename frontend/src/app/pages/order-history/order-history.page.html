@@ -35,7 +35,8 @@
                     <ion-label>Delivered</ion-label>
                   </ion-item>
                   <ion-item>
-                      <ion-input placeholder="Estimated delivery date"></ion-input>
+                      <!-- <ion-input placeholder="Estimated delivery date"></ion-input> -->
+                      <ion-datetime displayFormat="YYYY-MM-DD" min="2020-10-13" placeholder="Estimated delivery date" [(ngModel)]="date" (ionChange)="setDate(item)"></ion-datetime>
                   </ion-item>
             </ng-template>
 

@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-order-history',
@@ -23,11 +24,11 @@ export class OrderHistoryPage implements OnInit {
     'Res Number': '',
     'Phone number': '',
     'Amount Left': number
- }; 
+ }; public date: string;
 
   constructor(
     private auth: AngularFireAuth,
-    private storage: AngularFireStorage, 
+    private toast: ToastService,
     private storageService: StorageService,
     private firestore: AngularFirestore,
     private router: Router
@@ -59,9 +60,49 @@ export class OrderHistoryPage implements OnInit {
     this.storageService.store(this.uid,this.user)
   }
 
-  // setDate(item: any){
-  //   this.auth.currentUser.then((res) => {
-  //   });
-  // }
+  setDate(item: any){
+    this.auth.currentUser.then((res) => {
+      this.uid = res.uid;
+      this.firestore.firestore.collection('users').doc(item.Owner).get()
+        .then((res) => {
+          var v = res.data();
+          console.log(item)
+          console.log(v.Orders);
+          v.Orders.forEach((order) => {
+            if(order.id == item.id){
+              order['ETA'] = this.date.substr(0,10);
+              item['ETA'] = this.date.substr(0,10);
+              return;
+            }
+          });
+          this.user.Orders.forEach((order) => {
+            if(order.id == item.id){
+              order['ETA'] = this.date.substr(0,10);
+              return;
+            }
+          });
+          this.firestore.firestore.collection('users').doc(this.uid).update({
+            Orders: this.user.Orders
+          })
+          .then(() => {
+            this.firestore.firestore.collection('users').doc(item.Owner).update({ 
+              Orders: v.Orders
+            })
+            .then(() => {
+              this.toast.presentToast("Date set.");
+            })
+          })
+          .catch((err) => {
+            console.dir(err);
+          })
+        })              
+        .catch((err) => {
+          console.dir(err);
+        });
+    })
+    .catch((err) => {
+      console.dir(err);
+    });
+  }
 
 }
