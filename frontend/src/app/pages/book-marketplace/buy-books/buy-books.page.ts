@@ -54,8 +54,10 @@ export class BuyBooksPage implements OnInit {
                 var v = res.data();
                 item['Delivery Location'] = v.Campus;
                 v['Amount Left'] += parseFloat(item.Price);
+                v['Buyer'] = item.Owner;
                 v.Orders.push(item);
                 this.user['Amount Left'] = this.user['Amount Left'] - parseFloat(item.Price);
+                this.user['Buyer'] = item.Owner;
                 this.user.Orders.push(item);
                 this.firestore.firestore.collection('users').doc(this.uid).update({
                   'Amount Left': this.user['Amount Left'],

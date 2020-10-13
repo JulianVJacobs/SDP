@@ -62,8 +62,7 @@ export class OrderHistoryPage implements OnInit {
 
   setDate(item: any){
     this.auth.currentUser.then((res) => {
-      this.uid = res.uid;
-      this.firestore.firestore.collection('users').doc(item.Owner).get()
+      this.firestore.firestore.collection('users').doc(item.Buyer).get()
         .then((res) => {
           var v = res.data();
           console.log(item)
@@ -81,11 +80,11 @@ export class OrderHistoryPage implements OnInit {
               return;
             }
           });
-          this.firestore.firestore.collection('users').doc(this.uid).update({
+          this.firestore.firestore.collection('users').doc(item.Owner).update({
             Orders: this.user.Orders
           })
           .then(() => {
-            this.firestore.firestore.collection('users').doc(item.Owner).update({ 
+            this.firestore.firestore.collection('users').doc(item.Buyer).update({ 
               Orders: v.Orders
             })
             .then(() => {
