@@ -65,8 +65,6 @@ export class OrderHistoryPage implements OnInit {
       this.firestore.firestore.collection('users').doc(item.Buyer).get()
         .then((res) => {
           var v = res.data();
-          console.log(item)
-          console.log(v.Orders);
           v.Orders.forEach((order) => {
             if(order.id == item.id){
               order['ETA'] = this.date.substr(0,10);
@@ -88,7 +86,7 @@ export class OrderHistoryPage implements OnInit {
               Orders: v.Orders
             })
             .then(() => {
-              this.toast.presentToast("Date set.");
+              this.toast.presentToast("Date set");
             })
           })
           .catch((err) => {
