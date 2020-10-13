@@ -20,10 +20,10 @@
           
           <ion-list>
             <h1>{{ item.Title }}</h1>
-            <ion-label>C {{ item.Price }} <br></ion-label>
-            <ion-label>C {{ item['Delivery Location'] }} <br></ion-label>
+            <ion-label>Price: C {{ item.Price }} <br></ion-label>
+            <ion-label>Delivery Location:  {{ item['Delivery Location'] }} <br></ion-label>
             <div *ngIf="item.Status == 'Pending Delivery'; else deliveryDateText">
-              <ion-label> {{ item.ETA }} <br></ion-label>
+              <ion-label>ETA: {{ item.ETA }} <br></ion-label>
             </div>
             <div *ngIf="item.Owner != uid; else deliveredSeller">
               <ion-button expand="block" (click)="message(item)">Contact Seller</ion-button>
