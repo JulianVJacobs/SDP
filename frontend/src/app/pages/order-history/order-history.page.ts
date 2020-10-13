@@ -58,6 +58,7 @@ export class OrderHistoryPage implements OnInit {
     this.firestore.firestore.collection('users').doc(this.uid).update({Orders: this.user.Orders})
     this.firestore.firestore.collection('users').doc(item.Buyer).update({Orders: this.user.Orders})
     this.storageService.store(this.uid,this.user)
+    this.toast.presentToast("Marked as Delivered");
   }
 
   setDate(item: any){
