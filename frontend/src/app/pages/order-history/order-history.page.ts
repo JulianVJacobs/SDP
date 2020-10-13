@@ -56,7 +56,7 @@ export class OrderHistoryPage implements OnInit {
     item.Status = "Delivered"
     this.user.Orders[this.user.Orders.indexOf(item)] = item;
     this.firestore.firestore.collection('users').doc(this.uid).update({Orders: this.user.Orders})
-    this.firestore.firestore.collection('users').doc(item.Owner).update({Orders: this.user.Orders})
+    this.firestore.firestore.collection('users').doc(item.Buyer).update({Orders: this.user.Orders})
     this.storageService.store(this.uid,this.user)
   }
 
